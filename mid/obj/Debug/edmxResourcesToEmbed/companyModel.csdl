@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ICDBTrdAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MainCmpnam">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int16" Nullable="false" />
+    <Property Name="Cmp_Activity" Type="Int16" />
+    <Property Name="Hijri_DifDay" Type="Int16" />
+    <Property Name="Brch_Trns" Type="Int16" />
+    <Property Name="Stor_Trns" Type="Int16" />
+    <Property Name="Main_Brn" Type="Int16" />
+    <Property Name="DLv_Stor" Type="Int16" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="Local_Lang" Type="Int16" />
+    <Property Name="Sys_SetupNo" Type="Int16" />
+    <Property Name="Cmp_ShrtNm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Itm_twice" Type="Int16" />
+    <Property Name="InvTrf_Disc1" Type="Int16" />
+    <Property Name="InvTrf_Bouns" Type="Int16" />
+    <Property Name="BarCodeTy" Type="Int16" />
+    <Property Name="CostCalc" Type="Int16" />
+    <Property Name="Repeate_Item" Type="Int16" />
+    <Property Name="Disc2Pur_Dis2Sal" Type="Int16" />
+    <Property Name="ReqLocBalance" Type="Int16" />
+    <Property Name="Pur_TabOrder" Type="Int16" />
+    <Property Name="Start_Month" Type="Int16" />
+    <Property Name="Start_Year" Type="Int16" />
+    <Property Name="End_Month" Type="Int16" />
+    <Property Name="End_year" Type="Int16" />
+    <Property Name="Start_MonthHij" Type="Int16" />
+    <Property Name="Start_YearHij" Type="Int16" />
+    <Property Name="End_MonthHij" Type="Int16" />
+    <Property Name="End_yearHij" Type="Int16" />
+    <Property Name="Cmp_Nm" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Nm2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Tel" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Add" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Eadd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Enm" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Enm2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Prnt_Forms" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DelivaryStratigy" Type="Boolean" />
+    <Property Name="CostCenterStratigy" Type="Boolean" />
+    <Property Name="Activ_typ_no" Type="Int32" Nullable="false" />
+    <Property Name="Cshr_Status" Type="Int16" />
+    <Property Name="Cshr_Spr" Type="Int16" />
+    <Property Name="Sal_Spr" Type="Int16" />
+    <Property Name="Pur_Spr" Type="Int16" />
+    <Property Name="Invty_Spr" Type="Int16" />
+    <Property Name="Srv_Status" Type="Int16" />
+    <Property Name="Dnv_Status" Type="Int16" />
+    <Property Name="SalB_Dn" Type="Int16" />
+    <Property Name="PurB_Srv" Type="Int16" />
+    <Property Name="Itm_SrchRef" Type="Int16" />
+    <Property Name="Date_Status" Type="Int16" />
+    <Property Name="Dn_woCost" Type="Int16" />
+    <Property Name="Srv_woCost" Type="Int16" />
+    <Property Name="Same_Brn_DB" Type="Boolean" />
+    <Property Name="Brch_Comm" Type="Int16" />
+    <Property Name="Month_Post1" Type="Int16" />
+    <Property Name="Month_Post2" Type="Int16" />
+    <Property Name="Month_Post3" Type="Int16" />
+    <Property Name="Month_Post4" Type="Int16" />
+    <Property Name="Month_Post5" Type="Int16" />
+    <Property Name="Month_Post6" Type="Int16" />
+    <Property Name="Month_Post7" Type="Int16" />
+    <Property Name="Month_Post8" Type="Int16" />
+    <Property Name="Month_Post9" Type="Int16" />
+    <Property Name="Month_Post10" Type="Int16" />
+    <Property Name="Month_Post11" Type="Int16" />
+    <Property Name="Month_Post12" Type="Int16" />
+    <Property Name="Sal_Slip_Spcinv" Type="Int16" />
+    <Property Name="ModemPortNo" Type="Int32" />
+    <Property Name="ModemTelNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ChunkSize" Type="Int32" />
+    <Property Name="JvAuto_Mnth" Type="Int32" />
+    <Property Name="SalInv_Cash" Type="Int32" />
+    <Property Name="PurInv_Cash" Type="Int32" />
+    <Property Name="GL_NetSale" Type="Int32" />
+    <Property Name="GL_NetPur" Type="Int16" />
+    <Property Name="WoBoRpt" Type="Int32" />
+    <Property Name="PrintOrder" Type="Int32" />
+    <Property Name="Pur_Disc1" Type="Int32" />
+    <Property Name="Sal_Disc1" Type="Int32" />
+    <Property Name="Pur_Disc2" Type="Int32" />
+    <Property Name="Sal_Disc2" Type="Int32" />
+    <Property Name="Sal_Bouns" Type="Int32" />
+    <Property Name="Pur_Bouns" Type="Int32" />
+    <Property Name="Batch_No" Type="Int32" />
+    <Property Name="Disc1Pur_Dis1Sal" Type="Int32" />
+    <Property Name="NoStock" Type="Int32" />
+    <Property Name="Gl_Salesman" Type="Int32" />
+    <Property Name="Sec_Salesman" Type="Int32" />
+    <Property Name="Warehouse" Type="Int32" />
+    <Property Name="Inv_Sequence" Type="Int32" />
+    <Property Name="Sales_Type" Type="Int32" />
+    <Property Name="Activity_Type" Type="Int32" />
+    <Property Name="CR_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CC_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tax_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TaxExtra_Prct" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityContainer Name="ICDBTrdAEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MainCmpnam" EntityType="Self.MainCmpnam" />
+    <EntitySet Name="MainBranch" EntityType="ICDBTrdAModel.MainBranch" />
+    <FunctionImport Name="updatebranch">
+      <Parameter Name="Brn_No" Mode="In" Type="Int32" />
+      <Parameter Name="Cmp_No" Mode="In" Type="Int32" />
+      <Parameter Name="Brn_Nm" Mode="In" Type="String" />
+      <Parameter Name="Brn_Tel" Mode="In" Type="String" />
+      <Parameter Name="Brn_Adrs" Mode="In" Type="String" />
+      <Parameter Name="Brn_Email" Mode="In" Type="String" />
+      <Parameter Name="Acc_Customer" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_Suplier" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_Cashier" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_Suplier2" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_Sales" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_RetSal" Mode="In" Type="Int32" />
+      <Parameter Name="Csh_SalAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Csh_RetsalAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Cmp_PurchaseAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Cmp_RetPurchAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Cmp_CshPurDiscAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Agnt_CshPurDiscAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Agnt_BnusPurDiscAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Csh_PurAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Inv_Undprs" Mode="In" Type="Decimal" />
+      <Parameter Name="Cost_SalInvt" Mode="In" Type="Int32" />
+      <Parameter Name="Cost_INVt" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_TaxExtraDb" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_TaxExtraCR" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="updatebranchs">
+      <Parameter Name="Brn_No" Mode="In" Type="Int32" />
+      <Parameter Name="Cmp_No" Mode="In" Type="Int32" />
+      <Parameter Name="Brn_Nm" Mode="In" Type="String" />
+      <Parameter Name="Brn_Tel" Mode="In" Type="String" />
+      <Parameter Name="Brn_Adrs" Mode="In" Type="String" />
+      <Parameter Name="Brn_Email" Mode="In" Type="String" />
+      <Parameter Name="Acc_Customer" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_Suplier" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_Cashier" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_Suplier2" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_Sales" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_RetSal" Mode="In" Type="Int32" />
+      <Parameter Name="Csh_SalAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Csh_RetsalAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Cmp_PurchaseAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Cmp_RetPurchAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Cmp_CshPurDiscAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Agnt_CshPurDiscAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Agnt_BnusPurDiscAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Csh_PurAcc" Mode="In" Type="Int32" />
+      <Parameter Name="Inv_Undprs" Mode="In" Type="Decimal" />
+      <Parameter Name="Cost_SalInvt" Mode="In" Type="Int32" />
+      <Parameter Name="Cost_INVt" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_TaxExtraDb" Mode="In" Type="Int32" />
+      <Parameter Name="Acc_TaxExtraCR" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="GLjrnal" EntityType="ICDBTrdAModel.GLjrnal" />
+    <EntitySet Name="GLmstrfl" EntityType="ICDBTrdAModel.GLmstrfl" />
+    <EntitySet Name="InvAstCntry" EntityType="ICDBTrdAModel.InvAstCntry" />
+    <EntitySet Name="InvAstCurncy" EntityType="ICDBTrdAModel.InvAstCurncy" />
+    <EntitySet Name="InvAstPymwys" EntityType="ICDBTrdAModel.InvAstPymwys" />
+    <EntitySet Name="InvAstRefTyp" EntityType="ICDBTrdAModel.InvAstRefTyp" />
+    <EntitySet Name="InvAstRefTypMain" EntityType="ICDBTrdAModel.InvAstRefTypMain" />
+    <EntitySet Name="MainBranchDlv" EntityType="ICDBTrdAModel.MainBranchDlv" />
+  </EntityContainer>
+  <EntityType Name="MainBranch">
+    <Key>
+      <PropertyRef Name="Brn_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int32" Nullable="false" />
+    <Property Name="Brn_No" Type="Int32" Nullable="false" />
+    <Property Name="Main_Brn" Type="Int16" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Actvty_No" Type="Int16" />
+    <Property Name="Isue_ALinvc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Allow_StoreTrs" Type="Int16" />
+    <Property Name="Br_Ty" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Brn_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_NmAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Adrs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Foldr" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Fcstm_No" Type="Int32" />
+    <Property Name="Tcstm_No" Type="Int32" />
+    <Property Name="Cstm_No" Type="Int32" />
+    <Property Name="Acc_Customer" Type="Int64" />
+    <Property Name="Acc_Suplier" Type="Int64" />
+    <Property Name="Acc_Cashier" Type="Int64" />
+    <Property Name="Acc_Customer1" Type="Int64" />
+    <Property Name="Acc_Suplier1" Type="Int64" />
+    <Property Name="Acc_Suplier2" Type="Int64" />
+    <Property Name="Acc_Sales" Type="Int64" />
+    <Property Name="Acc_RetSal" Type="Int64" />
+    <Property Name="Crdt_CshSalDiscAcc" Type="Int64" />
+    <Property Name="Crdt_BnusSalDiscAcc" Type="Int64" />
+    <Property Name="Csh_SalAcc" Type="Int64" />
+    <Property Name="Csh_RetsalAcc" Type="Int64" />
+    <Property Name="Csh_CshSalDiscAcc" Type="Int64" />
+    <Property Name="Csh_BnusSalDiscAcc" Type="Int64" />
+    <Property Name="Cmp_PurchaseAcc" Type="Int64" />
+    <Property Name="Cmp_RetPurchAcc" Type="Int64" />
+    <Property Name="Cmp_CshPurDiscAcc" Type="Int64" />
+    <Property Name="Cmp_BnusPurDiscAcc" Type="Int64" />
+    <Property Name="Agnt_PurchaseAcc" Type="Int64" />
+    <Property Name="Agnt_RetPurchAcc" Type="Int64" />
+    <Property Name="Agnt_CshPurDiscAcc" Type="Int64" />
+    <Property Name="Agnt_BnusPurDiscAcc" Type="Int64" />
+    <Property Name="Othr_PurchaseAcc" Type="Int64" />
+    <Property Name="Othr_RetPurchAcc" Type="Int64" />
+    <Property Name="Othr_CshPurDiscAcc" Type="Int64" />
+    <Property Name="Othr_BnusPurDiscAcc" Type="Int64" />
+    <Property Name="DlyPst_CshSal" Type="Int16" />
+    <Property Name="DlyPst_CshPur" Type="Int16" />
+    <Property Name="Adv_SalAcc" Type="Int64" />
+    <Property Name="Adv_RetSalAcc" Type="Int64" />
+    <Property Name="Acc_Invtry" Type="Int64" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Csh_PurAcc" Type="Int64" />
+    <Property Name="Inv_Prdctn" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Inv_Undprs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Inv_RM" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Cost_INVt" Type="Int64" />
+    <Property Name="Cost_SalInvt" Type="Int64" />
+    <Property Name="Acc_Cheque" Type="Int64" />
+    <Property Name="Csh_RetPurAcc" Type="Int64" />
+    <Property Name="Acc_InvAdj" Type="Int64" />
+    <Property Name="Acc_Cashier1" Type="Int64" />
+    <Property Name="Acc_Cashier2" Type="Int64" />
+    <Property Name="Acc_Cashier3" Type="Int64" />
+    <Property Name="Acc_PNO" Type="Int64" />
+    <Property Name="Acc_TaxExtraDb" Type="Int64" />
+    <Property Name="Acc_TaxExtraCR" Type="Int64" />
+  </EntityType>
+  <EntityType Name="GLjrnal">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+      <PropertyRef Name="Brn_No" />
+      <PropertyRef Name="Jr_Ty" />
+      <PropertyRef Name="Tr_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int16" Nullable="false" />
+    <Property Name="Brn_No" Type="Int16" Nullable="false" />
+    <Property Name="Jr_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Tr_No" Type="Int64" Nullable="false" />
+    <Property Name="Month_No" Type="Int16" />
+    <Property Name="Month_Jvno" Type="Int32" />
+    <Property Name="Doc_Type" Type="Int16" />
+    <Property Name="Tr_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Tr_DtAr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Chq_no" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Bnk_Nm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Issue_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Due_Issue_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Amount_Int" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Amount_Frct" Type="Int16" />
+    <Property Name="Rcpt_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pymt_To" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Pymt_By" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Jv_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Trf_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Entr_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Entr_Time" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="TrAcc_No" Type="Int64" />
+    <Property Name="Cstm_No" Type="Int64" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Emp_No" Type="Int64" />
+    <Property Name="Tr_Db" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tr_Cr" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="GLmstrfl">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+      <PropertyRef Name="Acc_No" />
+      <PropertyRef Name="Parnt_Acc" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int16" Nullable="false" />
+    <Property Name="Acc_No" Type="Int64" Nullable="false" />
+    <Property Name="Parnt_Acc" Type="Int64" Nullable="false" />
+    <Property Name="Acc_Typ" Type="Int16" />
+    <Property Name="Level_No" Type="Int16" />
+    <Property Name="Acc_Ntr" Type="Int16" />
+    <Property Name="Level_Status" Type="Int16" />
+    <Property Name="Acc_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_NmEng" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Clsacc_No1" Type="Int32" />
+    <Property Name="Clsacc_No2" Type="Int32" />
+    <Property Name="CostCntr_Flag" Type="Int16" />
+    <Property Name="Costcntr_No" Type="Int64" />
+    <Property Name="Fbal_DB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR22" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="InvAstCntry">
+    <Key>
+      <PropertyRef Name="Cntry_No" />
+    </Key>
+    <Property Name="Cntry_No" Type="Int16" Nullable="false" />
+    <Property Name="Cntry_Nm" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Cntry_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstCurncy">
+    <Key>
+      <PropertyRef Name="Curncy_No" />
+    </Key>
+    <Property Name="Curncy_No" Type="Int16" Nullable="false" />
+    <Property Name="Curncy_Nm" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Curncy_Rate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Curncy_Nmar" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstPymwys">
+    <Key>
+      <PropertyRef Name="Pym_No" />
+    </Key>
+    <Property Name="Pym_No" Type="Int32" Nullable="false" />
+    <Property Name="Pym_Nm" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Pym_Nmar" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstRefTyp">
+    <Key>
+      <PropertyRef Name="Main_Reftyp" />
+      <PropertyRef Name="RefTyp_No" />
+    </Key>
+    <Property Name="Main_Reftyp" Type="Int16" Nullable="false" />
+    <Property Name="RefTyp_No" Type="Int16" Nullable="false" />
+    <Property Name="RefTyp_Nm" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="RefTyp_NmAr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstRefTypMain">
+    <Key>
+      <PropertyRef Name="Main_Reftyp" />
+    </Key>
+    <Property Name="Main_Reftyp" Type="Int16" Nullable="false" />
+    <Property Name="RefTyp_Nm" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="RefTyp_NmAr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MainBranchDlv">
+    <Key>
+      <PropertyRef Name="Brn_No" />
+      <PropertyRef Name="Dlv_Stor" />
+    </Key>
+    <Property Name="Brn_No" Type="Int32" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int32" Nullable="false" />
+    <Property Name="Dlv_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dlv_NmEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

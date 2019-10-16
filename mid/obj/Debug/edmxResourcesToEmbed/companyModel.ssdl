@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ICDBTrdAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GLjrnal">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+      <PropertyRef Name="Brn_No" />
+      <PropertyRef Name="Jr_Ty" />
+      <PropertyRef Name="Tr_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="smallint" Nullable="false" />
+    <Property Name="Brn_No" Type="smallint" Nullable="false" />
+    <Property Name="Jr_Ty" Type="smallint" Nullable="false" />
+    <Property Name="Tr_No" Type="bigint" Nullable="false" />
+    <Property Name="Month_No" Type="smallint" />
+    <Property Name="Month_Jvno" Type="int" />
+    <Property Name="Doc_Type" Type="smallint" />
+    <Property Name="Tr_Dt" Type="datetime" />
+    <Property Name="Tr_DtAr" Type="varchar" MaxLength="10" />
+    <Property Name="Chq_no" Type="nvarchar" MaxLength="15" />
+    <Property Name="Bnk_Nm" Type="nvarchar" MaxLength="50" />
+    <Property Name="Issue_Dt" Type="datetime" />
+    <Property Name="Due_Issue_Dt" Type="datetime" />
+    <Property Name="Acc_No" Type="bigint" />
+    <Property Name="Amount_Int" Type="money" />
+    <Property Name="Amount_Frct" Type="smallint" />
+    <Property Name="Rcpt_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pymt_To" Type="nvarchar" MaxLength="60" />
+    <Property Name="Pymt_By" Type="nvarchar" MaxLength="60" />
+    <Property Name="Jv_Post" Type="char" MaxLength="1" />
+    <Property Name="Trf_Post" Type="char" MaxLength="1" />
+    <Property Name="User_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Entr_Dt" Type="nvarchar" MaxLength="10" />
+    <Property Name="Entr_Time" Type="nvarchar" MaxLength="10" />
+    <Property Name="Ac_Ty" Type="smallint" />
+    <Property Name="TrAcc_No" Type="bigint" />
+    <Property Name="Cstm_No" Type="bigint" />
+    <Property Name="Sup_No" Type="bigint" />
+    <Property Name="Emp_No" Type="bigint" />
+    <Property Name="Tr_Db" Type="money" />
+    <Property Name="Tr_Cr" Type="money" />
+  </EntityType>
+  <EntityType Name="GLmstrfl">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+      <PropertyRef Name="Acc_No" />
+      <PropertyRef Name="Parnt_Acc" />
+    </Key>
+    <Property Name="Cmp_No" Type="smallint" Nullable="false" />
+    <Property Name="Acc_No" Type="bigint" Nullable="false" />
+    <Property Name="Parnt_Acc" Type="bigint" Nullable="false" />
+    <Property Name="Acc_Typ" Type="smallint" />
+    <Property Name="Level_No" Type="smallint" />
+    <Property Name="Acc_Ntr" Type="smallint" />
+    <Property Name="Level_Status" Type="smallint" />
+    <Property Name="Acc_Nm" Type="nvarchar" MaxLength="100" />
+    <Property Name="Acc_NmEng" Type="nvarchar" MaxLength="100" />
+    <Property Name="Clsacc_No1" Type="int" />
+    <Property Name="Clsacc_No2" Type="int" />
+    <Property Name="CostCntr_Flag" Type="smallint" />
+    <Property Name="Costcntr_No" Type="bigint" />
+    <Property Name="Fbal_DB" Type="money" />
+    <Property Name="Fbal_CR" Type="money" />
+    <Property Name="DB11" Type="money" />
+    <Property Name="CR11" Type="money" />
+    <Property Name="DB12" Type="money" />
+    <Property Name="CR12" Type="money" />
+    <Property Name="DB13" Type="money" />
+    <Property Name="CR13" Type="money" />
+    <Property Name="DB14" Type="money" />
+    <Property Name="CR14" Type="money" />
+    <Property Name="DB15" Type="money" />
+    <Property Name="CR15" Type="money" />
+    <Property Name="DB16" Type="money" />
+    <Property Name="CR16" Type="money" />
+    <Property Name="DB17" Type="money" />
+    <Property Name="CR17" Type="money" />
+    <Property Name="DB18" Type="money" />
+    <Property Name="CR18" Type="money" />
+    <Property Name="DB19" Type="money" />
+    <Property Name="CR19" Type="money" />
+    <Property Name="DB20" Type="money" />
+    <Property Name="CR20" Type="money" />
+    <Property Name="DB21" Type="money" />
+    <Property Name="CR21" Type="money" />
+    <Property Name="DB22" Type="money" />
+    <Property Name="CR22" Type="money" />
+  </EntityType>
+  <EntityType Name="InvAstCntry">
+    <Key>
+      <PropertyRef Name="Cntry_No" />
+    </Key>
+    <Property Name="Cntry_No" Type="smallint" Nullable="false" />
+    <Property Name="Cntry_Nm" Type="nvarchar" MaxLength="15" />
+    <Property Name="Cntry_NmAr" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InvAstCurncy">
+    <Key>
+      <PropertyRef Name="Curncy_No" />
+    </Key>
+    <Property Name="Curncy_No" Type="smallint" Nullable="false" />
+    <Property Name="Curncy_Nm" Type="nvarchar" MaxLength="15" />
+    <Property Name="Curncy_Rate" Type="money" />
+    <Property Name="Curncy_Nmar" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="InvAstPymwys">
+    <Key>
+      <PropertyRef Name="Pym_No" />
+    </Key>
+    <Property Name="Pym_No" Type="int" Nullable="false" />
+    <Property Name="Pym_Nm" Type="nvarchar" MaxLength="15" />
+    <Property Name="Pym_Nmar" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="InvAstRefTyp">
+    <Key>
+      <PropertyRef Name="Main_Reftyp" />
+      <PropertyRef Name="RefTyp_No" />
+    </Key>
+    <Property Name="Main_Reftyp" Type="smallint" Nullable="false" />
+    <Property Name="RefTyp_No" Type="smallint" Nullable="false" />
+    <Property Name="RefTyp_Nm" Type="nvarchar" MaxLength="30" />
+    <Property Name="RefTyp_NmAr" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="InvAstRefTypMain">
+    <Key>
+      <PropertyRef Name="Main_Reftyp" />
+    </Key>
+    <Property Name="Main_Reftyp" Type="smallint" Nullable="false" />
+    <Property Name="RefTyp_Nm" Type="nvarchar" MaxLength="30" />
+    <Property Name="RefTyp_NmAr" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="MainBranch">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+      <PropertyRef Name="Brn_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="int" Nullable="false" />
+    <Property Name="Brn_No" Type="int" Nullable="false" />
+    <Property Name="Main_Brn" Type="smallint" />
+    <Property Name="Dlv_Stor" Type="smallint" />
+    <Property Name="Actvty_No" Type="smallint" />
+    <Property Name="Isue_ALinvc" Type="char" MaxLength="1" />
+    <Property Name="Allow_StoreTrs" Type="smallint" />
+    <Property Name="Br_Ty" Type="char" MaxLength="1" />
+    <Property Name="Brn_Nm" Type="nvarchar" MaxLength="100" />
+    <Property Name="Brn_NmAr" Type="nvarchar" MaxLength="100" />
+    <Property Name="Brn_Tel" Type="nvarchar" MaxLength="15" />
+    <Property Name="Brn_Fax" Type="nvarchar" MaxLength="15" />
+    <Property Name="Brn_Adrs" Type="nvarchar" MaxLength="50" />
+    <Property Name="Brn_Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Brn_Foldr" Type="nvarchar" MaxLength="200" />
+    <Property Name="Fcstm_No" Type="int" />
+    <Property Name="Tcstm_No" Type="int" />
+    <Property Name="Cstm_No" Type="int" />
+    <Property Name="Acc_Customer" Type="bigint" />
+    <Property Name="Acc_Suplier" Type="bigint" />
+    <Property Name="Acc_Cashier" Type="bigint" />
+    <Property Name="Acc_Customer1" Type="bigint" />
+    <Property Name="Acc_Suplier1" Type="bigint" />
+    <Property Name="Acc_Suplier2" Type="bigint" />
+    <Property Name="Acc_Sales" Type="bigint" />
+    <Property Name="Acc_RetSal" Type="bigint" />
+    <Property Name="Crdt_CshSalDiscAcc" Type="bigint" />
+    <Property Name="Crdt_BnusSalDiscAcc" Type="bigint" />
+    <Property Name="Csh_SalAcc" Type="bigint" />
+    <Property Name="Csh_RetsalAcc" Type="bigint" />
+    <Property Name="Csh_CshSalDiscAcc" Type="bigint" />
+    <Property Name="Csh_BnusSalDiscAcc" Type="bigint" />
+    <Property Name="Cmp_PurchaseAcc" Type="bigint" />
+    <Property Name="Cmp_RetPurchAcc" Type="bigint" />
+    <Property Name="Cmp_CshPurDiscAcc" Type="bigint" />
+    <Property Name="Cmp_BnusPurDiscAcc" Type="bigint" />
+    <Property Name="Agnt_PurchaseAcc" Type="bigint" />
+    <Property Name="Agnt_RetPurchAcc" Type="bigint" />
+    <Property Name="Agnt_CshPurDiscAcc" Type="bigint" />
+    <Property Name="Agnt_BnusPurDiscAcc" Type="bigint" />
+    <Property Name="Othr_PurchaseAcc" Type="bigint" />
+    <Property Name="Othr_RetPurchAcc" Type="bigint" />
+    <Property Name="Othr_CshPurDiscAcc" Type="bigint" />
+    <Property Name="Othr_BnusPurDiscAcc" Type="bigint" />
+    <Property Name="DlyPst_CshSal" Type="smallint" />
+    <Property Name="DlyPst_CshPur" Type="smallint" />
+    <Property Name="Adv_SalAcc" Type="bigint" />
+    <Property Name="Adv_RetSalAcc" Type="bigint" />
+    <Property Name="Acc_Invtry" Type="bigint" />
+    <Property Name="Acc_No" Type="bigint" />
+    <Property Name="Csh_PurAcc" Type="bigint" />
+    <Property Name="Inv_Prdctn" Type="money" />
+    <Property Name="Inv_Undprs" Type="money" />
+    <Property Name="Inv_RM" Type="money" />
+    <Property Name="Cost_INVt" Type="bigint" />
+    <Property Name="Cost_SalInvt" Type="bigint" />
+    <Property Name="Acc_Cheque" Type="bigint" />
+    <Property Name="Csh_RetPurAcc" Type="bigint" />
+    <Property Name="Acc_InvAdj" Type="bigint" />
+    <Property Name="Acc_Cashier1" Type="bigint" />
+    <Property Name="Acc_Cashier2" Type="bigint" />
+    <Property Name="Acc_Cashier3" Type="bigint" />
+    <Property Name="Acc_PNO" Type="bigint" />
+    <Property Name="Acc_TaxExtraDb" Type="bigint" />
+    <Property Name="Acc_TaxExtraCR" Type="bigint" />
+  </EntityType>
+  <EntityType Name="MainBranchDlv">
+    <Key>
+      <PropertyRef Name="Brn_No" />
+      <PropertyRef Name="Dlv_Stor" />
+    </Key>
+    <Property Name="Brn_No" Type="int" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="int" Nullable="false" />
+    <Property Name="Dlv_NmAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dlv_NmEn" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MainCmpnam">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="smallint" Nullable="false" />
+    <Property Name="Cmp_Activity" Type="smallint" />
+    <Property Name="Hijri_DifDay" Type="smallint" />
+    <Property Name="Brch_Trns" Type="smallint" />
+    <Property Name="Stor_Trns" Type="smallint" />
+    <Property Name="Main_Brn" Type="smallint" />
+    <Property Name="DLv_Stor" Type="smallint" />
+    <Property Name="Slm_No" Type="smallint" />
+    <Property Name="Local_Lang" Type="smallint" />
+    <Property Name="Sys_SetupNo" Type="smallint" />
+    <Property Name="Cmp_ShrtNm" Type="nvarchar" MaxLength="50" />
+    <Property Name="Itm_twice" Type="smallint" />
+    <Property Name="InvTrf_Disc1" Type="smallint" />
+    <Property Name="InvTrf_Bouns" Type="smallint" />
+    <Property Name="BarCodeTy" Type="smallint" />
+    <Property Name="CostCalc" Type="smallint" />
+    <Property Name="Repeate_Item" Type="smallint" />
+    <Property Name="Disc2Pur_Dis2Sal" Type="smallint" />
+    <Property Name="ReqLocBalance" Type="smallint" />
+    <Property Name="Pur_TabOrder" Type="smallint" />
+    <Property Name="Start_Month" Type="smallint" />
+    <Property Name="Start_Year" Type="smallint" />
+    <Property Name="End_Month" Type="smallint" />
+    <Property Name="End_year" Type="smallint" />
+    <Property Name="Start_MonthHij" Type="smallint" />
+    <Property Name="Start_YearHij" Type="smallint" />
+    <Property Name="End_MonthHij" Type="smallint" />
+    <Property Name="End_yearHij" Type="smallint" />
+    <Property Name="Cmp_Nm" Type="nvarchar" MaxLength="200" />
+    <Property Name="Cmp_Nm2" Type="nvarchar" MaxLength="200" />
+    <Property Name="Cmp_Tel" Type="nvarchar" MaxLength="25" />
+    <Property Name="Cmp_Fax" Type="nvarchar" MaxLength="15" />
+    <Property Name="Cmp_Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Cmp_Add" Type="nvarchar" MaxLength="100" />
+    <Property Name="Cmp_Eadd" Type="nvarchar" MaxLength="100" />
+    <Property Name="Cmp_Enm" Type="nvarchar" MaxLength="200" />
+    <Property Name="Cmp_Enm2" Type="nvarchar" MaxLength="200" />
+    <Property Name="Prnt_Forms" Type="nvarchar" MaxLength="4" />
+    <Property Name="Picture" Type="image" />
+    <Property Name="DelivaryStratigy" Type="bit" />
+    <Property Name="CostCenterStratigy" Type="bit" />
+    <Property Name="Activ_typ_no" Type="int" Nullable="false" />
+    <Property Name="Cshr_Status" Type="smallint" />
+    <Property Name="Cshr_Spr" Type="smallint" />
+    <Property Name="Sal_Spr" Type="smallint" />
+    <Property Name="Pur_Spr" Type="smallint" />
+    <Property Name="Invty_Spr" Type="smallint" />
+    <Property Name="Srv_Status" Type="smallint" />
+    <Property Name="Dnv_Status" Type="smallint" />
+    <Property Name="SalB_Dn" Type="smallint" />
+    <Property Name="PurB_Srv" Type="smallint" />
+    <Property Name="Itm_SrchRef" Type="smallint" />
+    <Property Name="Date_Status" Type="smallint" />
+    <Property Name="Dn_woCost" Type="smallint" />
+    <Property Name="Srv_woCost" Type="smallint" />
+    <Property Name="Same_Brn_DB" Type="bit" />
+    <Property Name="Brch_Comm" Type="smallint" />
+    <Property Name="Month_Post1" Type="smallint" />
+    <Property Name="Month_Post2" Type="smallint" />
+    <Property Name="Month_Post3" Type="smallint" />
+    <Property Name="Month_Post4" Type="smallint" />
+    <Property Name="Month_Post5" Type="smallint" />
+    <Property Name="Month_Post6" Type="smallint" />
+    <Property Name="Month_Post7" Type="smallint" />
+    <Property Name="Month_Post8" Type="smallint" />
+    <Property Name="Month_Post9" Type="smallint" />
+    <Property Name="Month_Post10" Type="smallint" />
+    <Property Name="Month_Post11" Type="smallint" />
+    <Property Name="Month_Post12" Type="smallint" />
+    <Property Name="Sal_Slip_Spcinv" Type="smallint" />
+    <Property Name="ModemPortNo" Type="int" />
+    <Property Name="ModemTelNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="ChunkSize" Type="int" />
+    <Property Name="JvAuto_Mnth" Type="int" />
+    <Property Name="SalInv_Cash" Type="int" />
+    <Property Name="PurInv_Cash" Type="int" />
+    <Property Name="GL_NetSale" Type="int" />
+    <Property Name="GL_NetPur" Type="smallint" />
+    <Property Name="WoBoRpt" Type="int" />
+    <Property Name="PrintOrder" Type="int" />
+    <Property Name="Pur_Disc1" Type="int" />
+    <Property Name="Sal_Disc1" Type="int" />
+    <Property Name="Pur_Disc2" Type="int" />
+    <Property Name="Sal_Disc2" Type="int" />
+    <Property Name="Sal_Bouns" Type="int" />
+    <Property Name="Pur_Bouns" Type="int" />
+    <Property Name="Batch_No" Type="int" />
+    <Property Name="Disc1Pur_Dis1Sal" Type="int" />
+    <Property Name="NoStock" Type="int" />
+    <Property Name="Gl_Salesman" Type="int" />
+    <Property Name="Sec_Salesman" Type="int" />
+    <Property Name="Warehouse" Type="int" />
+    <Property Name="Inv_Sequence" Type="int" />
+    <Property Name="Sales_Type" Type="int" />
+    <Property Name="Activity_Type" Type="int" />
+    <Property Name="CR_No" Type="nvarchar" MaxLength="20" />
+    <Property Name="CC_No" Type="nvarchar" MaxLength="20" />
+    <Property Name="Tax_No" Type="nvarchar" MaxLength="20" />
+    <Property Name="TaxExtra_Prct" Type="smallmoney" />
+  </EntityType>
+  <EntityContainer Name="ICDBTrdAModelStoreContainer">
+    <EntitySet Name="GLjrnal" EntityType="Self.GLjrnal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GLmstrfl" EntityType="Self.GLmstrfl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvAstCntry" EntityType="Self.InvAstCntry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvAstCurncy" EntityType="Self.InvAstCurncy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvAstPymwys" EntityType="Self.InvAstPymwys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvAstRefTyp" EntityType="Self.InvAstRefTyp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvAstRefTypMain" EntityType="Self.InvAstRefTypMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MainBranch" EntityType="Self.MainBranch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MainBranchDlv" EntityType="Self.MainBranchDlv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MainCmpnam" EntityType="Self.MainCmpnam" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

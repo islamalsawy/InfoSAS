@@ -1,0 +1,505 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="mid.SiteMaster" %>
+
+
+    
+ 
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>لوحة التحكم | InfoSAS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="rtl-dashboard-v2-master/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="rtl-dashboard-v2-master/js/map/jqvmap.min.css"/>
+    <link href="Content/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form runat="server">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 sidebar ">
+            <img src="rtl-dashboard-v2-master/img/user.png" alt="" class="rounded-circle img-fluid mx-auto d-block profile-image mt-2 mb-2">
+            <div class="text-center mb-5">
+                <i class="fa fa-circle fa-sm text-success mr-1"></i><a href="#" class="mr-1 ml-1">
+                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label></a>
+                <br>
+                <asp:Button ID="Button1" runat="server" Text="خروج" OnClick="Button1_Click" />
+            </div>
+            <ul>
+                <li class="menu">
+                    <a data-toggle="collapse" href="#dashboard">
+                        <i class="fa fa-tachometer-alt mr-2 ml-2"></i><span>لوحة التحكم</span>
+                        <i class="fa fa-angle-right float-left sidebar-arrow menu-arrow"></i>
+                    </a>
+                    <ul class="collapse" id="dashboard">
+                         <li><a href="activity_types.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>بيانات الشركة</span></a>
+                        </li>
+                        <li><a href="branch.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>بيانات الفروع</span></a>
+                        </li>
+                         <li><a href="companies.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>الأنشطة</span></a>
+                        </li>
+                          <li><a href="astcompany.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>بيانات الشركات</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu">
+                    <a data-toggle="collapse" href="#sales">
+                        <i class="fa fa-shopping-bag mr-2 ml-2"></i><span>المبيعات </span>
+                        <i class="fa fa-angle-right float-left sidebar-arrow menu-arrow"></i>
+                    </a>
+                    <ul class="collapse" id="sales">
+                         <li><a href="activity_types.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>فاتورة المبيعات</span></a>
+                        </li>
+                        <li><a href="branch.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>مرتجع المبيعات </span></a>
+                        </li>
+                         <li><a href="companies.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>عرض الأسعار</span></a>
+                        </li>
+                          <li><a href="astcompany.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>طلبية العملاء </span></a>
+                        </li>
+                         <li><a href="astcompany.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>طلبية الفرع </span></a>
+                        </li>
+                         <li><a href="astcompany.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير المبيعات </span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                 <li class="menu">
+                    <a data-toggle="collapse" href="#purchasing">
+                        <i class="fa fa-shopping-bag mr-2 ml-2"></i><span>المشتريات </span>
+                        <i class="fa fa-angle-right float-left sidebar-arrow menu-arrow"></i>
+                    </a>
+                    <ul class="collapse" id="purchasing">
+                         <li><a href="purchasingInovice.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>فاتورة مشتريات جديدة</span></a>
+                        </li>
+                        <li><a href="purchasingInovice.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>بحث عن فاتورة مشتريات</span></a>
+                        </li>
+                        <li><a href="branch.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>مرتجع المشتريات </span></a>
+                        </li>
+                         <li><a href="companies.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>أمر الشراء</span></a>
+                        </li>
+                          <li><a href="astcompany.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير المشتريات </span></a>
+                        </li>  
+                    </ul>
+                </li>
+
+
+                     <li class="menu">
+                    <a data-toggle="collapse" href="#inventory">
+                        <i class="fa fa-shopping-bag mr-2 ml-2"></i><span>المخازن </span>
+                        <i class="fa fa-angle-right float-left sidebar-arrow menu-arrow"></i>
+                    </a>
+                    <ul class="collapse" id="inventory">
+                         <li><a href="activity_types.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>سند تحويل بضاعة</span></a>
+                        </li>
+                        <li><a href="branch.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تسوية المخازن </span></a>
+                        </li>
+                         <li><a href="companies.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>محاضر  الجرد</span></a>
+                        </li>
+                          <li><a href="astcompany.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير المخزون </span></a>
+                        </li>  
+                    </ul>
+                </li>
+
+                <li class="menu">
+                    <a data-toggle="collapse" href="#accountReports">
+                        <i class="fa fa-shopping-bag mr-2 ml-2"></i><span>التقارير المحاسبية </span>
+                        <i class="fa fa-angle-right float-left sidebar-arrow menu-arrow"></i>
+                    </a>
+                    <ul class="collapse" id="accountReports">
+                         <li><a href="activity_types.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>كشف حساب</span></a>
+                        </li>
+                        <li><a href="branch.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>ميزان المراجعة </span></a>
+                        </li>
+                         <li><a href="companies.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>ميزان المراجعة العام</span></a>
+                        </li>
+                          <li><a href="astcompany.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير قيود اليومية </span></a>
+                        </li>  
+                    </ul>
+                </li>
+
+                               <li class="menu">
+                    <a data-toggle="collapse" href="#costCenterReports">
+                        <i class="fa fa-shopping-bag mr-2 ml-2"></i><span>تقارير مراكز التكلفة </span>
+                        <i class="fa fa-angle-right float-left sidebar-arrow menu-arrow"></i>
+                    </a>
+                    <ul class="collapse" id="costCenterReports">
+                         <li><a href="activity_types.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>كشف حركة مراكز التكلفة</span></a>
+                        </li>
+                        <li><a href="branch.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>أرصدة مراكز التكلفة</span></a>
+                        </li>
+                         <li><a href="companies.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>الميزان العام لمراكز التكلفة</span></a>
+                        </li>
+                          <li><a href="astcompany.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>التقارير التحليلية لمراكز التكلفة </span></a>
+                        </li>  
+                           <li><a href="astcompany.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير القيود اليومية لمراكز التكلفة </span></a>
+                        </li> 
+                    </ul>
+                </li>
+
+                <li class="menu">
+                    <a data-toggle="collapse" href="#banks">
+                        <i class="fa fa-shopping-bag mr-2 ml-2"></i><span>الصندوق والبنوك </span>
+                        <i class="fa fa-angle-right float-left sidebar-arrow menu-arrow"></i>
+                    </a>
+                    <ul class="collapse" id="banks">
+                         <li><a href="activity_types.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>سندات القبض</span></a>
+                        </li>
+                        <li><a href="branch.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>سندات الصرف</span></a>
+                        </li>
+                         <li><a href="companies.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>الإشعارات</span></a>
+                        </li>             
+                    </ul>
+                </li>
+
+                <li class="menu">
+                    <a data-toggle="collapse" href="#registerDailyConstraints">
+                        <i class="fa fa-shopping-bag mr-2 ml-2"></i><span>تسجيل قيود اليومية </span>
+                        <i class="fa fa-angle-right float-left sidebar-arrow menu-arrow"></i>
+                    </a>
+                    <ul class="collapse" id="registerDailyConstraints">
+                         <li><a href="activity_types.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>اضافة قيد يومية</span></a>
+                        </li>
+                        <li><a href="branch.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>اضافة قيد افتتاحي</span></a>
+                        </li>
+                         <li><a href="companies.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تكرار القيود</span></a>
+                        </li>             
+                    </ul>
+                </li>
+
+                <li class="menu">
+                    <a data-toggle="collapse" href="#primaryData">
+                        <i class="fa fa-th-large mr-2 ml-2"></i><span>البيانات الأساسية</span>
+                        <i class="fa fa-angle-right float-left sidebar-arrow menu-arrow"></i>
+                    </a>
+                    <ul class="collapse" id="primaryData">
+                         <li><a href="activity_types.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>دليل الحساباب</span></a>
+                        </li>
+                        <li><a href="branch.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>دليل مراكز التكلفة</span></a>
+                        </li>
+                         <li><a href="companies.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>بيانات العملاء</span></a>
+                        </li>
+                         <li><a href="mainbranchdiv.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>بيانات الموردين</span></a>
+                        </li>
+                         <li><a href="astsupctg.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>البيانات المالية للموظفين</span></a>
+                        </li>
+                         <li><a href="country.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>بيانات الاعتمادات المستندية</span></a>
+                        </li>
+                         <li><a href="lcpymwys.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>بيانات الأصول الثابتة</span></a>
+                        </li>      
+                    </ul>
+                </li>
+
+
+                                <li class="menu">
+                    <a data-toggle="collapse" href="#primaryDataReports">
+                        <i class="fa fa-th-large mr-2 ml-2"></i><span>تقارير البيانات الأساسية</span>
+                        <i class="fa fa-angle-right float-left sidebar-arrow menu-arrow"></i>
+                    </a>
+                    <ul class="collapse" id="primaryDataReports">
+                         <li><a href="activity_types.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير دليل الحساباب</span></a>
+                        </li>
+                        <li><a href="branch.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير دليل مراكز التكلفة</span></a>
+                        </li>
+                         <li><a href="companies.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير بيانات العملاء</span></a>
+                        </li>
+                         <li><a href="mainbranchdiv.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير بيانات الموردين</span></a>
+                        </li>
+                         <li><a href="astsupctg.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقاريرالبيانات المالية للموظفين</span></a>
+                        </li>
+                         <li><a href="country.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير بيانات الاعتمادات المستندية</span></a>
+                        </li>
+                         <li><a href="lcpymwys.aspx"><i class="fa fa-dot-circle sidebar-arrow ml-2"></i><span>تقارير بيانات الأصول الثابتة</span></a>
+                        </li>      
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="underConstruction.aspx">
+                        <i class="fa fa-tags mr-2 ml-2"></i><span>الإعدادات</span>
+                        <i class="fa float-left"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="underConstruction.aspx">
+                        <i class="fa fa-tags mr-2 ml-2"></i><span>الأخبار</span>
+                        <i class="fa float-left"></i>
+                    </a></li>
+
+                    <li>
+                    <a href="underConstruction.aspx">
+                        <i class="fa fa-tags mr-2 ml-2"></i><span>حساب المستخدم</span>
+                        <i class="fa float-left"></i>
+                    </a></li>
+
+                    <li>
+                    <a href="underConstruction.aspx">
+                        <i class="fa fa-tags mr-2 ml-2"></i><span>حساب المدير</span>
+                        <i class="fa float-left"></i>
+                    </a></li>
+
+
+
+            </ul>
+        </div>
+        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
+            
+            <div class="row direction-rtl mt-2">
+                <%--<div class="col-sm-12">
+                    <h2 class="text-right text-primary">الرئيسية</h2>
+                    <hr class="bg-info">
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-xl-7 col-lg-6 col-md-6 col-6 text-right h-auto">
+                                    <h5 class="mt-2 mr-2">احصائيات</h5>
+                                    <h5 class="mt-2 mr-3 font-weight-bold">100</h5>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 col-md-6 col-6 h-auto">
+                                    <div class="text-center bg-info">
+                                        <i class="fa fa-shopping-bag fa-4x align-middle pt-3 pb-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-xl-7 col-lg-6 col-md-6 col-6 text-right h-auto">
+                                    <h5 class="mt-2 mr-2">مشتریات</h5>
+                                    <h5 class="mt-2 mr-3 font-weight-bold">100</h5>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 col-md-6 col-6 h-auto">
+                                    <div class="text-center bg-warning">
+                                        <i class="fa fa-user fa-4x align-middle p-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-xl-7 col-lg-6 col-md-6 col-6 text-right h-auto">
+                                    <h5 class="mt-2 mr-2">منتجات</h5>
+                                    <h5 class="mt-2 mr-3 font-weight-bold">100</h5>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 col-md-6 col-6 h-auto">
+                                    <div class="text-center bg-danger">
+                                        <i class="fa fa-th-large fa-4x align-middle pt-3 pb-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-xl-7 col-lg-6 col-md-6 col-6 text-right h-auto">
+                                    <h5 class="mt-2 mr-2">تواصل</h5>
+                                    <h5 class="mt-2 mr-3 font-weight-bold">100</h5>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 col-md-6 col-6 h-auto">
+                                    <div class="text-center bg-success">
+                                        <i class="fa fa-comments fa-4x align-middle pt-3 pb-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mt-1 mb-1">
+                    <div class="card">
+                        <div class="card-header text-right">
+                            لوحة العرض
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped p-2">
+                                    <thead class="thead-dark text-center">
+                                    <tr>
+                                        <th>رقم الموظف</th>
+                                        <th>الاسم</th>
+                                        <th>التاریخ</th>
+                                        <th>الحالة</th>
+                                        <th>مشاهدة</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+                                    <tr>
+                                        <td class="align-middle">156789</td>
+                                        <td class="align-middle">InfoSAS</td>
+                                        <td class="align-middle">1397/09/01</td>
+                                        <td class="align-middle"><span class="badge badge-success p-2 w-100">ارسال شد</span></td>
+                                        <td class="align-middle"><a href="#">مشاهدة</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="align-middle">156789</td>
+                                        <td class="align-middle">حامد حقی</td>
+                                        <td class="align-middle">1397/09/01</td>
+                                        <td class="align-middle"><span class="badge badge-info p-2 w-100">در حال بررسی</span></td>
+                                        <td class="align-middle"><a href="#">مشاهده</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="align-middle">156789</td>
+                                        <td class="align-middle">حامد حقی</td>
+                                        <td class="align-middle">1397/09/01</td>
+                                        <td class="align-middle"><span class="badge badge-danger p-2 w-100">عدم ارسال</span></td>
+                                        <td class="align-middle"><a href="#">مشاهده</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="align-middle">156789</td>
+                                        <td class="align-middle">حامد حقی</td>
+                                        <td class="align-middle">1397/09/01</td>
+                                        <td class="align-middle"><span class="badge badge-primary p-2 w-100">عدم ارسال</span></td>
+                                        <td class="align-middle"><a href="#">مشاهده</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="align-middle">156789</td>
+                                        <td class="align-middle">حامد حقی</td>
+                                        <td class="align-middle">1397/09/01</td>
+                                        <td class="align-middle"><span class="badge badge-secondary p-2 w-100">عدم ارسال</span></td>
+                                        <td class="align-middle"><a href="#">مشاهده</a></td>
+                                    </tr>
+                                  
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mt-1 mb-1">
+                    <div class="card">
+                        <div class="card-header text-right">
+                            لوحة العرض
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped">
+                                    <thead class="thead-dark text-center">
+                                    <tr>
+                                       
+                                        <th>الرقم</th>
+                                        <th>تاریخ </th>
+                                        <th>ایمیل</th>
+                                        <th>مشاهدة</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+                                    <tr>
+                                        
+                                        <td class="align-middle">hamed07</td>
+                                        <td class="align-middle">1397/01/02</td>
+                                        <td class="align-middle">hamedhaghi07@gmail.com</td>
+                                        <td class="align-middle"><a href="#">مشاهده</a></td>
+                                    </tr>
+                                    <tr>
+                                      
+                                        <td class="align-middle">hamed07</td>
+                                        <td class="align-middle">1397/01/02</td>
+                                        <td class="align-middle">hamedhaghi07@gmail.com</td>
+                                        <td class="align-middle"><a href="#">مشاهده</a></td>
+                                    </tr>
+                                    <tr>
+                                       
+                                        <td class="align-middle">hamed07</td>
+                                        <td class="align-middle">1397/01/02</td>
+                                        <td class="align-middle">hamedhaghi07@gmail.com</td>
+                                        <td class="align-middle"><a href="#">مشاهده</a></td>
+                                    </tr>
+                                    <tr>
+                                      
+                                        <td class="align-middle">hamed07</td>
+                                        <td class="align-middle">1397/01/02</td>
+                                        <td class="align-middle">hamedhaghi07@gmail.com</td>
+                                        <td class="align-middle"><a href="#">مشاهده</a></td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td class="align-middle">hamed07</td>
+                                        <td class="align-middle">1397/01/02</td>
+                                        <td class="align-middle">hamedhaghi07@gmail.com</td>
+                                        <td class="align-middle"><a href="#">مشاهده</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>--%>
+                 <asp:ContentPlaceHolder ID="MainContent" runat="server">  
+          
+        </asp:ContentPlaceHolder> 
+                
+            </div>
+           
+                
+            
+        </div>
+
+    </div>
+</div>
+
+<script src="rtl-dashboard-v2-master/js/jquery-3.3.1.min.js"></script>
+<script src="rtl-dashboard-v2-master/js/popper.min.js"></script>
+<script src="rtl-dashboard-v2-master/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="rtl-dashboard-v2-master/js/map/jquery.vmap.min.js"></script>
+<script type="text/javascript" src="rtl-dashboard-v2-master/js/map/maps/jquery.vmap.iran.js" charset="utf-8"></script>
+<script>
+    $(document).ready(function () {
+        $('#vmap').vectorMap({
+            map: 'iran_ir',
+            backgroundColor: '#fff',
+            borderColor: '#818181',
+            borderOpacity: 0.25,
+            borderWidth: 2,
+            color: '#eee',
+            enableZoom: false,
+            hoverColor: '#008cba',
+            hoverOpacity: null,
+            normalizeFunction: 'linear',
+            selectedColor: '#fff',
+            showTooltip: true,
+            onRegionClick: function (element, code, region) {
+                var message = 'خطأ "'
+                    + region
+                    + '" تأكد من الرابط الصحيح: '
+                    + code.toUpperCase();
+
+                alert(message);
+            }
+        });
+    });
+</script>
+<script src="rtl-dashboard-v2-master/js/Chart.min.js" type="text/javascript"></script>
+<script src="rtl-dashboard-v2-master/js/chart-config.js" type="text/javascript"></script>
+<script src="rtl-dashboard-v2-master/js/app.js"></script>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

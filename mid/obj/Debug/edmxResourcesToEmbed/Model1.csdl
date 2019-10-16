@@ -1,0 +1,3109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ICDBTrdAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ActivityTypes">
+    <Key>
+      <PropertyRef Name="Actvty_No" />
+    </Key>
+    <Property Name="Actvty_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Arb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name_Eng" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ActivSetup">
+    <Key>
+      <PropertyRef Name="Sys_No" />
+    </Key>
+    <Property Name="Sys_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sys_NmEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sys_NmAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Exp_Date" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Multi_Unit" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Multi_Store" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Scnd_Grid" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="OverSea" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AgeBalance">
+    <Key>
+      <PropertyRef Name="Age_ID" />
+    </Key>
+    <Property Name="Age_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Age_Nm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AstCompany">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cmp_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_NmEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AstDprtmnt">
+    <Key>
+      <PropertyRef Name="Dpm_No" />
+    </Key>
+    <Property Name="Dpm_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nof_Emp" Type="Int16" />
+    <Property Name="Dpm_Nm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dpm_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Astsupctg">
+    <Key>
+      <PropertyRef Name="Supctg_No" />
+    </Key>
+    <Property Name="Supctg_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Supctg_Nmar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Supctg_Nmen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Cstm" Type="Int32" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="Int32" />
+    <Property Name="property" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="uvalue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FixAsetsCat">
+    <Key>
+      <PropertyRef Name="Cat_No" />
+    </Key>
+    <Property Name="Cat_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cat_Nm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FixdAsetsLoc">
+    <Key>
+      <PropertyRef Name="Loc_No" />
+    </Key>
+    <Property Name="Loc_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Loc_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Ownr_No" Type="Int16" />
+    <Property Name="Acc_DB" Type="Int64" />
+    <Property Name="Acc_CR" Type="Int64" />
+  </EntityType>
+  <EntityType Name="FixdAsetstype">
+    <Key>
+      <PropertyRef Name="Ac_No1" />
+    </Key>
+    <Property Name="Ac_No1" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ac_Nm1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Dep_YearPrcnt" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_MonthPrcnt" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_NofYear" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_NofMonth" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Cr_Acc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dep_Prcnt" Type="Int16" />
+  </EntityType>
+  <EntityType Name="FixdAstSalDep">
+    <Key>
+      <PropertyRef Name="Brn_No" />
+    </Key>
+    <Property Name="Brn_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Aset_No" Type="Int64" Nullable="false" />
+    <Property Name="Aset_Nm" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Aset_NmEn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Aset_Actvty" Type="Int16" />
+    <Property Name="Aset_Typ" Type="Int16" />
+    <Property Name="Book_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Depr_StDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DeprSt_No" Type="Int32" />
+    <Property Name="Pursh_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Pursh_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Pursh_Issue" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_DB" Type="Int64" />
+    <Property Name="Acc_CR" Type="Int64" />
+    <Property Name="Sup_Nm" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Garnt_Cond" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Garnt_StDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Garnt_EndDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Insur_Issue" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Insur_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Insur_StDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Insur_EndDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Loc_No" Type="Int16" />
+    <Property Name="Aset_Recp" Type="Int32" />
+    <Property Name="Aset_CmpNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tot_Depr" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Mnth_Depr" Type="Int16" />
+    <Property Name="AsetCmp_No" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DeprSt_No1" Type="Int16" />
+    <Property Name="Dep_Mnth1" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_Mnth2" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_Mnth3" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_Mnth4" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_Mnth5" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_Val1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dep_Val2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dep_Val3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dep_Val4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dep_Val5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dep_yer1" Type="Int16" />
+    <Property Name="Dep_Yer2" Type="Int16" />
+    <Property Name="Dep_Yer3" Type="Int16" />
+    <Property Name="Dep_Yer4" Type="Int16" />
+    <Property Name="Dep_Yer5" Type="Int16" />
+    <Property Name="Ownr_No" Type="Int64" />
+    <Property Name="Depm_No" Type="Int64" />
+    <Property Name="Recp_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Ex_Recp" Type="Int16" />
+    <Property Name="recp_typ" Type="Int32" />
+    <Property Name="Dep_YearPrcnt" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_MonthPrcnt" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_NofYear" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_NofMonth" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Cancelation_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Cancelation_Typ" Type="Int16" />
+    <Property Name="Cancelation_Val" Type="Single" />
+    <Property Name="Customer_Nm" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FixdAstStatus">
+    <Key>
+      <PropertyRef Name="AsetStat_No" />
+    </Key>
+    <Property Name="AsetStat_NmAr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AsetStat_NmEn" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AsetStat_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="FixdDepStat">
+    <Key>
+      <PropertyRef Name="DeprSt_No" />
+    </Key>
+    <Property Name="DeprSt_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeprSt_Nm" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int16" />
+  </EntityType>
+  <EntityType Name="GLAnalytical1">
+    <Key>
+      <PropertyRef Name="Analytical1_No" />
+    </Key>
+    <Property Name="Analytical1_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Parnt_Acc" Type="Int64" />
+    <Property Name="Analytical_Nmar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Analytical_Nmen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Level_No" Type="Int16" />
+    <Property Name="Level_Status" Type="Int16" />
+    <Property Name="Fbal_DB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR22" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="GLAnalytical2">
+    <Key>
+      <PropertyRef Name="Analytical2_No" />
+    </Key>
+    <Property Name="Analytical2_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Parnt_Acc" Type="Int64" />
+    <Property Name="Analytical_Nmar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Analytical_Nmen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Level_No" Type="Int16" />
+    <Property Name="Level_Status" Type="Int16" />
+    <Property Name="Fbal_DB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR22" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="GLAstAcnBnk">
+    <Key>
+      <PropertyRef Name="ACC_No" />
+    </Key>
+    <Property Name="Ln_No" Type="Int16" Nullable="false" />
+    <Property Name="ACC_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Acc_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_NmEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_Bank_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Rcp_Voucher" Type="Boolean" />
+    <Property Name="Csh_voucher" Type="Boolean" />
+    <Property Name="Chk_Voucher" Type="Boolean" />
+    <Property Name="Cash_Rpt" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="GLAstAcntyp">
+    <Key>
+      <PropertyRef Name="Ac_ty" />
+    </Key>
+    <Property Name="Ac_ty" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ac_NmAr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Ac_NmEn" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GLAstbank">
+    <Key>
+      <PropertyRef Name="ACC_No" />
+    </Key>
+    <Property Name="ACC_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Acc_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_NmEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_Bank_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Rcp_Voucher" Type="Boolean" />
+    <Property Name="Csh_voucher" Type="Boolean" />
+    <Property Name="Chk_Voucher" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="GLAstinvAdj">
+    <Key>
+      <PropertyRef Name="ACC_No" />
+    </Key>
+    <Property Name="ACC_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Acc_NmAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_NmEn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_Bank_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Rcp_Voucher" Type="Boolean" />
+    <Property Name="Csh_voucher" Type="Boolean" />
+    <Property Name="Chk_Voucher" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="GLAstJrntyp">
+    <Key>
+      <PropertyRef Name="Jr_Ty" />
+    </Key>
+    <Property Name="Jr_Ty" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Jrty_Nm" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Jrty_NmEn" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GLjrnal">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+      <PropertyRef Name="Brn_No" />
+      <PropertyRef Name="Jr_Ty" />
+      <PropertyRef Name="Tr_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int16" Nullable="false" />
+    <Property Name="Brn_No" Type="Int16" Nullable="false" />
+    <Property Name="Jr_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Tr_No" Type="Int64" Nullable="false" />
+    <Property Name="Month_No" Type="Int16" />
+    <Property Name="Month_Jvno" Type="Int32" />
+    <Property Name="Doc_Type" Type="Int16" />
+    <Property Name="Tr_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Tr_DtAr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Chq_no" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Bnk_Nm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Issue_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Due_Issue_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Amount_Int" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Amount_Frct" Type="Int16" />
+    <Property Name="Rcpt_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pymt_To" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Pymt_By" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Jv_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Trf_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Entr_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Entr_Time" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="TrAcc_No" Type="Int64" />
+    <Property Name="Cstm_No" Type="Int64" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Emp_No" Type="Int64" />
+    <Property Name="Tr_Db" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tr_Cr" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="GLjrntrs">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+      <PropertyRef Name="Brn_No" />
+      <PropertyRef Name="Jr_Ty" />
+      <PropertyRef Name="Tr_No" />
+      <PropertyRef Name="Ln_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int16" Nullable="false" />
+    <Property Name="Brn_No" Type="Int16" Nullable="false" />
+    <Property Name="Jr_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Tr_No" Type="Int64" Nullable="false" />
+    <Property Name="Ln_No" Type="Int16" Nullable="false" />
+    <Property Name="Month_No" Type="Int16" />
+    <Property Name="Month_Jvno" Type="Int32" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="Sysub_Account" Type="Int64" />
+    <Property Name="Tr_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Tr_DtAr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Tr_Db" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tr_Cr" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dc_No" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Tr_Ds" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tr_Ds1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Clsacc_no1" Type="Int64" />
+    <Property Name="Clsacc_no2" Type="Int64" />
+    <Property Name="Costcntr_No" Type="Int64" />
+    <Property Name="Doc_Type" Type="Int16" />
+    <Property Name="GL_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="JV_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Trf_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Entr_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Entr_Time" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_Type" Type="Int16" />
+    <Property Name="Balnce" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_DB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Bonus" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Rcpt_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RetPur_Sal" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="GlLast">
+    <Key>
+      <PropertyRef Name="Rep_No" />
+    </Key>
+    <Property Name="Rep_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ln_No" Type="Int32" Nullable="false" />
+    <Property Name="Rep_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Rep_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Ln_Ty" Type="Int16" />
+    <Property Name="ACC_Dsc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sum_No" Type="Int16" />
+    <Property Name="Prnt_Sorc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_Ntr" Type="Int16" />
+    <Property Name="Prnt_YN" Type="Int16" />
+    <Property Name="Acc_No" Type="Int32" />
+    <Property Name="Prnt_Sorc_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Acc_Val" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="GLMonth">
+    <Key>
+      <PropertyRef Name="Month_No" />
+    </Key>
+    <Property Name="Month_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Month_GrnmAr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Month_GrnmEn" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Month_HjnmAr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Month_HjnmEn" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Glprvyer">
+    <Key>
+      <PropertyRef Name="Acc_No" />
+    </Key>
+    <Property Name="Acc_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Prv1_BAL11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv1_BAL22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv2_BAL22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL111" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL121" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL131" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL141" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL151" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL161" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL171" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL181" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL191" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL201" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL211" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Prv3_BAL221" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_DB22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Budg_CR22" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="HrAstdeductntyp">
+    <Key>
+      <PropertyRef Name="Deduc_No" />
+    </Key>
+    <Property Name="Deduc_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Deduc_NmAr" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Deduc_NmEn" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HrAstDeprtmnt">
+    <Key>
+      <PropertyRef Name="Depm_No" />
+    </Key>
+    <Property Name="Depm_No" Type="Int32" Nullable="false" />
+    <Property Name="Depm_NmAr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Depm_NmEn" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Depm_Lic" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Civl_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Depm_Aprv" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HrAstEmpstu">
+    <Key>
+      <PropertyRef Name="Emp_stu" />
+    </Key>
+    <Property Name="Emp_stu" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Emp_StunmAr" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_StunmEn" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HrAstErngtyp">
+    <Key>
+      <PropertyRef Name="Earning_No" />
+    </Key>
+    <Property Name="Earning_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Earning_NmAr" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Earning_NmEn" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HrAstJobtbl">
+    <Key>
+      <PropertyRef Name="Job_No" />
+    </Key>
+    <Property Name="Job_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Job_NmAr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Job_NmEn" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HrAstPymntype">
+    <Key>
+      <PropertyRef Name="Pymnt_No" />
+    </Key>
+    <Property Name="Pymnt_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pymnt_NmAr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Pymnt_NmEn" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Nof_Emp" Type="Int16" />
+  </EntityType>
+  <EntityType Name="HrAstReljan">
+    <Key>
+      <PropertyRef Name="Reljan_No" />
+    </Key>
+    <Property Name="Reljan_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Reljan_NmAr" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Reljan_NmEn" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HrAstReqtyp">
+    <Key>
+      <PropertyRef Name="Reqtyp_No" />
+    </Key>
+    <Property Name="Reqtyp_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Reqtyp_NmAr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Reqtyp_NmEn" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HrAststate">
+    <Key>
+      <PropertyRef Name="State_No" />
+    </Key>
+    <Property Name="State_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State_NmAr" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="State_NmEn" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstArea">
+    <Key>
+      <PropertyRef Name="Area_No" />
+    </Key>
+    <Property Name="Area_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Area_NmAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Area_NmEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cntry_No" Type="Int16" />
+    <Property Name="City_No" Type="Int16" />
+    <Property Name="Slm_No" Type="Int16" />
+  </EntityType>
+  <EntityType Name="InvAstCardTyp">
+    <Key>
+      <PropertyRef Name="Card_ID" />
+    </Key>
+    <Property Name="Card_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Card_Typ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstCity">
+    <Key>
+      <PropertyRef Name="City_No" />
+    </Key>
+    <Property Name="City_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Brn_No" Type="Int32" />
+    <Property Name="City_NmAR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="City_NmEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Cntry_No" Type="Int16" />
+  </EntityType>
+  <EntityType Name="InvAstCntry">
+    <Key>
+      <PropertyRef Name="Cntry_No" />
+    </Key>
+    <Property Name="Cntry_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cntry_Nm" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Cntry_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstcPayType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type_Name_E" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstCurncy">
+    <Key>
+      <PropertyRef Name="Curncy_No" />
+    </Key>
+    <Property Name="Curncy_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Curncy_Nm" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Curncy_Rate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Curncy_Nmar" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstCustmcatg">
+    <Key>
+      <PropertyRef Name="Catg_No" />
+    </Key>
+    <Property Name="Catg_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Catg_NmAr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Catg_NmEn" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Credit_Value1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Credit_Value2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Credit_Days1" Type="Int32" />
+    <Property Name="Lst_Discount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Lst_Credit_Days" Type="Int32" />
+  </EntityType>
+  <EntityType Name="InvAstMarket">
+    <Key>
+      <PropertyRef Name="Mrkt_No" />
+    </Key>
+    <Property Name="Mrkt_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Brn_No" Type="Int32" />
+    <Property Name="Mrkt_NmEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mrkt_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstNutrbusn">
+    <Key>
+      <PropertyRef Name="Nutr_No" />
+    </Key>
+    <Property Name="Nutr_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nutr_Nm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nutr_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Short_Arb" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Short_Eng" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstPymwys">
+    <Key>
+      <PropertyRef Name="Pym_No" />
+    </Key>
+    <Property Name="Pym_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pym_Nm" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Pym_Nmar" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstRefTyp">
+    <Key>
+      <PropertyRef Name="RefTyp_No" />
+    </Key>
+    <Property Name="Main_Reftyp" Type="Int16" Nullable="false" />
+    <Property Name="RefTyp_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RefTyp_Nm" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="RefTyp_NmAr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstRefTypMain">
+    <Key>
+      <PropertyRef Name="Main_Reftyp" />
+    </Key>
+    <Property Name="Main_Reftyp" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RefTyp_Nm" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="RefTyp_NmAr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvAstSalesman">
+    <Key>
+      <PropertyRef Name="Slm_No" />
+    </Key>
+    <Property Name="Slm_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Brn_No" Type="Int32" />
+    <Property Name="StoreNo" Type="Int32" />
+    <Property Name="Slm_NmEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Slm_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Slm_Abrv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fbal_Db" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Target" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Cash" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Cheqe" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TCashCheqe" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Cheqe_UndrPost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Difrence" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Updt_Date" Type="DateTime" Precision="3" />
+    <Property Name="CBal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgL30" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG30" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG60" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgg90" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG120" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG150" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG180" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG270" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Slm_Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Slm_Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="InvAstwrkPeriod">
+    <Key>
+      <PropertyRef Name="Period_Time" />
+    </Key>
+    <Property Name="Period_Time" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Period_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Period_NmEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="From_Time" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="To_Time" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="InvItemfsunit">
+    <Key>
+      <PropertyRef Name="Itm_No" />
+    </Key>
+    <Property Name="Actvty_No" Type="Int32" Nullable="false" />
+    <Property Name="Cstm_Agrmnt" Type="Int32" Nullable="false" />
+    <Property Name="Itm_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ln_No" Type="Int16" Nullable="false" />
+    <Property Name="Unit_No" Type="Int16" Nullable="false" />
+    <Property Name="Unit_Ratio" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Unit_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Discval" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_DiscPrct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Updt_Date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_SalMain" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="InvItmcatgry">
+    <Key>
+      <PropertyRef Name="Catg_No" />
+    </Key>
+    <Property Name="Kind_No" Type="Int16" Nullable="false" />
+    <Property Name="Catg_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Catg_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Catg_NmAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Updt_Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="InvItmexpdt">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Dlv_Stor" />
+      <PropertyRef Name="Itm_No" />
+      <PropertyRef Name="Loc_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int16" Nullable="false" />
+    <Property Name="Itm_No" Type="Int64" Nullable="false" />
+    <Property Name="Loc_No" Type="Int16" Nullable="false" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="Loc_Active" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Exp_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Catg_No" Type="Int32" />
+    <Property Name="Unit_No" Type="Int16" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="In_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Phy_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsuDLV_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Itm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc1_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc2_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DiscSal_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DiscSal2_prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCrdt_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCash_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrItm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OvrItm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OvrDisc1_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrDisc2_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrDiscSal_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrDiscSal2_prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrBonusSalCrdt_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrBonusSalCash_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrBonusPur_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrDisc1_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OvrDisc2_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OvrBonusPur_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OvrBonusPur_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Phy_Itmcost" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Phy_Tcost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Updt_Date" Type="DateTime" Precision="3" />
+    <Property Name="Customs_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Customs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcItm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Expens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SExpens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens6" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens7" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcOvrItm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Batch_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="dis_cash_p" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="dis_cash" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="dis_deal_p" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="dis_deal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_SalQty" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="InvItmkind">
+    <Key>
+      <PropertyRef Name="Kind_No" />
+    </Key>
+    <Property Name="Kind_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kind_Nm" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Kind_NmAr" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="LC_DB" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="InvItmmfs">
+    <Key>
+      <PropertyRef Name="Itm_No" />
+    </Key>
+    <Property Name="Itm_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Itm_Active" Type="Int16" />
+    <Property Name="Ref_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Catg_No" Type="Int64" />
+    <Property Name="Kind_No" Type="Int32" />
+    <Property Name="Unit_No" Type="Int16" />
+    <Property Name="UnitPur_No" Type="Int16" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Measure_Grp" Type="Int32" />
+    <Property Name="Itm_Nm" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Itm_Nmar" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Req_Limit" Type="Int32" />
+    <Property Name="Itm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_COst" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal6" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Pur_Bouns" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Sal_Bouns" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Itm_Othr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Exp_Date" Type="Int16" />
+    <Property Name="Item_BarCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Fctry_Barcode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Medcn_Grup1" Type="Int16" />
+    <Property Name="Medcn_Grup2" Type="Int16" />
+    <Property Name="Genric_No" Type="Int16" />
+    <Property Name="Bouns_Chk" Type="Int16" />
+    <Property Name="Bouns_Qty" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc1_Chk" Type="Int16" />
+    <Property Name="Disc2_Chk" Type="Int16" />
+    <Property Name="Disc3_Chk" Type="Int16" />
+    <Property Name="Disc4_Chk" Type="Int16" />
+    <Property Name="Disc5_Chk" Type="Int16" />
+    <Property Name="Disc1_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc2_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc3_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc4_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc5_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Unit_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal6" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal7" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal8" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal9" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal10" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Discval" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_DiscPrct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Shelf_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="User_ID" Type="Int32" />
+    <Property Name="Updt_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Batch_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Qty2_Chk" Type="Int16" />
+    <Property Name="Qty3_Chk" Type="Int16" />
+    <Property Name="Pckng_Unit" Type="Int16" />
+    <Property Name="Pckng_Ratio" Type="Int16" />
+    <Property Name="Itm_TWeight" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_NWeight" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MaxQty_SaL" Type="Int16" />
+    <Property Name="Taxp_Extra" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Tax_Allow" Type="Int16" />
+    <Property Name="ChkDiscount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Commission" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="InvItmSub1">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Arb" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Name_Eng" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvItmSub2">
+    <Key>
+      <PropertyRef Name="Main_Code" />
+    </Key>
+    <Property Name="Main_Code" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="Int16" Nullable="false" />
+    <Property Name="Name_Arb" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Name_Eng" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvItmunit">
+    <Key>
+      <PropertyRef Name="Unit_No" />
+    </Key>
+    <Property Name="Unit_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Unit_Nm" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_NmAr" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvLimit_Qty">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Name="StoreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Itm_No" Type="Int64" Nullable="false" />
+    <Property Name="Limit_Qty" Type="Int64" />
+    <Property Name="Updt_Date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="InvLoddtl">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_Ty" />
+      <PropertyRef Name="Doc_No" />
+      <PropertyRef Name="Ln_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Ln_No" Type="Int16" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Custm_Inv" Type="Int64" />
+    <Property Name="Reftyp_No" Type="Int16" />
+    <Property Name="Ref_No" Type="Int64" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="To_Store" Type="Int16" />
+    <Property Name="Mrkt_No" Type="Int16" />
+    <Property Name="Period_Time" Type="Int16" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="City_No" Type="Int16" />
+    <Property Name="Cstm_No" Type="Int64" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Catg_No" Type="Int64" />
+    <Property Name="Kind_No" Type="Int32" />
+    <Property Name="Itm_No" Type="Int64" />
+    <Property Name="Loc_No" Type="Int16" />
+    <Property Name="Itm_RefNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_No" Type="Int16" />
+    <Property Name="UnitLn_No" Type="Int32" />
+    <Property Name="Unit_ratio" Type="Int32" />
+    <Property Name="Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dlv_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Exp_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Expens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc1_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc2_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc1_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc2_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Itm_SalSubUnt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_SalSubUnt2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_SalSubUnt3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DiscSal_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DiscSal2_prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCrdt_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCash_Prct" Type="Int16" />
+    <Property Name="Itm_Rcpt_Hold" Type="Int16" />
+    <Property Name="Customs_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Customs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcItm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcItm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTitm_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTitm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTitm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTitm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SExpens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Pur_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Price1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Price2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_OPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Uprice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Reord_Blnc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bal_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bal_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Blnc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_BlncCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="User_Id" Type="Int16" />
+    <Property Name="Qty_Print" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="updt_date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Lc_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Doc_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Batch_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="F4" Type="Int16" />
+    <Property Name="SpecialDiscount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Taxp_Extra" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Taxv_Extra" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="InvLodhdr">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_Ty" />
+      <PropertyRef Name="Doc_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="RcvngPur_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Pym_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Custm_Inv" Type="Int64" />
+    <Property Name="Reftyp_No" Type="Int16" />
+    <Property Name="Ref_No" Type="Int64" />
+    <Property Name="Ref_No2" Type="Int64" />
+    <Property Name="To_Store" Type="Int16" />
+    <Property Name="Mrkt_No" Type="Int16" />
+    <Property Name="Period_Time" Type="Int16" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="City_No" Type="Int16" />
+    <Property Name="Cstm_No" Type="Int64" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Sup_Inv" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SubCstm_Filno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Curncy_No" Type="Int16" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_ODisc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_OPrct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_customs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Expens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Net" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Credit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Return_Mony" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTot_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTot_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTot_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTot_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTot_ODisc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcNet" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SExpens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens6" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens7" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Sup_VchrNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Credit_Days" Type="Int32" />
+    <Property Name="Dlv_Ord_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Ret_Status" Type="Int16" />
+    <Property Name="JV_No" Type="Int64" />
+    <Property Name="JV_Lno" Type="Int16" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="Doc_Procs" Type="Int16" />
+    <Property Name="Doc_RProcs" Type="Int16" />
+    <Property Name="Doc_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Trnf_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GL_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Rcpt_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="User_Id" Type="Int16" />
+    <Property Name="Doc_Time" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Print_No" Type="Int16" />
+    <Property Name="Tpur_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tothr_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="updt_date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_InvAdj" Type="Int64" />
+    <Property Name="Tot_Disc2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Prct2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SpecialDiscount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CashInvoice" Type="Boolean" />
+    <Property Name="SpecialDiscountInvoice" Type="Boolean" />
+    <Property Name="Notes1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Taxp_Extra" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Taxv_Extra" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tax_Allow" Type="Int16" />
+    <Property Name="Tax_Acc" Type="Int64" />
+  </EntityType>
+  <EntityType Name="InvPoDtl">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_Ty" />
+      <PropertyRef Name="Doc_No" />
+      <PropertyRef Name="Ln_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Ln_No" Type="Int16" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Custm_Inv" Type="Int64" />
+    <Property Name="Reftyp_No" Type="Int16" />
+    <Property Name="Ref_No" Type="Int64" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="To_Store" Type="Int16" />
+    <Property Name="Mrkt_No" Type="Int16" />
+    <Property Name="Period_Time" Type="Int16" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="Cstm_No" Type="Int64" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Catg_No" Type="Int64" />
+    <Property Name="Itm_No" Type="Int64" />
+    <Property Name="Loc_No" Type="Int16" />
+    <Property Name="Itm_RefNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_No" Type="Int16" />
+    <Property Name="UnitLn_No" Type="Int32" />
+    <Property Name="Unit_ratio" Type="Int32" />
+    <Property Name="Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dlv_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Exp_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc1_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc2_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc1_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc2_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Itm_SalSubUnt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_SalSubUnt2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_SalSubUnt3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DiscSal_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DiscSal2_prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCrdt_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCash_Prct" Type="Int16" />
+    <Property Name="Itm_Rcpt_Hold" Type="Int16" />
+    <Property Name="Pur_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Price1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Price2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_OPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Uprice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Reord_Blnc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bal_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bal_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Blnc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_BlncCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="User_Id" Type="Int16" />
+    <Property Name="Batch_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvPoHdr">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_Ty" />
+      <PropertyRef Name="Doc_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="RcvngPur_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Pym_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Custm_Inv" Type="Int64" />
+    <Property Name="Reftyp_No" Type="Int16" />
+    <Property Name="Ref_No" Type="Int64" />
+    <Property Name="Ref_No2" Type="Int64" />
+    <Property Name="To_Store" Type="Int16" />
+    <Property Name="Mrkt_No" Type="Int16" />
+    <Property Name="Period_Time" Type="Int16" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="Cstm_No" Type="Int64" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Sup_Inv" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SubCstm_Filno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Curncy_No" Type="Int16" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_ODisc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_OPrct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Net" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Credit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Return_Mony" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Expens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Sup_VchrNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Credit_Days" Type="Int32" />
+    <Property Name="Dlv_Ord_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Ret_Status" Type="Int16" />
+    <Property Name="JV_No" Type="Int64" />
+    <Property Name="JV_Lno" Type="Int16" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="Doc_Procs" Type="Int16" />
+    <Property Name="Doc_RProcs" Type="Int16" />
+    <Property Name="Doc_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Trnf_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GL_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Rcpt_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="User_Id" Type="Int16" />
+    <Property Name="Doc_Time" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Print_No" Type="Int16" />
+    <Property Name="Tpur_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tothr_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Disc2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Prct2" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="InvQutdtl">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_Ty" />
+      <PropertyRef Name="Doc_No" />
+      <PropertyRef Name="Ln_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Ln_No" Type="Int16" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Custm_Inv" Type="Int64" />
+    <Property Name="Reftyp_No" Type="Int16" />
+    <Property Name="Ref_No" Type="Int64" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="To_Store" Type="Int16" />
+    <Property Name="Mrkt_No" Type="Int16" />
+    <Property Name="Period_Time" Type="Int16" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="City_No" Type="Int16" />
+    <Property Name="Cstm_No" Type="Int64" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Catg_No" Type="Int64" />
+    <Property Name="Kind_No" Type="Int32" />
+    <Property Name="Itm_No" Type="Int64" />
+    <Property Name="Loc_No" Type="Int16" />
+    <Property Name="Itm_RefNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_No" Type="Int16" />
+    <Property Name="UnitLn_No" Type="Int32" />
+    <Property Name="Unit_ratio" Type="Int32" />
+    <Property Name="Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dlv_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Exp_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc1_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc2_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc1_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc2_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Itm_SalSubUnt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_SalSubUnt2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_SalSubUnt3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DiscSal_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DiscSal2_prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCrdt_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCash_Prct" Type="Int16" />
+    <Property Name="Itm_Rcpt_Hold" Type="Int16" />
+    <Property Name="Pur_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Price1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Price2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_OPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Uprice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Reord_Blnc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bal_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bal_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Blnc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_BlncCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="User_Id" Type="Int16" />
+    <Property Name="Qty_Print" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Batch_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvQuthdr">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_Ty" />
+      <PropertyRef Name="Doc_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="RcvngPur_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Pym_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Custm_Inv" Type="Int64" />
+    <Property Name="Reftyp_No" Type="Int16" />
+    <Property Name="Ref_No" Type="Int64" />
+    <Property Name="Ref_No2" Type="Int64" />
+    <Property Name="To_Store" Type="Int16" />
+    <Property Name="Mrkt_No" Type="Int16" />
+    <Property Name="Period_Time" Type="Int16" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="City_No" Type="Int16" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="Cstm_No" Type="Int64" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Sup_Inv" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SubCstm_Filno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Curncy_No" Type="Int16" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_ODisc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_OPrct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Net" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Credit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Return_Mony" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Expens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Sup_VchrNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Credit_Days" Type="Int32" />
+    <Property Name="Dlv_Ord_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Ret_Status" Type="Int16" />
+    <Property Name="JV_No" Type="Int64" />
+    <Property Name="JV_Lno" Type="Int16" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="Doc_Procs" Type="Int16" />
+    <Property Name="Doc_RProcs" Type="Int16" />
+    <Property Name="Doc_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Trnf_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GL_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Rcpt_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="User_Id" Type="Int16" />
+    <Property Name="Doc_Time" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Print_No" Type="Int16" />
+    <Property Name="Tpur_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tothr_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Disc2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Prct2" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="InvSalReqdtl">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_Ty" />
+      <PropertyRef Name="Doc_No" />
+      <PropertyRef Name="Ln_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Ln_No" Type="Int16" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Custm_Inv" Type="Int64" />
+    <Property Name="Reftyp_No" Type="Int16" />
+    <Property Name="Ref_No" Type="Int64" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="To_Store" Type="Int16" />
+    <Property Name="Mrkt_No" Type="Int16" />
+    <Property Name="Period_Time" Type="Int16" />
+    <Property Name="Slm_No" Type="Int32" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="City_No" Type="Int16" />
+    <Property Name="Cstm_No" Type="Int64" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Catg_No" Type="Int64" />
+    <Property Name="Kind_No" Type="Int32" />
+    <Property Name="Itm_No" Type="Int64" />
+    <Property Name="Loc_No" Type="Int16" />
+    <Property Name="Itm_RefNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_No" Type="Int16" />
+    <Property Name="UnitLn_No" Type="Int32" />
+    <Property Name="Unit_ratio" Type="Int32" />
+    <Property Name="Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dlv_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Exp_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc1_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc2_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc1_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc2_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Itm_SalSubUnt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_SalSubUnt2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_SalSubUnt3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DiscSal_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DiscSal2_prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCrdt_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCash_Prct" Type="Int16" />
+    <Property Name="Itm_Rcpt_Hold" Type="Int16" />
+    <Property Name="Customs_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Customs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcItm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcItm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTitm_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTitm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTitm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTitm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SExpens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Pur_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Price1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Price2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_OPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ret_Uprice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Reord_Blnc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bal_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bal_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Blnc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_BlncCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="User_Id" Type="Int16" />
+    <Property Name="Qty_Print" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="updt_date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvSalReqhdr">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_Ty" />
+      <PropertyRef Name="Doc_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="RcvngPur_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Pym_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Custm_Inv" Type="Int64" />
+    <Property Name="Reftyp_No" Type="Int16" />
+    <Property Name="Ref_No" Type="Int64" />
+    <Property Name="Ref_No2" Type="Int64" />
+    <Property Name="To_Store" Type="Int16" />
+    <Property Name="Mrkt_No" Type="Int16" />
+    <Property Name="Period_Time" Type="Int16" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="City_No" Type="Int16" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="Cstm_No" Type="Int64" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Sup_Inv" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SubCstm_Filno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Curncy_No" Type="Int16" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Prct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_ODisc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_OPrct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_customs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Expens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Net" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Credit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Return_Mony" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Bonus_val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTot_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTot_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTot_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTot_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcTot_ODisc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcNet" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SExpens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens6" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens7" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Sup_VchrNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Credit_Days" Type="Int32" />
+    <Property Name="Dlv_Ord_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Ret_Status" Type="Int16" />
+    <Property Name="JV_No" Type="Int64" />
+    <Property Name="JV_Lno" Type="Int16" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="Doc_Procs" Type="Int16" />
+    <Property Name="Doc_RProcs" Type="Int16" />
+    <Property Name="Doc_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Trnf_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GL_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Rcpt_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="User_Id" Type="Int16" />
+    <Property Name="Doc_Time" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Print_No" Type="Int16" />
+    <Property Name="Tpur_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tothr_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="updt_date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_InvAdj" Type="Int64" />
+  </EntityType>
+  <EntityType Name="Lang_Controls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="FormName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ControlEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ControlAR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Parent" Type="Int32" />
+    <Property Name="CtlTyp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TipEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TipAR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Width" Type="Int32" />
+    <Property Name="leftAr" Type="Int32" />
+    <Property Name="leftEn" Type="Int32" />
+    <Property Name="pwidth" Type="Int32" />
+    <Property Name="ColIndex" Type="Int32" />
+    <Property Name="Translatable" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lang_Forms">
+    <Key>
+      <PropertyRef Name="FormId" />
+    </Key>
+    <Property Name="FormId" Type="Int32" Nullable="false" />
+    <Property Name="FormName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="GridFlg" Type="Boolean" />
+    <Property Name="TabFlg" Type="Boolean" />
+    <Property Name="ToolBarFlg" Type="Boolean" />
+    <Property Name="MenuFlg" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="LCItemexp">
+    <Key>
+      <PropertyRef Name="ICost_No" />
+    </Key>
+    <Property Name="ICost_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ICost_NmEN" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="ICost_NmAR" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_No" Type="Int64" />
+  </EntityType>
+  <EntityType Name="LcPymwys">
+    <Key>
+      <PropertyRef Name="Pym_No" />
+    </Key>
+    <Property Name="Pym_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pym_Nm" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Pym_Nmar" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MainBranch">
+    <Key>
+      <PropertyRef Name="Brn_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int32" Nullable="false" />
+    <Property Name="Brn_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Main_Brn" Type="Int16" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Actvty_No" Type="Int16" />
+    <Property Name="Isue_ALinvc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Allow_StoreTrs" Type="Int16" />
+    <Property Name="Br_Ty" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Brn_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_NmAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Adrs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Foldr" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Fcstm_No" Type="Int32" />
+    <Property Name="Tcstm_No" Type="Int32" />
+    <Property Name="Cstm_No" Type="Int32" />
+    <Property Name="Acc_Customer" Type="Int64" />
+    <Property Name="Acc_Suplier" Type="Int64" />
+    <Property Name="Acc_Cashier" Type="Int64" />
+    <Property Name="Acc_Customer1" Type="Int64" />
+    <Property Name="Acc_Suplier1" Type="Int64" />
+    <Property Name="Acc_Suplier2" Type="Int64" />
+    <Property Name="Acc_Sales" Type="Int64" />
+    <Property Name="Acc_RetSal" Type="Int64" />
+    <Property Name="Crdt_CshSalDiscAcc" Type="Int64" />
+    <Property Name="Crdt_BnusSalDiscAcc" Type="Int64" />
+    <Property Name="Csh_SalAcc" Type="Int64" />
+    <Property Name="Csh_RetsalAcc" Type="Int64" />
+    <Property Name="Csh_CshSalDiscAcc" Type="Int64" />
+    <Property Name="Csh_BnusSalDiscAcc" Type="Int64" />
+    <Property Name="Cmp_PurchaseAcc" Type="Int64" />
+    <Property Name="Cmp_RetPurchAcc" Type="Int64" />
+    <Property Name="Cmp_CshPurDiscAcc" Type="Int64" />
+    <Property Name="Cmp_BnusPurDiscAcc" Type="Int64" />
+    <Property Name="Agnt_PurchaseAcc" Type="Int64" />
+    <Property Name="Agnt_RetPurchAcc" Type="Int64" />
+    <Property Name="Agnt_CshPurDiscAcc" Type="Int64" />
+    <Property Name="Agnt_BnusPurDiscAcc" Type="Int64" />
+    <Property Name="Othr_PurchaseAcc" Type="Int64" />
+    <Property Name="Othr_RetPurchAcc" Type="Int64" />
+    <Property Name="Othr_CshPurDiscAcc" Type="Int64" />
+    <Property Name="Othr_BnusPurDiscAcc" Type="Int64" />
+    <Property Name="DlyPst_CshSal" Type="Int16" />
+    <Property Name="DlyPst_CshPur" Type="Int16" />
+    <Property Name="Adv_SalAcc" Type="Int64" />
+    <Property Name="Adv_RetSalAcc" Type="Int64" />
+    <Property Name="Acc_Invtry" Type="Int64" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Csh_PurAcc" Type="Int64" />
+    <Property Name="Inv_Prdctn" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Inv_Undprs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Inv_RM" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Cost_INVt" Type="Int64" />
+    <Property Name="Cost_SalInvt" Type="Int64" />
+    <Property Name="Acc_Cheque" Type="Int64" />
+    <Property Name="Csh_RetPurAcc" Type="Int64" />
+    <Property Name="Acc_InvAdj" Type="Int64" />
+    <Property Name="Acc_Cashier1" Type="Int64" />
+    <Property Name="Acc_Cashier2" Type="Int64" />
+    <Property Name="Acc_Cashier3" Type="Int64" />
+    <Property Name="Acc_PNO" Type="Int64" />
+    <Property Name="Acc_TaxExtraDb" Type="Int64" />
+    <Property Name="Acc_TaxExtraCR" Type="Int64" />
+  </EntityType>
+  <EntityType Name="MainBranch2">
+    <Key>
+      <PropertyRef Name="Brn_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int32" Nullable="false" />
+    <Property Name="Brn_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Main_Brn" Type="Int16" />
+    <Property Name="Dlv_Stor" Type="Int16" />
+    <Property Name="Actvty_No" Type="Int16" />
+    <Property Name="Isue_ALinvc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Allow_StoreTrs" Type="Int16" />
+    <Property Name="Br_Ty" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Brn_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_NmAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Adrs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Brn_Foldr" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Fcstm_No" Type="Int32" />
+    <Property Name="Tcstm_No" Type="Int32" />
+    <Property Name="Cstm_No" Type="Int32" />
+    <Property Name="Acc_Customer" Type="Int64" />
+    <Property Name="Acc_Suplier" Type="Int64" />
+    <Property Name="Acc_Cashier" Type="Int64" />
+    <Property Name="Acc_Customer1" Type="Int64" />
+    <Property Name="Acc_Suplier1" Type="Int64" />
+    <Property Name="Acc_Suplier2" Type="Int64" />
+    <Property Name="Acc_Sales" Type="Int64" />
+    <Property Name="Acc_RetSal" Type="Int64" />
+    <Property Name="Crdt_CshSalDiscAcc" Type="Int64" />
+    <Property Name="Crdt_BnusSalDiscAcc" Type="Int64" />
+    <Property Name="Csh_SalAcc" Type="Int64" />
+    <Property Name="Csh_RetsalAcc" Type="Int64" />
+    <Property Name="Csh_CshSalDiscAcc" Type="Int64" />
+    <Property Name="Csh_BnusSalDiscAcc" Type="Int64" />
+    <Property Name="Cmp_PurchaseAcc" Type="Int64" />
+    <Property Name="Cmp_RetPurchAcc" Type="Int64" />
+    <Property Name="Cmp_CshPurDiscAcc" Type="Int64" />
+    <Property Name="Cmp_BnusPurDiscAcc" Type="Int64" />
+    <Property Name="Agnt_PurchaseAcc" Type="Int64" />
+    <Property Name="Agnt_RetPurchAcc" Type="Int64" />
+    <Property Name="Agnt_CshPurDiscAcc" Type="Int64" />
+    <Property Name="Agnt_BnusPurDiscAcc" Type="Int64" />
+    <Property Name="Othr_PurchaseAcc" Type="Int64" />
+    <Property Name="Othr_RetPurchAcc" Type="Int64" />
+    <Property Name="Othr_CshPurDiscAcc" Type="Int64" />
+    <Property Name="Othr_BnusPurDiscAcc" Type="Int64" />
+    <Property Name="DlyPst_CshSal" Type="Int16" />
+    <Property Name="DlyPst_CshPur" Type="Int16" />
+    <Property Name="Adv_SalAcc" Type="Int64" />
+    <Property Name="Adv_RetSalAcc" Type="Int64" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Csh_PurAcc" Type="Int64" />
+    <Property Name="Csh_RetPurAcc" Type="Int64" />
+    <Property Name="Inv_Prdctn" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Inv_Undprs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Inv_RM" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Cost_SalInvt" Type="Int64" />
+    <Property Name="Cost_INVt" Type="Int64" />
+    <Property Name="Acc_InvAdj" Type="Int64" />
+    <Property Name="Acc_Cashier1" Type="Int64" />
+    <Property Name="Acc_Cashier2" Type="Int64" />
+    <Property Name="Acc_Cashier3" Type="Int64" />
+    <Property Name="Acc_PNO" Type="Int64" />
+    <Property Name="Acc_Cheque" Type="Int64" />
+    <Property Name="Acc_TaxExtraDb" Type="Int64" />
+    <Property Name="Acc_TaxExtraCR" Type="Int64" />
+  </EntityType>
+  <EntityType Name="MainBranchDlv">
+    <Key>
+      <PropertyRef Name="Dlv_Stor" />
+    </Key>
+    <Property Name="Brn_No" Type="Int32" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dlv_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dlv_NmEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MainBranchDlv2">
+    <Key>
+      <PropertyRef Name="Dlv_Stor" />
+    </Key>
+    <Property Name="Brn_No" Type="Int32" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dlv_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dlv_NmEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MainCmpnam">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cmp_Activity" Type="Int16" />
+    <Property Name="Hijri_DifDay" Type="Int16" />
+    <Property Name="Brch_Trns" Type="Int16" />
+    <Property Name="Stor_Trns" Type="Int16" />
+    <Property Name="Main_Brn" Type="Int16" />
+    <Property Name="DLv_Stor" Type="Int16" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="Local_Lang" Type="Int16" />
+    <Property Name="Sys_SetupNo" Type="Int16" />
+    <Property Name="Cmp_ShrtNm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Itm_twice" Type="Int16" />
+    <Property Name="InvTrf_Disc1" Type="Int16" />
+    <Property Name="InvTrf_Bouns" Type="Int16" />
+    <Property Name="BarCodeTy" Type="Int16" />
+    <Property Name="CostCalc" Type="Int16" />
+    <Property Name="Repeate_Item" Type="Int16" />
+    <Property Name="Disc2Pur_Dis2Sal" Type="Int16" />
+    <Property Name="ReqLocBalance" Type="Int16" />
+    <Property Name="Pur_TabOrder" Type="Int16" />
+    <Property Name="Start_Month" Type="Int16" />
+    <Property Name="Start_Year" Type="Int16" />
+    <Property Name="End_Month" Type="Int16" />
+    <Property Name="End_year" Type="Int16" />
+    <Property Name="Start_MonthHij" Type="Int16" />
+    <Property Name="Start_YearHij" Type="Int16" />
+    <Property Name="End_MonthHij" Type="Int16" />
+    <Property Name="End_yearHij" Type="Int16" />
+    <Property Name="Cmp_Nm" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Nm2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Tel" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Add" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Eadd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Enm" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Cmp_Enm2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Prnt_Forms" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DelivaryStratigy" Type="Boolean" />
+    <Property Name="CostCenterStratigy" Type="Boolean" />
+    <Property Name="Activ_typ_no" Type="Int32" Nullable="false" />
+    <Property Name="Cshr_Status" Type="Int16" />
+    <Property Name="Cshr_Spr" Type="Int16" />
+    <Property Name="Sal_Spr" Type="Int16" />
+    <Property Name="Pur_Spr" Type="Int16" />
+    <Property Name="Invty_Spr" Type="Int16" />
+    <Property Name="Srv_Status" Type="Int16" />
+    <Property Name="Dnv_Status" Type="Int16" />
+    <Property Name="SalB_Dn" Type="Int16" />
+    <Property Name="PurB_Srv" Type="Int16" />
+    <Property Name="Itm_SrchRef" Type="Int16" />
+    <Property Name="Date_Status" Type="Int16" />
+    <Property Name="Dn_woCost" Type="Int16" />
+    <Property Name="Srv_woCost" Type="Int16" />
+    <Property Name="Same_Brn_DB" Type="Boolean" />
+    <Property Name="Brch_Comm" Type="Int16" />
+    <Property Name="Month_Post1" Type="Int16" />
+    <Property Name="Month_Post2" Type="Int16" />
+    <Property Name="Month_Post3" Type="Int16" />
+    <Property Name="Month_Post4" Type="Int16" />
+    <Property Name="Month_Post5" Type="Int16" />
+    <Property Name="Month_Post6" Type="Int16" />
+    <Property Name="Month_Post7" Type="Int16" />
+    <Property Name="Month_Post8" Type="Int16" />
+    <Property Name="Month_Post9" Type="Int16" />
+    <Property Name="Month_Post10" Type="Int16" />
+    <Property Name="Month_Post11" Type="Int16" />
+    <Property Name="Month_Post12" Type="Int16" />
+    <Property Name="Sal_Slip_Spcinv" Type="Int16" />
+    <Property Name="ModemPortNo" Type="Int32" />
+    <Property Name="ModemTelNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ChunkSize" Type="Int32" />
+    <Property Name="JvAuto_Mnth" Type="Int32" />
+    <Property Name="SalInv_Cash" Type="Int32" />
+    <Property Name="PurInv_Cash" Type="Int32" />
+    <Property Name="GL_NetSale" Type="Int32" />
+    <Property Name="GL_NetPur" Type="Int16" />
+    <Property Name="WoBoRpt" Type="Int32" />
+    <Property Name="PrintOrder" Type="Int32" />
+    <Property Name="Pur_Disc1" Type="Int32" />
+    <Property Name="Sal_Disc1" Type="Int32" />
+    <Property Name="Pur_Disc2" Type="Int32" />
+    <Property Name="Sal_Disc2" Type="Int32" />
+    <Property Name="Sal_Bouns" Type="Int32" />
+    <Property Name="Pur_Bouns" Type="Int32" />
+    <Property Name="Batch_No" Type="Int32" />
+    <Property Name="Disc1Pur_Dis1Sal" Type="Int32" />
+    <Property Name="NoStock" Type="Int32" />
+    <Property Name="Gl_Salesman" Type="Int32" />
+    <Property Name="Sec_Salesman" Type="Int32" />
+    <Property Name="Warehouse" Type="Int32" />
+    <Property Name="Inv_Sequence" Type="Int32" />
+    <Property Name="Sales_Type" Type="Int32" />
+    <Property Name="Activity_Type" Type="Int32" />
+    <Property Name="CR_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CC_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tax_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TaxExtra_Prct" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="MtsCcustmr">
+    <Key>
+      <PropertyRef Name="Cstm_No" />
+    </Key>
+    <Property Name="Brn_No" Type="Int16" Nullable="false" />
+    <Property Name="Cstm_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cstm_Active" Type="Int16" />
+    <Property Name="Cstm_Ctg" Type="Int16" />
+    <Property Name="Cstm_Refno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Prnt_cstm" Type="Int32" />
+    <Property Name="Level_no" Type="Int32" />
+    <Property Name="Have_sub" Type="Boolean" />
+    <Property Name="Main" Type="Boolean" />
+    <Property Name="Internal_Invoice" Type="Int16" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Catg_No" Type="Int16" />
+    <Property Name="Acc_ArAp" Type="Int64" />
+    <Property Name="Cstm_Nm" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Cstm_Nmarb" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Slm_No" Type="Int32" />
+    <Property Name="Mrkt_No" Type="Int32" />
+    <Property Name="Nutr_No" Type="Int16" />
+    <Property Name="Cntry_No" Type="Int32" />
+    <Property Name="City_No" Type="Int16" />
+    <Property Name="Area_No" Type="Int32" />
+    <Property Name="Credit_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Credit_Days" Type="Int32" />
+    <Property Name="Cstm_Adr" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Cstm_POBox" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Cstm_ZipCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Cstm_Rsp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cstm_Othr" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Cstm_Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Cstm_Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Cstm_Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Cntct_Prsn1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cntct_Prsn2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cntct_Prsn3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cntct_Prsn4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cntct_Prsn5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TitL1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TitL2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TitL3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TitL4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TitL5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile5" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Email1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tel1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Tel2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Tel3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Fbal_Db" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CBal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgL30" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG30" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG60" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG90" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG120" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG150" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG180" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG270" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_Rcpt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Custmr_Scope" Type="Int16" />
+    <Property Name="Opn_Date" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Opn_Time" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Updt_Date" Type="DateTime" Precision="3" />
+    <Property Name="Cstm_Agrmnt" Type="Int32" />
+    <Property Name="Disc_prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Itm_Sal" Type="Int16" />
+    <Property Name="Fbal_BalAgL30" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG30" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG60" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG90" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG120" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG150" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG180" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG270" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Linv_No" Type="Int64" />
+    <Property Name="Linv_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Linv_Net" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LRcpt_No" Type="Int64" />
+    <Property Name="LRcpt_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LRcpt_Db" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Inv_Sales" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Inv_SalesRet" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DeserveDiscounts" Type="Int16" />
+    <Property Name="Notes" Type="String" MaxLength="240" FixedLength="false" Unicode="true" />
+    <Property Name="ParentAcc_No" Type="Int64" />
+    <Property Name="AgeNotCalculate" Type="Int16" />
+    <Property Name="Tax_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MtsChartAc">
+    <Key>
+      <PropertyRef Name="Acc_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int16" Nullable="false" />
+    <Property Name="Acc_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Parnt_Acc" Type="Int64" Nullable="false" />
+    <Property Name="Acc_Typ" Type="Int16" />
+    <Property Name="Level_No" Type="Int16" />
+    <Property Name="Acc_Ntr" Type="Int16" />
+    <Property Name="Level_Status" Type="Int16" />
+    <Property Name="Acc_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_NmEng" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Clsacc_No1" Type="Int32" />
+    <Property Name="Clsacc_No2" Type="Int32" />
+    <Property Name="CostCntr_Flag" Type="Int16" />
+    <Property Name="Costcntr_No" Type="Int64" />
+    <Property Name="Fbal_DB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR22" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="MtsCostcntr">
+    <Key>
+      <PropertyRef Name="Costcntr_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int16" />
+    <Property Name="Costcntr_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Parnt_Acc" Type="Int64" Nullable="false" />
+    <Property Name="Costcntr_Nmar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Costcntr_Nmen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Level_No" Type="Int16" />
+    <Property Name="Level_Status" Type="Int16" />
+    <Property Name="Fbal_DB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR22" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="MtsEmpadmin">
+    <Key>
+      <PropertyRef Name="Emp_No" />
+    </Key>
+    <Property Name="Emp_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Emp_NOt" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nm1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nm2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nm3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nm4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nm5" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nme1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nme2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nme3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nme4" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nme5" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Nme" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Birth_Plac" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Reljan" Type="Int16" />
+    <Property Name="Educt_Type" Type="Int16" />
+    <Property Name="Birth_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Uniq_no" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Work_Expyer" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Blood_Type" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Pasprt_Nt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Pasprt_Plc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status_Type" Type="Int16" />
+    <Property Name="Pasprt_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Pasprt_Sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Pasprt_Edt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Pasprt_Ty" Type="Int32" />
+    <Property Name="Residn_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Residn_Ty" Type="Int16" />
+    <Property Name="Civl_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Residn_Plc" Type="Int16" />
+    <Property Name="Residn_Chld" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Residn_Sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Residn_Edt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Job_Stu" Type="Int16" />
+    <Property Name="Job_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Start_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="End_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Work_Lic" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Work_Period" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Work_StDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Work_Endt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Month_Salry" Type="Single" />
+    <Property Name="MMonth_Salry" Type="Single" />
+    <Property Name="Entr_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Cntry_No" Type="Int16" />
+    <Property Name="Ownr_Near" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Pasp_Endt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Rsdn_Endt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Zipnm" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Tel" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Zipno" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Pbox" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Depm_No" Type="Int16" />
+    <Property Name="Job_No" Type="Int16" />
+    <Property Name="MJob_No" Type="Int16" />
+    <Property Name="Issu_Lic" Type="Int32" />
+    <Property Name="Ownr_No" Type="Int16" />
+    <Property Name="Emp_Adrsno" Type="Int16" />
+    <Property Name="Depm_Civlno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Psprt_Rcv" Type="Int16" />
+    <Property Name="Basic_Temp" Type="Int32" />
+    <Property Name="Int_Ext" Type="Int32" />
+    <Property Name="Specl_Need" Type="Int32" />
+    <Property Name="Specl_NeedTyp" Type="Int32" />
+    <Property Name="Lic_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Lic_Typ" Type="Int32" />
+    <Property Name="Lic_Plc" Type="Int32" />
+    <Property Name="Lic_Sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Lic_Edt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Gov_Cntrct" Type="Int32" />
+    <Property Name="Cmp_No" Type="Int16" />
+    <Property Name="Dpm_No" Type="Int32" />
+    <Property Name="Hldy_Typ" Type="Int32" />
+    <Property Name="Hldy_Period" Type="Int32" />
+    <Property Name="Prev_Blnc" Type="Int32" />
+    <Property Name="Emp_Ref" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="On_WorkDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Loc_No" Type="Int16" />
+    <Property Name="Insurance_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Budg_typ" Type="Int16" />
+    <Property Name="Insur_StartDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Insur_EndDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Insur_BSalry" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Insur_ReSTSalry" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="post" Type="Int16" />
+    <Property Name="Acc_NoDb1" Type="Int64" />
+    <Property Name="Acc_NoDb2" Type="Int64" />
+    <Property Name="Acc_NoCr1" Type="Int64" />
+    <Property Name="Acc_NoCr2" Type="Int64" />
+    <Property Name="Acc_Loans" Type="Int64" />
+    <Property Name="Salry_Cost1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Salry_Cost2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_DB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR22" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="MtsEmpcntrct">
+    <Key>
+      <PropertyRef Name="Emp_No" />
+    </Key>
+    <Property Name="Emp_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Emp_NmAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_NmEn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Cnt_Stdt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Cnt_Nwdt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Cnt_Endt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Tkt_No" Type="Int16" />
+    <Property Name="Tkt_Fraqncy" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Tkt_Adult" Type="Int16" />
+    <Property Name="Tkt_Child" Type="Int16" />
+    <Property Name="Tkt_Class" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Tkt_Destn" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Tkt_Sector" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Bsc_Salary" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Hous_Alw" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trnsp_Alw" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Other_Alw" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Emp_Vactn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Acntno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cntry_No" Type="Int16" />
+    <Property Name="Depm_No" Type="Int16" />
+    <Property Name="Job_No" Type="Int16" />
+    <Property Name="Cntyp_No" Type="Int16" />
+    <Property Name="Pymnt_No" Type="Int16" />
+    <Property Name="Bnk_No" Type="Int64" />
+    <Property Name="Wrkstu_No" Type="Int16" />
+    <Property Name="Sub_Bnk" Type="Int64" />
+    <Property Name="Bnk_Brn" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Car_No" Type="Int32" />
+    <Property Name="Depm_No1" Type="Int16" />
+    <Property Name="Wrk_Hour" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Wrk_CostHour" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Wrk_OvrTime" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Cmp_No" Type="Int32" />
+    <Property Name="Gov_Cntrct" Type="Int32" />
+    <Property Name="Job_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Food_Alw" Type="Int16" />
+    <Property Name="Blnc_Paid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Blnc_UnPaid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="salry_typ" Type="Int16" />
+    <Property Name="Fbal_Db" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Acc_NoDb1" Type="Int64" />
+    <Property Name="Acc_NoDb2" Type="Int64" />
+    <Property Name="Acc_NoCr1" Type="Int64" />
+    <Property Name="Acc_NoCr2" Type="Int64" />
+    <Property Name="Acc_Loans" Type="Int64" />
+    <Property Name="Salry_Cost1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Salry_Cost2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Shift_Type" Type="Int32" />
+    <Property Name="Lunch_hour" Type="Single" />
+  </EntityType>
+  <EntityType Name="MtsFixdAsets">
+    <Key>
+      <PropertyRef Name="FxdAset_No" />
+    </Key>
+    <Property Name="Brn_No" Type="Int16" Nullable="false" />
+    <Property Name="FxdAset_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Aset_NmAr" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Aset_NmEn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Aset_Actvty" Type="Int16" />
+    <Property Name="Aset_Typ" Type="Int16" />
+    <Property Name="Book_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Depr_StDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DeprSt_No" Type="Int32" />
+    <Property Name="Pursh_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Pursh_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Pursh_Issue" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_DB" Type="Int64" />
+    <Property Name="Acc_CR" Type="Int64" />
+    <Property Name="Sup_Nm" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Garnt_Cond" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Garnt_StDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Garnt_EndDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Insur_Issue" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Insur_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Insur_StDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Insur_EndDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Loc_No" Type="Int16" />
+    <Property Name="Aset_Recp" Type="Int32" />
+    <Property Name="Aset_CmpNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tot_Depr" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Mnth_Depr" Type="Int16" />
+    <Property Name="AsetCmp_No" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DeprSt_No1" Type="Int16" />
+    <Property Name="Dep_Mnth1" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_Mnth2" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_Mnth3" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_Mnth4" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_Mnth5" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_Val1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dep_Val2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dep_Val3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dep_Val4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dep_Val5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dep_yer1" Type="Int16" />
+    <Property Name="Dep_Yer2" Type="Int16" />
+    <Property Name="Dep_Yer3" Type="Int16" />
+    <Property Name="Dep_Yer4" Type="Int16" />
+    <Property Name="Dep_Yer5" Type="Int16" />
+    <Property Name="Ownr_No" Type="Int64" />
+    <Property Name="Depm_No" Type="Int64" />
+    <Property Name="Recp_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Ex_Recp" Type="Int16" />
+    <Property Name="Recp_Typ" Type="Int32" />
+    <Property Name="Dep_YearPrcnt" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_MonthPrcnt" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_NofYear" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Dep_NofMonth" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Cancelation_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Cancelation_Typ" Type="Int16" />
+    <Property Name="Cancelation_Val" Type="Single" />
+    <Property Name="Customer_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MtsItmmfs">
+    <Key>
+      <PropertyRef Name="Itm_No" />
+    </Key>
+    <Property Name="Itm_No" Type="Int64" Nullable="false" />
+    <Property Name="Itm_Active" Type="Int16" />
+    <Property Name="Ref_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Catg_No" Type="Int64" />
+    <Property Name="Kind_No" Type="Int32" />
+    <Property Name="Unit_No" Type="Int16" />
+    <Property Name="UnitPur_No" Type="Int16" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Measure_Grp" Type="Int32" />
+    <Property Name="Itm_NmEn" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Itm_NmAr" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Req_Limit" Type="Int32" />
+    <Property Name="Itm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_COst" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal6" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Pur_Bouns" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Sal_Bouns" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Itm_Othr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Exp_Date" Type="Int16" />
+    <Property Name="Item_BarCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Fctry_Barcode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Medcn_Grup1" Type="Int16" />
+    <Property Name="Medcn_Grup2" Type="Int16" />
+    <Property Name="Genric_No" Type="Int16" />
+    <Property Name="Bouns_Chk" Type="Int16" />
+    <Property Name="Bouns_Qty" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc1_Chk" Type="Int16" />
+    <Property Name="Disc2_Chk" Type="Int16" />
+    <Property Name="Disc3_Chk" Type="Int16" />
+    <Property Name="Disc4_Chk" Type="Int16" />
+    <Property Name="Disc5_Chk" Type="Int16" />
+    <Property Name="Disc1_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc2_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc3_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc4_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc5_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Unit_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal6" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal7" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal8" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal9" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal10" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Discval" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_DiscPrct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Shelf_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="User_ID" Type="Int32" />
+    <Property Name="Updt_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Batch_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Qty2_Chk" Type="Int16" />
+    <Property Name="Qty3_Chk" Type="Int16" />
+    <Property Name="Pckng_Unit" Type="Int16" />
+    <Property Name="Pckng_Ratio" Type="Int16" />
+    <Property Name="Itm_TWeight" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_NWeight" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MaxQty_SaL" Type="Int16" />
+    <Property Name="Taxp_Extra" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Tax_Allow" Type="Int16" />
+    <Property Name="Itm_Length" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Itm_Width" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Itm_Height" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Itm_Durability" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="ChkDiscount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Commission" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="MtsLC">
+    <Key>
+      <PropertyRef Name="Doc_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="Pym_Terms" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lc_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bank_No" Type="Int32" />
+    <Property Name="Lc_OpnDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Lc_OpnDAr" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Lc_CLosDt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Lc_CLosDAr" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Curncy_No1" Type="Int16" />
+    <Property Name="Curncy_No2" Type="Int16" />
+    <Property Name="ExchangeRate1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ExchangeRate2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LC_FVAL" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LCExp_FVAL" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LC_VAL" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LCExp_VAL" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Po_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Po_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Cntry_No" Type="Int16" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Acc_Db" Type="Int64" />
+    <Property Name="TLC_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TLc_exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ReqQut_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReqQut_DT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SupQut_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SupQut_Dt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ShiVia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Dlv_Period" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Dlv_PLC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NoofItems" Type="Int64" />
+    <Property Name="Requesdt_By" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Used_By" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tr_NoClose" Type="Int64" />
+    <Property Name="Fbal_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_Expens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_Customs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_Db" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_Cr" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CBal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AccTot_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AccTot_customs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AccTot_Expens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AccTot_Lc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Lc_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="updt_date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Kind_No" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MtsSuplir">
+    <Key>
+      <PropertyRef Name="Sup_No" />
+    </Key>
+    <Property Name="Brn_No" Type="Int32" />
+    <Property Name="Sup_No" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sup_Refno" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="SupCtg_No" Type="Int16" />
+    <Property Name="Cntry_No" Type="Int16" />
+    <Property Name="Sup_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_NmAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Adr" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Rsp" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Othr" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Curncy_No" Type="Int16" />
+    <Property Name="Sup_Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Tel1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Tel2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Credit_Value" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Credit_Days" Type="Int32" />
+    <Property Name="Fbal_Db" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_CR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TradeOffer" Type="Int16" />
+    <Property Name="CR11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CR22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB11" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB12" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB13" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB14" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB15" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB16" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB17" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB19" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB20" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DB22" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CBal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgL30" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG30" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG60" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG90" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BalAgG120" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trnf_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Updt_Date" Type="DateTime" Precision="3" />
+    <Property Name="User_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Fbal_BalAgL30" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG30" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG60" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG90" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_BalAgG120" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fbal_Rcpt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tax_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sec_Controls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="FormName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ControlEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ControlAR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Parent" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="CtlTyp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TipEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TipAR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Width" Type="Int32" />
+    <Property Name="leftAr" Type="Int32" />
+    <Property Name="leftEn" Type="Int32" />
+    <Property Name="pwidth" Type="Int32" />
+    <Property Name="ColIndex" Type="Int32" />
+    <Property Name="Translatable" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sec_Forms">
+    <Key>
+      <PropertyRef Name="FormId" />
+      <PropertyRef Name="FormName" />
+    </Key>
+    <Property Name="FormId" Type="Int32" Nullable="false" />
+    <Property Name="FormName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="GridFlg" Type="Boolean" />
+    <Property Name="TabFlg" Type="Boolean" />
+    <Property Name="ToolBarFlg" Type="Boolean" />
+    <Property Name="MenuFlg" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Sec_GrpMenuPrvldg">
+    <Key>
+      <PropertyRef Name="GroupId" />
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="MenuID" Type="Int32" Nullable="false" />
+    <Property Name="AccessFlag" Type="Int32" />
+    <Property Name="AccessLevel" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sec_MainMenu">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="Int32" Nullable="false" />
+    <Property Name="MName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MIndex" Type="Int32" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="CaptionAr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CaptionEn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="HeadMenu" Type="Int32" />
+    <Property Name="WndFunction" Type="Int32" />
+    <Property Name="FormName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HelpFileNo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sec_Roles">
+    <Key>
+      <PropertyRef Name="GroupId" />
+    </Key>
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sec_Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User_NmAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_NmEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_Id" Type="Int32" />
+    <Property Name="Stor_Trns" Type="Int32" />
+    <Property Name="Brch_Trns" Type="Int32" />
+    <Property Name="Local_Lang" Type="Int32" />
+    <Property Name="Sal_Slip_Spcinv" Type="Int32" />
+    <Property Name="Cmp_Activity" Type="Int32" />
+    <Property Name="Br_Ty" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="FixdDepDtl">
+    <Key>
+      <PropertyRef Name="Cmp_No" />
+      <PropertyRef Name="Brn_No" />
+      <PropertyRef Name="Tr_No" />
+      <PropertyRef Name="Month_No" />
+      <PropertyRef Name="Asset_No" />
+    </Key>
+    <Property Name="Cmp_No" Type="Int16" Nullable="false" />
+    <Property Name="Brn_No" Type="Int16" Nullable="false" />
+    <Property Name="Tr_No" Type="Int64" Nullable="false" />
+    <Property Name="Month_No" Type="Int16" Nullable="false" />
+    <Property Name="Asset_No" Type="Int64" Nullable="false" />
+    <Property Name="Jr_Ty" Type="Int16" />
+    <Property Name="Tr_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Tr_DtAr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Dep" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Acc_DB" Type="Int64" />
+    <Property Name="Acc_CR" Type="Int64" />
+  </EntityType>
+  <EntityType Name="ItmsCatgry">
+    <Key>
+      <PropertyRef Name="Kind_No" />
+      <PropertyRef Name="Catg_No" />
+    </Key>
+    <Property Name="Kind_No" Type="Int16" Nullable="false" />
+    <Property Name="Catg_No" Type="Int16" Nullable="false" />
+    <Property Name="Catg_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Catg_NmAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Updt_Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ItmsExpdt">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Dlv_Stor" />
+      <PropertyRef Name="Itm_No" />
+      <PropertyRef Name="Loc_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Dlv_Stor" Type="Int16" Nullable="false" />
+    <Property Name="Itm_No" Type="Int64" Nullable="false" />
+    <Property Name="Loc_No" Type="Int16" Nullable="false" />
+    <Property Name="Slm_No" Type="Int16" />
+    <Property Name="Loc_Active" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Exp_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Catg_No" Type="Int32" />
+    <Property Name="Unit_No" Type="Int16" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="In_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Phy_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsuDLV_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BonusPur_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Itm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Disc1_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Disc2_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DiscSal_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DiscSal2_prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCrdt_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="BonusSalCash_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrItm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OvrItm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OvrDisc1_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrDisc2_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrDiscSal_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrDiscSal2_prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrBonusSalCrdt_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrBonusSalCash_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrBonusPur_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OvrDisc1_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OvrDisc2_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OvrBonusPur_Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OvrBonusPur_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Phy_Itmcost" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Phy_Tcost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Updt_Date" Type="DateTime" Precision="3" />
+    <Property Name="Customs_Prct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Customs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcItm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Expens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SExpens" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens5" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens6" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Expens7" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FcOvrItm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Batch_No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="dis_cash_p" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="dis_cash" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="dis_deal_p" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="dis_deal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_SalQty" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Itmskind">
+    <Key>
+      <PropertyRef Name="Kind_No" />
+    </Key>
+    <Property Name="Kind_No" Type="Int16" Nullable="false" />
+    <Property Name="Kind_Nm" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Kind_NmAr" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="LC_DB" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="ItmsMfsunit">
+    <Key>
+      <PropertyRef Name="Actvty_No" />
+      <PropertyRef Name="Cstm_Agrmnt" />
+      <PropertyRef Name="Itm_No" />
+      <PropertyRef Name="Ln_No" />
+      <PropertyRef Name="Unit_No" />
+    </Key>
+    <Property Name="Actvty_No" Type="Int32" Nullable="false" />
+    <Property Name="Cstm_Agrmnt" Type="Int32" Nullable="false" />
+    <Property Name="Itm_No" Type="Int64" Nullable="false" />
+    <Property Name="Ln_No" Type="Int16" Nullable="false" />
+    <Property Name="Unit_No" Type="Int16" Nullable="false" />
+    <Property Name="Unit_Ratio" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Unit_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Sal4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_Discval" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit_DiscPrct" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Updt_Date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_SalMain" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="ItmsUnit">
+    <Key>
+      <PropertyRef Name="Unit_No" />
+    </Key>
+    <Property Name="Unit_No" Type="Int16" Nullable="false" />
+    <Property Name="Unit_Nm" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_NmAr" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LCexpensDtl">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_Ty" />
+      <PropertyRef Name="Doc_No" />
+      <PropertyRef Name="Ln_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Ln_No" Type="Int16" Nullable="false" />
+    <Property Name="Lc_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobOrd_Year" Type="Int32" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_Dtar" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="Pym_Type" Type="Int16" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="Cstm_No" Type="Int32" />
+    <Property Name="Sup_No" Type="Int32" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="ICost_No" Type="Int64" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tr_Dsc1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_No" Type="Int64" />
+    <Property Name="Trnf_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="User_Id" Type="Int16" />
+    <Property Name="Jv_No" Type="Int64" />
+    <Property Name="Jv_Lno" Type="Int16" />
+  </EntityType>
+  <EntityType Name="LCexpensHdr">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_Ty" />
+      <PropertyRef Name="Doc_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_Ty" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Lc_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobOrd_Year" Type="Int32" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Pym_Type" Type="Int16" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="Pym_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Cstm_No" Type="Int32" />
+    <Property Name="Sup_No" Type="Int32" />
+    <Property Name="Ac_Ty" Type="Int16" />
+    <Property Name="Tot_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tot_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Othr_Disc" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Net" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Curncy_No" Type="Int16" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="User_Id" Type="Int16" />
+    <Property Name="Doc_Time" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Doc_Procs" Type="Int16" />
+    <Property Name="Doc_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Trnf_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GL_Post" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Print_No" Type="Int16" />
+    <Property Name="Jv_No" Type="Int64" />
+    <Property Name="Jv_Lno" Type="Int16" />
+    <Property Name="Sup_Inv" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Inv2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Credit_Days" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LcItmTrs">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="Doc_No" />
+      <PropertyRef Name="Ln_No" />
+      <PropertyRef Name="Lc_No" />
+    </Key>
+    <Property Name="StoreID" Type="Int16" Nullable="false" />
+    <Property Name="Doc_No" Type="Int64" Nullable="false" />
+    <Property Name="Ln_No" Type="Int16" Nullable="false" />
+    <Property Name="Lc_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Doc_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Doc_DtAr" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Custm_Inv" Type="Int64" />
+    <Property Name="Ref_No" Type="Int64" />
+    <Property Name="Pym_No" Type="Int16" />
+    <Property Name="Sup_No" Type="Int64" />
+    <Property Name="Catg_No" Type="Int64" />
+    <Property Name="Kind_No" Type="Int32" />
+    <Property Name="Itm_No" Type="Int64" />
+    <Property Name="Loc_No" Type="Int16" />
+    <Property Name="Itm_RefNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_No" Type="Int16" />
+    <Property Name="UnitLn_No" Type="Int32" />
+    <Property Name="Unit_ratio" Type="Int32" />
+    <Property Name="Qty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Exp_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Unit_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Itm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Val" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Sal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Titm_Pur" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Pur_Exp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="updt_date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MSreplication_subscriptions">
+    <Key>
+      <PropertyRef Name="publisher" />
+      <PropertyRef Name="publisher_db" />
+      <PropertyRef Name="independent_agent" />
+      <PropertyRef Name="subscription_type" />
+      <PropertyRef Name="time" />
+      <PropertyRef Name="transaction_timestamp" />
+      <PropertyRef Name="update_mode" />
+      <PropertyRef Name="immediate_sync" />
+    </Key>
+    <Property Name="publisher" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="publisher_db" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="publication" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="independent_agent" Type="Boolean" Nullable="false" />
+    <Property Name="subscription_type" Type="Int32" Nullable="false" />
+    <Property Name="distribution_agent" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="time" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="transaction_timestamp" Type="Binary" MaxLength="16" FixedLength="false" Nullable="false" />
+    <Property Name="update_mode" Type="Byte" Nullable="false" />
+    <Property Name="agent_id" Type="Binary" MaxLength="16" FixedLength="true" />
+    <Property Name="subscription_guid" Type="Binary" MaxLength="16" FixedLength="true" />
+    <Property Name="subid" Type="Binary" MaxLength="16" FixedLength="true" />
+    <Property Name="immediate_sync" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MSsubscription_agents">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="publisher" />
+      <PropertyRef Name="publisher_db" />
+      <PropertyRef Name="publication" />
+      <PropertyRef Name="subscription_type" />
+      <PropertyRef Name="update_mode" />
+      <PropertyRef Name="failover_mode" />
+      <PropertyRef Name="spid" />
+      <PropertyRef Name="login_time" />
+      <PropertyRef Name="allow_subscription_copy" />
+      <PropertyRef Name="attach_state" />
+      <PropertyRef Name="attach_version" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="publisher" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="publisher_db" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="publication" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="subscription_type" Type="Int32" Nullable="false" />
+    <Property Name="queue_id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="update_mode" Type="Byte" Nullable="false" />
+    <Property Name="failover_mode" Type="Boolean" Nullable="false" />
+    <Property Name="spid" Type="Int32" Nullable="false" />
+    <Property Name="login_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="allow_subscription_copy" Type="Boolean" Nullable="false" />
+    <Property Name="attach_state" Type="Int32" Nullable="false" />
+    <Property Name="attach_version" Type="Binary" MaxLength="16" FixedLength="true" Nullable="false" />
+    <Property Name="last_sync_status" Type="Int32" />
+    <Property Name="last_sync_summary" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="last_sync_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Sec_UsrMenuPrvldg">
+    <Key>
+      <PropertyRef Name="GroupId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="MenuID" Type="Int32" Nullable="false" />
+    <Property Name="AccessFlag" Type="Int32" />
+    <Property Name="AccessLevel" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="ICDBTrdAEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActivityTypes" EntityType="Self.ActivityTypes" />
+    <EntitySet Name="ActivSetup" EntityType="Self.ActivSetup" />
+    <EntitySet Name="AgeBalance" EntityType="Self.AgeBalance" />
+    <EntitySet Name="AstCompany" EntityType="Self.AstCompany" />
+    <EntitySet Name="AstDprtmnt" EntityType="Self.AstDprtmnt" />
+    <EntitySet Name="Astsupctg" EntityType="Self.Astsupctg" />
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" />
+    <EntitySet Name="FixAsetsCat" EntityType="Self.FixAsetsCat" />
+    <EntitySet Name="FixdAsetsLoc" EntityType="Self.FixdAsetsLoc" />
+    <EntitySet Name="FixdAsetstype" EntityType="Self.FixdAsetstype" />
+    <EntitySet Name="FixdAstSalDep" EntityType="Self.FixdAstSalDep" />
+    <EntitySet Name="FixdAstStatus" EntityType="Self.FixdAstStatus" />
+    <EntitySet Name="FixdDepStat" EntityType="Self.FixdDepStat" />
+    <EntitySet Name="GLAnalytical1" EntityType="Self.GLAnalytical1" />
+    <EntitySet Name="GLAnalytical2" EntityType="Self.GLAnalytical2" />
+    <EntitySet Name="GLAstAcnBnk" EntityType="Self.GLAstAcnBnk" />
+    <EntitySet Name="GLAstAcntyp" EntityType="Self.GLAstAcntyp" />
+    <EntitySet Name="GLAstbank" EntityType="Self.GLAstbank" />
+    <EntitySet Name="GLAstinvAdj" EntityType="Self.GLAstinvAdj" />
+    <EntitySet Name="GLAstJrntyp" EntityType="Self.GLAstJrntyp" />
+    <EntitySet Name="GLjrnal" EntityType="Self.GLjrnal" />
+    <EntitySet Name="GLjrntrs" EntityType="Self.GLjrntrs" />
+    <EntitySet Name="GlLast" EntityType="Self.GlLast" />
+    <EntitySet Name="GLMonth" EntityType="Self.GLMonth" />
+    <EntitySet Name="Glprvyer" EntityType="Self.Glprvyer" />
+    <EntitySet Name="HrAstdeductntyp" EntityType="Self.HrAstdeductntyp" />
+    <EntitySet Name="HrAstDeprtmnt" EntityType="Self.HrAstDeprtmnt" />
+    <EntitySet Name="HrAstEmpstu" EntityType="Self.HrAstEmpstu" />
+    <EntitySet Name="HrAstErngtyp" EntityType="Self.HrAstErngtyp" />
+    <EntitySet Name="HrAstJobtbl" EntityType="Self.HrAstJobtbl" />
+    <EntitySet Name="HrAstPymntype" EntityType="Self.HrAstPymntype" />
+    <EntitySet Name="HrAstReljan" EntityType="Self.HrAstReljan" />
+    <EntitySet Name="HrAstReqtyp" EntityType="Self.HrAstReqtyp" />
+    <EntitySet Name="HrAststate" EntityType="Self.HrAststate" />
+    <EntitySet Name="InvAstArea" EntityType="Self.InvAstArea" />
+    <EntitySet Name="InvAstCardTyp" EntityType="Self.InvAstCardTyp" />
+    <EntitySet Name="InvAstCity" EntityType="Self.InvAstCity" />
+    <EntitySet Name="InvAstCntry" EntityType="Self.InvAstCntry" />
+    <EntitySet Name="InvAstcPayType" EntityType="Self.InvAstcPayType" />
+    <EntitySet Name="InvAstCurncy" EntityType="Self.InvAstCurncy" />
+    <EntitySet Name="InvAstCustmcatg" EntityType="Self.InvAstCustmcatg" />
+    <EntitySet Name="InvAstMarket" EntityType="Self.InvAstMarket" />
+    <EntitySet Name="InvAstNutrbusn" EntityType="Self.InvAstNutrbusn" />
+    <EntitySet Name="InvAstPymwys" EntityType="Self.InvAstPymwys" />
+    <EntitySet Name="InvAstRefTyp" EntityType="Self.InvAstRefTyp" />
+    <EntitySet Name="InvAstRefTypMain" EntityType="Self.InvAstRefTypMain" />
+    <EntitySet Name="InvAstSalesman" EntityType="Self.InvAstSalesman" />
+    <EntitySet Name="InvAstwrkPeriod" EntityType="Self.InvAstwrkPeriod" />
+    <EntitySet Name="InvItemfsunit" EntityType="Self.InvItemfsunit" />
+    <EntitySet Name="InvItmcatgry" EntityType="Self.InvItmcatgry" />
+    <EntitySet Name="InvItmexpdt" EntityType="Self.InvItmexpdt" />
+    <EntitySet Name="InvItmkind" EntityType="Self.InvItmkind" />
+    <EntitySet Name="InvItmmfs" EntityType="Self.InvItmmfs" />
+    <EntitySet Name="InvItmSub1" EntityType="Self.InvItmSub1" />
+    <EntitySet Name="InvItmSub2" EntityType="Self.InvItmSub2" />
+    <EntitySet Name="InvItmunit" EntityType="Self.InvItmunit" />
+    <EntitySet Name="InvLimit_Qty" EntityType="Self.InvLimit_Qty" />
+    <EntitySet Name="InvLoddtl" EntityType="Self.InvLoddtl" />
+    <EntitySet Name="InvLodhdr" EntityType="Self.InvLodhdr" />
+    <EntitySet Name="InvPoDtl" EntityType="Self.InvPoDtl" />
+    <EntitySet Name="InvPoHdr" EntityType="Self.InvPoHdr" />
+    <EntitySet Name="InvQutdtl" EntityType="Self.InvQutdtl" />
+    <EntitySet Name="InvQuthdr" EntityType="Self.InvQuthdr" />
+    <EntitySet Name="InvSalReqdtl" EntityType="Self.InvSalReqdtl" />
+    <EntitySet Name="InvSalReqhdr" EntityType="Self.InvSalReqhdr" />
+    <EntitySet Name="Lang_Controls" EntityType="Self.Lang_Controls" />
+    <EntitySet Name="Lang_Forms" EntityType="Self.Lang_Forms" />
+    <EntitySet Name="LCItemexp" EntityType="Self.LCItemexp" />
+    <EntitySet Name="LcPymwys" EntityType="Self.LcPymwys" />
+    <EntitySet Name="MainBranch" EntityType="Self.MainBranch" />
+    <EntitySet Name="MainBranch2" EntityType="Self.MainBranch2" />
+    <EntitySet Name="MainBranchDlv" EntityType="Self.MainBranchDlv" />
+    <EntitySet Name="MainBranchDlv2" EntityType="Self.MainBranchDlv2" />
+    <EntitySet Name="MainCmpnam" EntityType="Self.MainCmpnam" />
+    <EntitySet Name="MtsCcustmr" EntityType="Self.MtsCcustmr" />
+    <EntitySet Name="MtsChartAc" EntityType="Self.MtsChartAc" />
+    <EntitySet Name="MtsCostcntr" EntityType="Self.MtsCostcntr" />
+    <EntitySet Name="MtsEmpadmin" EntityType="Self.MtsEmpadmin" />
+    <EntitySet Name="MtsEmpcntrct" EntityType="Self.MtsEmpcntrct" />
+    <EntitySet Name="MtsFixdAsets" EntityType="Self.MtsFixdAsets" />
+    <EntitySet Name="MtsItmmfs" EntityType="Self.MtsItmmfs" />
+    <EntitySet Name="MtsLC" EntityType="Self.MtsLC" />
+    <EntitySet Name="MtsSuplir" EntityType="Self.MtsSuplir" />
+    <EntitySet Name="Sec_Controls" EntityType="Self.Sec_Controls" />
+    <EntitySet Name="Sec_Forms" EntityType="Self.Sec_Forms" />
+    <EntitySet Name="Sec_GrpMenuPrvldg" EntityType="Self.Sec_GrpMenuPrvldg" />
+    <EntitySet Name="Sec_MainMenu" EntityType="Self.Sec_MainMenu" />
+    <EntitySet Name="Sec_Roles" EntityType="Self.Sec_Roles" />
+    <EntitySet Name="Sec_Users" EntityType="Self.Sec_Users" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="FixdDepDtl" EntityType="Self.FixdDepDtl" />
+    <EntitySet Name="ItmsCatgry" EntityType="Self.ItmsCatgry" />
+    <EntitySet Name="ItmsExpdt" EntityType="Self.ItmsExpdt" />
+    <EntitySet Name="Itmskind" EntityType="Self.Itmskind" />
+    <EntitySet Name="ItmsMfsunit" EntityType="Self.ItmsMfsunit" />
+    <EntitySet Name="ItmsUnit" EntityType="Self.ItmsUnit" />
+    <EntitySet Name="LCexpensDtl" EntityType="Self.LCexpensDtl" />
+    <EntitySet Name="LCexpensHdr" EntityType="Self.LCexpensHdr" />
+    <EntitySet Name="LcItmTrs" EntityType="Self.LcItmTrs" />
+    <EntitySet Name="MSreplication_subscriptions" EntityType="Self.MSreplication_subscriptions" />
+    <EntitySet Name="MSsubscription_agents" EntityType="Self.MSsubscription_agents" />
+    <EntitySet Name="Sec_UsrMenuPrvldg" EntityType="Self.Sec_UsrMenuPrvldg" />
+    <FunctionImport Name="login_check" ReturnType="Collection(ICDBTrdAModel.login_check_Result)">
+      <Parameter Name="user_name" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="register">
+      <Parameter Name="user_name" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="group_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="login_check_Result">
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="GroupName" Nullable="false" MaxLength="50" />
+  </ComplexType>
+</Schema>

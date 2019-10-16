@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ICDBTrdAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MainBranch">
+          <Key>
+            <PropertyRef Name="Brn_No" />
+          </Key>
+          <Property Name="Cmp_No" Type="int" Nullable="false" />
+          <Property Name="Brn_No" Type="int" Nullable="false" />
+          <Property Name="Main_Brn" Type="smallint" />
+          <Property Name="Dlv_Stor" Type="smallint" />
+          <Property Name="Actvty_No" Type="smallint" />
+          <Property Name="Isue_ALinvc" Type="char" MaxLength="1" />
+          <Property Name="Allow_StoreTrs" Type="smallint" />
+          <Property Name="Br_Ty" Type="char" MaxLength="1" />
+          <Property Name="Brn_Nm" Type="nvarchar" MaxLength="100" />
+          <Property Name="Brn_NmAr" Type="nvarchar" MaxLength="100" />
+          <Property Name="Brn_Tel" Type="nvarchar" MaxLength="15" />
+          <Property Name="Brn_Fax" Type="nvarchar" MaxLength="15" />
+          <Property Name="Brn_Adrs" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brn_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brn_Foldr" Type="nvarchar" MaxLength="200" />
+          <Property Name="Fcstm_No" Type="int" />
+          <Property Name="Tcstm_No" Type="int" />
+          <Property Name="Cstm_No" Type="int" />
+          <Property Name="Acc_Customer" Type="bigint" />
+          <Property Name="Acc_Suplier" Type="bigint" />
+          <Property Name="Acc_Cashier" Type="bigint" />
+          <Property Name="Acc_Customer1" Type="bigint" />
+          <Property Name="Acc_Suplier1" Type="bigint" />
+          <Property Name="Acc_Suplier2" Type="bigint" />
+          <Property Name="Acc_Sales" Type="bigint" />
+          <Property Name="Acc_RetSal" Type="bigint" />
+          <Property Name="Crdt_CshSalDiscAcc" Type="bigint" />
+          <Property Name="Crdt_BnusSalDiscAcc" Type="bigint" />
+          <Property Name="Csh_SalAcc" Type="bigint" />
+          <Property Name="Csh_RetsalAcc" Type="bigint" />
+          <Property Name="Csh_CshSalDiscAcc" Type="bigint" />
+          <Property Name="Csh_BnusSalDiscAcc" Type="bigint" />
+          <Property Name="Cmp_PurchaseAcc" Type="bigint" />
+          <Property Name="Cmp_RetPurchAcc" Type="bigint" />
+          <Property Name="Cmp_CshPurDiscAcc" Type="bigint" />
+          <Property Name="Cmp_BnusPurDiscAcc" Type="bigint" />
+          <Property Name="Agnt_PurchaseAcc" Type="bigint" />
+          <Property Name="Agnt_RetPurchAcc" Type="bigint" />
+          <Property Name="Agnt_CshPurDiscAcc" Type="bigint" />
+          <Property Name="Agnt_BnusPurDiscAcc" Type="bigint" />
+          <Property Name="Othr_PurchaseAcc" Type="bigint" />
+          <Property Name="Othr_RetPurchAcc" Type="bigint" />
+          <Property Name="Othr_CshPurDiscAcc" Type="bigint" />
+          <Property Name="Othr_BnusPurDiscAcc" Type="bigint" />
+          <Property Name="DlyPst_CshSal" Type="smallint" />
+          <Property Name="DlyPst_CshPur" Type="smallint" />
+          <Property Name="Adv_SalAcc" Type="bigint" />
+          <Property Name="Adv_RetSalAcc" Type="bigint" />
+          <Property Name="Acc_Invtry" Type="bigint" />
+          <Property Name="Acc_No" Type="bigint" />
+          <Property Name="Csh_PurAcc" Type="bigint" />
+          <Property Name="Inv_Prdctn" Type="money" />
+          <Property Name="Inv_Undprs" Type="money" />
+          <Property Name="Inv_RM" Type="money" />
+          <Property Name="Cost_INVt" Type="bigint" />
+          <Property Name="Cost_SalInvt" Type="bigint" />
+          <Property Name="Acc_Cheque" Type="bigint" />
+          <Property Name="Csh_RetPurAcc" Type="bigint" />
+          <Property Name="Acc_InvAdj" Type="bigint" />
+          <Property Name="Acc_Cashier1" Type="bigint" />
+          <Property Name="Acc_Cashier2" Type="bigint" />
+          <Property Name="Acc_Cashier3" Type="bigint" />
+          <Property Name="Acc_PNO" Type="bigint" />
+          <Property Name="Acc_TaxExtraDb" Type="bigint" />
+          <Property Name="Acc_TaxExtraCR" Type="bigint" />
+        </EntityType>
+        <EntityType Name="MainCmpnam">
+          <Key>
+            <PropertyRef Name="Cmp_No" />
+          </Key>
+          <Property Name="Cmp_No" Type="smallint" Nullable="false" />
+          <Property Name="Cmp_Activity" Type="smallint" />
+          <Property Name="Hijri_DifDay" Type="smallint" />
+          <Property Name="Brch_Trns" Type="smallint" />
+          <Property Name="Stor_Trns" Type="smallint" />
+          <Property Name="Main_Brn" Type="smallint" />
+          <Property Name="DLv_Stor" Type="smallint" />
+          <Property Name="Slm_No" Type="smallint" />
+          <Property Name="Local_Lang" Type="smallint" />
+          <Property Name="Sys_SetupNo" Type="smallint" />
+          <Property Name="Cmp_ShrtNm" Type="nvarchar" MaxLength="50" />
+          <Property Name="Itm_twice" Type="smallint" />
+          <Property Name="InvTrf_Disc1" Type="smallint" />
+          <Property Name="InvTrf_Bouns" Type="smallint" />
+          <Property Name="BarCodeTy" Type="smallint" />
+          <Property Name="CostCalc" Type="smallint" />
+          <Property Name="Repeate_Item" Type="smallint" />
+          <Property Name="Disc2Pur_Dis2Sal" Type="smallint" />
+          <Property Name="ReqLocBalance" Type="smallint" />
+          <Property Name="Pur_TabOrder" Type="smallint" />
+          <Property Name="Start_Month" Type="smallint" />
+          <Property Name="Start_Year" Type="smallint" />
+          <Property Name="End_Month" Type="smallint" />
+          <Property Name="End_year" Type="smallint" />
+          <Property Name="Start_MonthHij" Type="smallint" />
+          <Property Name="Start_YearHij" Type="smallint" />
+          <Property Name="End_MonthHij" Type="smallint" />
+          <Property Name="End_yearHij" Type="smallint" />
+          <Property Name="Cmp_Nm" Type="nvarchar" MaxLength="200" />
+          <Property Name="Cmp_Nm2" Type="nvarchar" MaxLength="200" />
+          <Property Name="Cmp_Tel" Type="nvarchar" MaxLength="25" />
+          <Property Name="Cmp_Fax" Type="nvarchar" MaxLength="15" />
+          <Property Name="Cmp_Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cmp_Add" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cmp_Eadd" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cmp_Enm" Type="nvarchar" MaxLength="200" />
+          <Property Name="Cmp_Enm2" Type="nvarchar" MaxLength="200" />
+          <Property Name="Prnt_Forms" Type="nvarchar" MaxLength="4" />
+          <Property Name="Picture" Type="image" />
+          <Property Name="DelivaryStratigy" Type="bit" />
+          <Property Name="CostCenterStratigy" Type="bit" />
+          <Property Name="Activ_typ_no" Type="int" Nullable="false" />
+          <Property Name="Cshr_Status" Type="smallint" />
+          <Property Name="Cshr_Spr" Type="smallint" />
+          <Property Name="Sal_Spr" Type="smallint" />
+          <Property Name="Pur_Spr" Type="smallint" />
+          <Property Name="Invty_Spr" Type="smallint" />
+          <Property Name="Srv_Status" Type="smallint" />
+          <Property Name="Dnv_Status" Type="smallint" />
+          <Property Name="SalB_Dn" Type="smallint" />
+          <Property Name="PurB_Srv" Type="smallint" />
+          <Property Name="Itm_SrchRef" Type="smallint" />
+          <Property Name="Date_Status" Type="smallint" />
+          <Property Name="Dn_woCost" Type="smallint" />
+          <Property Name="Srv_woCost" Type="smallint" />
+          <Property Name="Same_Brn_DB" Type="bit" />
+          <Property Name="Brch_Comm" Type="smallint" />
+          <Property Name="Month_Post1" Type="smallint" />
+          <Property Name="Month_Post2" Type="smallint" />
+          <Property Name="Month_Post3" Type="smallint" />
+          <Property Name="Month_Post4" Type="smallint" />
+          <Property Name="Month_Post5" Type="smallint" />
+          <Property Name="Month_Post6" Type="smallint" />
+          <Property Name="Month_Post7" Type="smallint" />
+          <Property Name="Month_Post8" Type="smallint" />
+          <Property Name="Month_Post9" Type="smallint" />
+          <Property Name="Month_Post10" Type="smallint" />
+          <Property Name="Month_Post11" Type="smallint" />
+          <Property Name="Month_Post12" Type="smallint" />
+          <Property Name="Sal_Slip_Spcinv" Type="smallint" />
+          <Property Name="ModemPortNo" Type="int" />
+          <Property Name="ModemTelNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="ChunkSize" Type="int" />
+          <Property Name="JvAuto_Mnth" Type="int" />
+          <Property Name="SalInv_Cash" Type="int" />
+          <Property Name="PurInv_Cash" Type="int" />
+          <Property Name="GL_NetSale" Type="int" />
+          <Property Name="GL_NetPur" Type="smallint" />
+          <Property Name="WoBoRpt" Type="int" />
+          <Property Name="PrintOrder" Type="int" />
+          <Property Name="Pur_Disc1" Type="int" />
+          <Property Name="Sal_Disc1" Type="int" />
+          <Property Name="Pur_Disc2" Type="int" />
+          <Property Name="Sal_Disc2" Type="int" />
+          <Property Name="Sal_Bouns" Type="int" />
+          <Property Name="Pur_Bouns" Type="int" />
+          <Property Name="Batch_No" Type="int" />
+          <Property Name="Disc1Pur_Dis1Sal" Type="int" />
+          <Property Name="NoStock" Type="int" />
+          <Property Name="Gl_Salesman" Type="int" />
+          <Property Name="Sec_Salesman" Type="int" />
+          <Property Name="Warehouse" Type="int" />
+          <Property Name="Inv_Sequence" Type="int" />
+          <Property Name="Sales_Type" Type="int" />
+          <Property Name="Activity_Type" Type="int" />
+          <Property Name="CR_No" Type="nvarchar" MaxLength="20" />
+          <Property Name="CC_No" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tax_No" Type="nvarchar" MaxLength="20" />
+          <Property Name="TaxExtra_Prct" Type="smallmoney" />
+        </EntityType>
+        <Function Name="updatebranch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Brn_No" Type="int" Mode="In" />
+          <Parameter Name="Cmp_No" Type="int" Mode="In" />
+          <Parameter Name="Brn_Nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="Brn_Tel" Type="nvarchar" Mode="In" />
+          <Parameter Name="Brn_Adrs" Type="nvarchar" Mode="In" />
+          <Parameter Name="Brn_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Acc_Customer" Type="int" Mode="In" />
+          <Parameter Name="Acc_Suplier" Type="int" Mode="In" />
+          <Parameter Name="Acc_Cashier" Type="int" Mode="In" />
+          <Parameter Name="Acc_Suplier2" Type="int" Mode="In" />
+          <Parameter Name="Acc_Sales" Type="int" Mode="In" />
+          <Parameter Name="Acc_RetSal" Type="int" Mode="In" />
+          <Parameter Name="Csh_SalAcc" Type="int" Mode="In" />
+          <Parameter Name="Csh_RetsalAcc" Type="int" Mode="In" />
+          <Parameter Name="Cmp_PurchaseAcc" Type="int" Mode="In" />
+          <Parameter Name="Cmp_RetPurchAcc" Type="int" Mode="In" />
+          <Parameter Name="Cmp_CshPurDiscAcc" Type="int" Mode="In" />
+          <Parameter Name="Agnt_CshPurDiscAcc" Type="int" Mode="In" />
+          <Parameter Name="Agnt_BnusPurDiscAcc" Type="int" Mode="In" />
+          <Parameter Name="Csh_PurAcc" Type="int" Mode="In" />
+          <Parameter Name="Inv_Undprs" Type="money" Mode="In" />
+          <Parameter Name="Cost_SalInvt" Type="int" Mode="In" />
+          <Parameter Name="Cost_INVt" Type="int" Mode="In" />
+          <Parameter Name="Acc_TaxExtraDb" Type="int" Mode="In" />
+          <Parameter Name="Acc_TaxExtraCR" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updatebranchs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Brn_No" Type="int" Mode="In" />
+          <Parameter Name="Cmp_No" Type="int" Mode="In" />
+          <Parameter Name="Brn_Nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="Brn_Tel" Type="nvarchar" Mode="In" />
+          <Parameter Name="Brn_Adrs" Type="nvarchar" Mode="In" />
+          <Parameter Name="Brn_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Acc_Customer" Type="int" Mode="In" />
+          <Parameter Name="Acc_Suplier" Type="int" Mode="In" />
+          <Parameter Name="Acc_Cashier" Type="int" Mode="In" />
+          <Parameter Name="Acc_Suplier2" Type="int" Mode="In" />
+          <Parameter Name="Acc_Sales" Type="int" Mode="In" />
+          <Parameter Name="Acc_RetSal" Type="int" Mode="In" />
+          <Parameter Name="Csh_SalAcc" Type="int" Mode="In" />
+          <Parameter Name="Csh_RetsalAcc" Type="int" Mode="In" />
+          <Parameter Name="Cmp_PurchaseAcc" Type="int" Mode="In" />
+          <Parameter Name="Cmp_RetPurchAcc" Type="int" Mode="In" />
+          <Parameter Name="Cmp_CshPurDiscAcc" Type="int" Mode="In" />
+          <Parameter Name="Agnt_CshPurDiscAcc" Type="int" Mode="In" />
+          <Parameter Name="Agnt_BnusPurDiscAcc" Type="int" Mode="In" />
+          <Parameter Name="Csh_PurAcc" Type="int" Mode="In" />
+          <Parameter Name="Inv_Undprs" Type="money" Mode="In" />
+          <Parameter Name="Cost_SalInvt" Type="int" Mode="In" />
+          <Parameter Name="Cost_INVt" Type="int" Mode="In" />
+          <Parameter Name="Acc_TaxExtraDb" Type="int" Mode="In" />
+          <Parameter Name="Acc_TaxExtraCR" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="ICDBTrdAModelStoreContainer">
+          <EntitySet Name="MainBranch" EntityType="Self.MainBranch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MainCmpnam" EntityType="Self.MainCmpnam" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ICDBTrdAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MainCmpnam">
+          <Key>
+            <PropertyRef Name="Cmp_No" />
+          </Key>
+          <Property Name="Cmp_No" Type="Int16" Nullable="false" />
+          <Property Name="Cmp_Activity" Type="Int16" />
+          <Property Name="Hijri_DifDay" Type="Int16" />
+          <Property Name="Brch_Trns" Type="Int16" />
+          <Property Name="Stor_Trns" Type="Int16" />
+          <Property Name="Main_Brn" Type="Int16" />
+          <Property Name="DLv_Stor" Type="Int16" />
+          <Property Name="Slm_No" Type="Int16" />
+          <Property Name="Local_Lang" Type="Int16" />
+          <Property Name="Sys_SetupNo" Type="Int16" />
+          <Property Name="Cmp_ShrtNm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Itm_twice" Type="Int16" />
+          <Property Name="InvTrf_Disc1" Type="Int16" />
+          <Property Name="InvTrf_Bouns" Type="Int16" />
+          <Property Name="BarCodeTy" Type="Int16" />
+          <Property Name="CostCalc" Type="Int16" />
+          <Property Name="Repeate_Item" Type="Int16" />
+          <Property Name="Disc2Pur_Dis2Sal" Type="Int16" />
+          <Property Name="ReqLocBalance" Type="Int16" />
+          <Property Name="Pur_TabOrder" Type="Int16" />
+          <Property Name="Start_Month" Type="Int16" />
+          <Property Name="Start_Year" Type="Int16" />
+          <Property Name="End_Month" Type="Int16" />
+          <Property Name="End_year" Type="Int16" />
+          <Property Name="Start_MonthHij" Type="Int16" />
+          <Property Name="Start_YearHij" Type="Int16" />
+          <Property Name="End_MonthHij" Type="Int16" />
+          <Property Name="End_yearHij" Type="Int16" />
+          <Property Name="Cmp_Nm" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Cmp_Nm2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Cmp_Tel" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Cmp_Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Cmp_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cmp_Add" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cmp_Eadd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cmp_Enm" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Cmp_Enm2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Prnt_Forms" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DelivaryStratigy" Type="Boolean" />
+          <Property Name="CostCenterStratigy" Type="Boolean" />
+          <Property Name="Activ_typ_no" Type="Int32" Nullable="false" />
+          <Property Name="Cshr_Status" Type="Int16" />
+          <Property Name="Cshr_Spr" Type="Int16" />
+          <Property Name="Sal_Spr" Type="Int16" />
+          <Property Name="Pur_Spr" Type="Int16" />
+          <Property Name="Invty_Spr" Type="Int16" />
+          <Property Name="Srv_Status" Type="Int16" />
+          <Property Name="Dnv_Status" Type="Int16" />
+          <Property Name="SalB_Dn" Type="Int16" />
+          <Property Name="PurB_Srv" Type="Int16" />
+          <Property Name="Itm_SrchRef" Type="Int16" />
+          <Property Name="Date_Status" Type="Int16" />
+          <Property Name="Dn_woCost" Type="Int16" />
+          <Property Name="Srv_woCost" Type="Int16" />
+          <Property Name="Same_Brn_DB" Type="Boolean" />
+          <Property Name="Brch_Comm" Type="Int16" />
+          <Property Name="Month_Post1" Type="Int16" />
+          <Property Name="Month_Post2" Type="Int16" />
+          <Property Name="Month_Post3" Type="Int16" />
+          <Property Name="Month_Post4" Type="Int16" />
+          <Property Name="Month_Post5" Type="Int16" />
+          <Property Name="Month_Post6" Type="Int16" />
+          <Property Name="Month_Post7" Type="Int16" />
+          <Property Name="Month_Post8" Type="Int16" />
+          <Property Name="Month_Post9" Type="Int16" />
+          <Property Name="Month_Post10" Type="Int16" />
+          <Property Name="Month_Post11" Type="Int16" />
+          <Property Name="Month_Post12" Type="Int16" />
+          <Property Name="Sal_Slip_Spcinv" Type="Int16" />
+          <Property Name="ModemPortNo" Type="Int32" />
+          <Property Name="ModemTelNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ChunkSize" Type="Int32" />
+          <Property Name="JvAuto_Mnth" Type="Int32" />
+          <Property Name="SalInv_Cash" Type="Int32" />
+          <Property Name="PurInv_Cash" Type="Int32" />
+          <Property Name="GL_NetSale" Type="Int32" />
+          <Property Name="GL_NetPur" Type="Int16" />
+          <Property Name="WoBoRpt" Type="Int32" />
+          <Property Name="PrintOrder" Type="Int32" />
+          <Property Name="Pur_Disc1" Type="Int32" />
+          <Property Name="Sal_Disc1" Type="Int32" />
+          <Property Name="Pur_Disc2" Type="Int32" />
+          <Property Name="Sal_Disc2" Type="Int32" />
+          <Property Name="Sal_Bouns" Type="Int32" />
+          <Property Name="Pur_Bouns" Type="Int32" />
+          <Property Name="Batch_No" Type="Int32" />
+          <Property Name="Disc1Pur_Dis1Sal" Type="Int32" />
+          <Property Name="NoStock" Type="Int32" />
+          <Property Name="Gl_Salesman" Type="Int32" />
+          <Property Name="Sec_Salesman" Type="Int32" />
+          <Property Name="Warehouse" Type="Int32" />
+          <Property Name="Inv_Sequence" Type="Int32" />
+          <Property Name="Sales_Type" Type="Int32" />
+          <Property Name="Activity_Type" Type="Int32" />
+          <Property Name="CR_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CC_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tax_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TaxExtra_Prct" Type="Decimal" Precision="10" Scale="4" />
+        </EntityType>
+        <EntityContainer Name="ICDBTrdAEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MainCmpnam" EntityType="Self.MainCmpnam" />
+          <EntitySet Name="MainBranch" EntityType="ICDBTrdAModel.MainBranch" />
+          <FunctionImport Name="updatebranch">
+            <Parameter Name="Brn_No" Mode="In" Type="Int32" />
+            <Parameter Name="Cmp_No" Mode="In" Type="Int32" />
+            <Parameter Name="Brn_Nm" Mode="In" Type="String" />
+            <Parameter Name="Brn_Tel" Mode="In" Type="String" />
+            <Parameter Name="Brn_Adrs" Mode="In" Type="String" />
+            <Parameter Name="Brn_Email" Mode="In" Type="String" />
+            <Parameter Name="Acc_Customer" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_Suplier" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_Cashier" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_Suplier2" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_Sales" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_RetSal" Mode="In" Type="Int32" />
+            <Parameter Name="Csh_SalAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Csh_RetsalAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Cmp_PurchaseAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Cmp_RetPurchAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Cmp_CshPurDiscAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Agnt_CshPurDiscAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Agnt_BnusPurDiscAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Csh_PurAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Inv_Undprs" Mode="In" Type="Decimal" />
+            <Parameter Name="Cost_SalInvt" Mode="In" Type="Int32" />
+            <Parameter Name="Cost_INVt" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_TaxExtraDb" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_TaxExtraCR" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updatebranchs">
+            <Parameter Name="Brn_No" Mode="In" Type="Int32" />
+            <Parameter Name="Cmp_No" Mode="In" Type="Int32" />
+            <Parameter Name="Brn_Nm" Mode="In" Type="String" />
+            <Parameter Name="Brn_Tel" Mode="In" Type="String" />
+            <Parameter Name="Brn_Adrs" Mode="In" Type="String" />
+            <Parameter Name="Brn_Email" Mode="In" Type="String" />
+            <Parameter Name="Acc_Customer" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_Suplier" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_Cashier" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_Suplier2" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_Sales" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_RetSal" Mode="In" Type="Int32" />
+            <Parameter Name="Csh_SalAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Csh_RetsalAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Cmp_PurchaseAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Cmp_RetPurchAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Cmp_CshPurDiscAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Agnt_CshPurDiscAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Agnt_BnusPurDiscAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Csh_PurAcc" Mode="In" Type="Int32" />
+            <Parameter Name="Inv_Undprs" Mode="In" Type="Decimal" />
+            <Parameter Name="Cost_SalInvt" Mode="In" Type="Int32" />
+            <Parameter Name="Cost_INVt" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_TaxExtraDb" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_TaxExtraCR" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="MainBranch">
+          <Key>
+            <PropertyRef Name="Brn_No" />
+          </Key>
+          <Property Name="Cmp_No" Type="Int32" Nullable="false" />
+          <Property Name="Brn_No" Type="Int32" Nullable="false" />
+          <Property Name="Main_Brn" Type="Int16" />
+          <Property Name="Dlv_Stor" Type="Int16" />
+          <Property Name="Actvty_No" Type="Int16" />
+          <Property Name="Isue_ALinvc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Allow_StoreTrs" Type="Int16" />
+          <Property Name="Br_Ty" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Brn_Nm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Brn_NmAr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Brn_Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Brn_Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Brn_Adrs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Brn_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Brn_Foldr" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Fcstm_No" Type="Int32" />
+          <Property Name="Tcstm_No" Type="Int32" />
+          <Property Name="Cstm_No" Type="Int32" />
+          <Property Name="Acc_Customer" Type="Int64" />
+          <Property Name="Acc_Suplier" Type="Int64" />
+          <Property Name="Acc_Cashier" Type="Int64" />
+          <Property Name="Acc_Customer1" Type="Int64" />
+          <Property Name="Acc_Suplier1" Type="Int64" />
+          <Property Name="Acc_Suplier2" Type="Int64" />
+          <Property Name="Acc_Sales" Type="Int64" />
+          <Property Name="Acc_RetSal" Type="Int64" />
+          <Property Name="Crdt_CshSalDiscAcc" Type="Int64" />
+          <Property Name="Crdt_BnusSalDiscAcc" Type="Int64" />
+          <Property Name="Csh_SalAcc" Type="Int64" />
+          <Property Name="Csh_RetsalAcc" Type="Int64" />
+          <Property Name="Csh_CshSalDiscAcc" Type="Int64" />
+          <Property Name="Csh_BnusSalDiscAcc" Type="Int64" />
+          <Property Name="Cmp_PurchaseAcc" Type="Int64" />
+          <Property Name="Cmp_RetPurchAcc" Type="Int64" />
+          <Property Name="Cmp_CshPurDiscAcc" Type="Int64" />
+          <Property Name="Cmp_BnusPurDiscAcc" Type="Int64" />
+          <Property Name="Agnt_PurchaseAcc" Type="Int64" />
+          <Property Name="Agnt_RetPurchAcc" Type="Int64" />
+          <Property Name="Agnt_CshPurDiscAcc" Type="Int64" />
+          <Property Name="Agnt_BnusPurDiscAcc" Type="Int64" />
+          <Property Name="Othr_PurchaseAcc" Type="Int64" />
+          <Property Name="Othr_RetPurchAcc" Type="Int64" />
+          <Property Name="Othr_CshPurDiscAcc" Type="Int64" />
+          <Property Name="Othr_BnusPurDiscAcc" Type="Int64" />
+          <Property Name="DlyPst_CshSal" Type="Int16" />
+          <Property Name="DlyPst_CshPur" Type="Int16" />
+          <Property Name="Adv_SalAcc" Type="Int64" />
+          <Property Name="Adv_RetSalAcc" Type="Int64" />
+          <Property Name="Acc_Invtry" Type="Int64" />
+          <Property Name="Acc_No" Type="Int64" />
+          <Property Name="Csh_PurAcc" Type="Int64" />
+          <Property Name="Inv_Prdctn" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Inv_Undprs" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Inv_RM" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Cost_INVt" Type="Int64" />
+          <Property Name="Cost_SalInvt" Type="Int64" />
+          <Property Name="Acc_Cheque" Type="Int64" />
+          <Property Name="Csh_RetPurAcc" Type="Int64" />
+          <Property Name="Acc_InvAdj" Type="Int64" />
+          <Property Name="Acc_Cashier1" Type="Int64" />
+          <Property Name="Acc_Cashier2" Type="Int64" />
+          <Property Name="Acc_Cashier3" Type="Int64" />
+          <Property Name="Acc_PNO" Type="Int64" />
+          <Property Name="Acc_TaxExtraDb" Type="Int64" />
+          <Property Name="Acc_TaxExtraCR" Type="Int64" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ICDBTrdAModelStoreContainer" CdmEntityContainer="ICDBTrdAEntities1">
+          <EntitySetMapping Name="MainCmpnam">
+            <EntityTypeMapping TypeName="ICDBTrdAModel.MainCmpnam">
+              <MappingFragment StoreEntitySet="MainCmpnam">
+                <ScalarProperty Name="Cmp_No" ColumnName="Cmp_No" />
+                <ScalarProperty Name="Cmp_Activity" ColumnName="Cmp_Activity" />
+                <ScalarProperty Name="Hijri_DifDay" ColumnName="Hijri_DifDay" />
+                <ScalarProperty Name="Brch_Trns" ColumnName="Brch_Trns" />
+                <ScalarProperty Name="Stor_Trns" ColumnName="Stor_Trns" />
+                <ScalarProperty Name="Main_Brn" ColumnName="Main_Brn" />
+                <ScalarProperty Name="DLv_Stor" ColumnName="DLv_Stor" />
+                <ScalarProperty Name="Slm_No" ColumnName="Slm_No" />
+                <ScalarProperty Name="Local_Lang" ColumnName="Local_Lang" />
+                <ScalarProperty Name="Sys_SetupNo" ColumnName="Sys_SetupNo" />
+                <ScalarProperty Name="Cmp_ShrtNm" ColumnName="Cmp_ShrtNm" />
+                <ScalarProperty Name="Itm_twice" ColumnName="Itm_twice" />
+                <ScalarProperty Name="InvTrf_Disc1" ColumnName="InvTrf_Disc1" />
+                <ScalarProperty Name="InvTrf_Bouns" ColumnName="InvTrf_Bouns" />
+                <ScalarProperty Name="BarCodeTy" ColumnName="BarCodeTy" />
+                <ScalarProperty Name="CostCalc" ColumnName="CostCalc" />
+                <ScalarProperty Name="Repeate_Item" ColumnName="Repeate_Item" />
+                <ScalarProperty Name="Disc2Pur_Dis2Sal" ColumnName="Disc2Pur_Dis2Sal" />
+                <ScalarProperty Name="ReqLocBalance" ColumnName="ReqLocBalance" />
+                <ScalarProperty Name="Pur_TabOrder" ColumnName="Pur_TabOrder" />
+                <ScalarProperty Name="Start_Month" ColumnName="Start_Month" />
+                <ScalarProperty Name="Start_Year" ColumnName="Start_Year" />
+                <ScalarProperty Name="End_Month" ColumnName="End_Month" />
+                <ScalarProperty Name="End_year" ColumnName="End_year" />
+                <ScalarProperty Name="Start_MonthHij" ColumnName="Start_MonthHij" />
+                <ScalarProperty Name="Start_YearHij" ColumnName="Start_YearHij" />
+                <ScalarProperty Name="End_MonthHij" ColumnName="End_MonthHij" />
+                <ScalarProperty Name="End_yearHij" ColumnName="End_yearHij" />
+                <ScalarProperty Name="Cmp_Nm" ColumnName="Cmp_Nm" />
+                <ScalarProperty Name="Cmp_Nm2" ColumnName="Cmp_Nm2" />
+                <ScalarProperty Name="Cmp_Tel" ColumnName="Cmp_Tel" />
+                <ScalarProperty Name="Cmp_Fax" ColumnName="Cmp_Fax" />
+                <ScalarProperty Name="Cmp_Email" ColumnName="Cmp_Email" />
+                <ScalarProperty Name="Cmp_Add" ColumnName="Cmp_Add" />
+                <ScalarProperty Name="Cmp_Eadd" ColumnName="Cmp_Eadd" />
+                <ScalarProperty Name="Cmp_Enm" ColumnName="Cmp_Enm" />
+                <ScalarProperty Name="Cmp_Enm2" ColumnName="Cmp_Enm2" />
+                <ScalarProperty Name="Prnt_Forms" ColumnName="Prnt_Forms" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="DelivaryStratigy" ColumnName="DelivaryStratigy" />
+                <ScalarProperty Name="CostCenterStratigy" ColumnName="CostCenterStratigy" />
+                <ScalarProperty Name="Activ_typ_no" ColumnName="Activ_typ_no" />
+                <ScalarProperty Name="Cshr_Status" ColumnName="Cshr_Status" />
+                <ScalarProperty Name="Cshr_Spr" ColumnName="Cshr_Spr" />
+                <ScalarProperty Name="Sal_Spr" ColumnName="Sal_Spr" />
+                <ScalarProperty Name="Pur_Spr" ColumnName="Pur_Spr" />
+                <ScalarProperty Name="Invty_Spr" ColumnName="Invty_Spr" />
+                <ScalarProperty Name="Srv_Status" ColumnName="Srv_Status" />
+                <ScalarProperty Name="Dnv_Status" ColumnName="Dnv_Status" />
+                <ScalarProperty Name="SalB_Dn" ColumnName="SalB_Dn" />
+                <ScalarProperty Name="PurB_Srv" ColumnName="PurB_Srv" />
+                <ScalarProperty Name="Itm_SrchRef" ColumnName="Itm_SrchRef" />
+                <ScalarProperty Name="Date_Status" ColumnName="Date_Status" />
+                <ScalarProperty Name="Dn_woCost" ColumnName="Dn_woCost" />
+                <ScalarProperty Name="Srv_woCost" ColumnName="Srv_woCost" />
+                <ScalarProperty Name="Same_Brn_DB" ColumnName="Same_Brn_DB" />
+                <ScalarProperty Name="Brch_Comm" ColumnName="Brch_Comm" />
+                <ScalarProperty Name="Month_Post1" ColumnName="Month_Post1" />
+                <ScalarProperty Name="Month_Post2" ColumnName="Month_Post2" />
+                <ScalarProperty Name="Month_Post3" ColumnName="Month_Post3" />
+                <ScalarProperty Name="Month_Post4" ColumnName="Month_Post4" />
+                <ScalarProperty Name="Month_Post5" ColumnName="Month_Post5" />
+                <ScalarProperty Name="Month_Post6" ColumnName="Month_Post6" />
+                <ScalarProperty Name="Month_Post7" ColumnName="Month_Post7" />
+                <ScalarProperty Name="Month_Post8" ColumnName="Month_Post8" />
+                <ScalarProperty Name="Month_Post9" ColumnName="Month_Post9" />
+                <ScalarProperty Name="Month_Post10" ColumnName="Month_Post10" />
+                <ScalarProperty Name="Month_Post11" ColumnName="Month_Post11" />
+                <ScalarProperty Name="Month_Post12" ColumnName="Month_Post12" />
+                <ScalarProperty Name="Sal_Slip_Spcinv" ColumnName="Sal_Slip_Spcinv" />
+                <ScalarProperty Name="ModemPortNo" ColumnName="ModemPortNo" />
+                <ScalarProperty Name="ModemTelNo" ColumnName="ModemTelNo" />
+                <ScalarProperty Name="ChunkSize" ColumnName="ChunkSize" />
+                <ScalarProperty Name="JvAuto_Mnth" ColumnName="JvAuto_Mnth" />
+                <ScalarProperty Name="SalInv_Cash" ColumnName="SalInv_Cash" />
+                <ScalarProperty Name="PurInv_Cash" ColumnName="PurInv_Cash" />
+                <ScalarProperty Name="GL_NetSale" ColumnName="GL_NetSale" />
+                <ScalarProperty Name="GL_NetPur" ColumnName="GL_NetPur" />
+                <ScalarProperty Name="WoBoRpt" ColumnName="WoBoRpt" />
+                <ScalarProperty Name="PrintOrder" ColumnName="PrintOrder" />
+                <ScalarProperty Name="Pur_Disc1" ColumnName="Pur_Disc1" />
+                <ScalarProperty Name="Sal_Disc1" ColumnName="Sal_Disc1" />
+                <ScalarProperty Name="Pur_Disc2" ColumnName="Pur_Disc2" />
+                <ScalarProperty Name="Sal_Disc2" ColumnName="Sal_Disc2" />
+                <ScalarProperty Name="Sal_Bouns" ColumnName="Sal_Bouns" />
+                <ScalarProperty Name="Pur_Bouns" ColumnName="Pur_Bouns" />
+                <ScalarProperty Name="Batch_No" ColumnName="Batch_No" />
+                <ScalarProperty Name="Disc1Pur_Dis1Sal" ColumnName="Disc1Pur_Dis1Sal" />
+                <ScalarProperty Name="NoStock" ColumnName="NoStock" />
+                <ScalarProperty Name="Gl_Salesman" ColumnName="Gl_Salesman" />
+                <ScalarProperty Name="Sec_Salesman" ColumnName="Sec_Salesman" />
+                <ScalarProperty Name="Warehouse" ColumnName="Warehouse" />
+                <ScalarProperty Name="Inv_Sequence" ColumnName="Inv_Sequence" />
+                <ScalarProperty Name="Sales_Type" ColumnName="Sales_Type" />
+                <ScalarProperty Name="Activity_Type" ColumnName="Activity_Type" />
+                <ScalarProperty Name="CR_No" ColumnName="CR_No" />
+                <ScalarProperty Name="CC_No" ColumnName="CC_No" />
+                <ScalarProperty Name="Tax_No" ColumnName="Tax_No" />
+                <ScalarProperty Name="TaxExtra_Prct" ColumnName="TaxExtra_Prct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainBranch">
+            <EntityTypeMapping TypeName="ICDBTrdAModel.MainBranch">
+              <MappingFragment StoreEntitySet="MainBranch">
+                <ScalarProperty Name="Acc_TaxExtraCR" ColumnName="Acc_TaxExtraCR" />
+                <ScalarProperty Name="Acc_TaxExtraDb" ColumnName="Acc_TaxExtraDb" />
+                <ScalarProperty Name="Acc_PNO" ColumnName="Acc_PNO" />
+                <ScalarProperty Name="Acc_Cashier3" ColumnName="Acc_Cashier3" />
+                <ScalarProperty Name="Acc_Cashier2" ColumnName="Acc_Cashier2" />
+                <ScalarProperty Name="Acc_Cashier1" ColumnName="Acc_Cashier1" />
+                <ScalarProperty Name="Acc_InvAdj" ColumnName="Acc_InvAdj" />
+                <ScalarProperty Name="Csh_RetPurAcc" ColumnName="Csh_RetPurAcc" />
+                <ScalarProperty Name="Acc_Cheque" ColumnName="Acc_Cheque" />
+                <ScalarProperty Name="Cost_SalInvt" ColumnName="Cost_SalInvt" />
+                <ScalarProperty Name="Cost_INVt" ColumnName="Cost_INVt" />
+                <ScalarProperty Name="Inv_RM" ColumnName="Inv_RM" />
+                <ScalarProperty Name="Inv_Undprs" ColumnName="Inv_Undprs" />
+                <ScalarProperty Name="Inv_Prdctn" ColumnName="Inv_Prdctn" />
+                <ScalarProperty Name="Csh_PurAcc" ColumnName="Csh_PurAcc" />
+                <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+                <ScalarProperty Name="Acc_Invtry" ColumnName="Acc_Invtry" />
+                <ScalarProperty Name="Adv_RetSalAcc" ColumnName="Adv_RetSalAcc" />
+                <ScalarProperty Name="Adv_SalAcc" ColumnName="Adv_SalAcc" />
+                <ScalarProperty Name="DlyPst_CshPur" ColumnName="DlyPst_CshPur" />
+                <ScalarProperty Name="DlyPst_CshSal" ColumnName="DlyPst_CshSal" />
+                <ScalarProperty Name="Othr_BnusPurDiscAcc" ColumnName="Othr_BnusPurDiscAcc" />
+                <ScalarProperty Name="Othr_CshPurDiscAcc" ColumnName="Othr_CshPurDiscAcc" />
+                <ScalarProperty Name="Othr_RetPurchAcc" ColumnName="Othr_RetPurchAcc" />
+                <ScalarProperty Name="Othr_PurchaseAcc" ColumnName="Othr_PurchaseAcc" />
+                <ScalarProperty Name="Agnt_BnusPurDiscAcc" ColumnName="Agnt_BnusPurDiscAcc" />
+                <ScalarProperty Name="Agnt_CshPurDiscAcc" ColumnName="Agnt_CshPurDiscAcc" />
+                <ScalarProperty Name="Agnt_RetPurchAcc" ColumnName="Agnt_RetPurchAcc" />
+                <ScalarProperty Name="Agnt_PurchaseAcc" ColumnName="Agnt_PurchaseAcc" />
+                <ScalarProperty Name="Cmp_BnusPurDiscAcc" ColumnName="Cmp_BnusPurDiscAcc" />
+                <ScalarProperty Name="Cmp_CshPurDiscAcc" ColumnName="Cmp_CshPurDiscAcc" />
+                <ScalarProperty Name="Cmp_RetPurchAcc" ColumnName="Cmp_RetPurchAcc" />
+                <ScalarProperty Name="Cmp_PurchaseAcc" ColumnName="Cmp_PurchaseAcc" />
+                <ScalarProperty Name="Csh_BnusSalDiscAcc" ColumnName="Csh_BnusSalDiscAcc" />
+                <ScalarProperty Name="Csh_CshSalDiscAcc" ColumnName="Csh_CshSalDiscAcc" />
+                <ScalarProperty Name="Csh_RetsalAcc" ColumnName="Csh_RetsalAcc" />
+                <ScalarProperty Name="Csh_SalAcc" ColumnName="Csh_SalAcc" />
+                <ScalarProperty Name="Crdt_BnusSalDiscAcc" ColumnName="Crdt_BnusSalDiscAcc" />
+                <ScalarProperty Name="Crdt_CshSalDiscAcc" ColumnName="Crdt_CshSalDiscAcc" />
+                <ScalarProperty Name="Acc_RetSal" ColumnName="Acc_RetSal" />
+                <ScalarProperty Name="Acc_Sales" ColumnName="Acc_Sales" />
+                <ScalarProperty Name="Acc_Suplier2" ColumnName="Acc_Suplier2" />
+                <ScalarProperty Name="Acc_Suplier1" ColumnName="Acc_Suplier1" />
+                <ScalarProperty Name="Acc_Customer1" ColumnName="Acc_Customer1" />
+                <ScalarProperty Name="Acc_Cashier" ColumnName="Acc_Cashier" />
+                <ScalarProperty Name="Acc_Suplier" ColumnName="Acc_Suplier" />
+                <ScalarProperty Name="Acc_Customer" ColumnName="Acc_Customer" />
+                <ScalarProperty Name="Cstm_No" ColumnName="Cstm_No" />
+                <ScalarProperty Name="Tcstm_No" ColumnName="Tcstm_No" />
+                <ScalarProperty Name="Fcstm_No" ColumnName="Fcstm_No" />
+                <ScalarProperty Name="Brn_Foldr" ColumnName="Brn_Foldr" />
+                <ScalarProperty Name="Brn_Email" ColumnName="Brn_Email" />
+                <ScalarProperty Name="Brn_Adrs" ColumnName="Brn_Adrs" />
+                <ScalarProperty Name="Brn_Fax" ColumnName="Brn_Fax" />
+                <ScalarProperty Name="Brn_Tel" ColumnName="Brn_Tel" />
+                <ScalarProperty Name="Brn_NmAr" ColumnName="Brn_NmAr" />
+                <ScalarProperty Name="Brn_Nm" ColumnName="Brn_Nm" />
+                <ScalarProperty Name="Br_Ty" ColumnName="Br_Ty" />
+                <ScalarProperty Name="Allow_StoreTrs" ColumnName="Allow_StoreTrs" />
+                <ScalarProperty Name="Isue_ALinvc" ColumnName="Isue_ALinvc" />
+                <ScalarProperty Name="Actvty_No" ColumnName="Actvty_No" />
+                <ScalarProperty Name="Dlv_Stor" ColumnName="Dlv_Stor" />
+                <ScalarProperty Name="Main_Brn" ColumnName="Main_Brn" />
+                <ScalarProperty Name="Brn_No" ColumnName="Brn_No" />
+                <ScalarProperty Name="Cmp_No" ColumnName="Cmp_No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="updatebranch" FunctionName="ICDBTrdAModel.Store.updatebranch" />
+          <FunctionImportMapping FunctionImportName="updatebranchs" FunctionName="ICDBTrdAModel.Store.updatebranchs" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

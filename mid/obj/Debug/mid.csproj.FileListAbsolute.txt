@@ -1,0 +1,720 @@
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\ApplicationInsights.config
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\csc.exe
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\System.Collections.Immutable.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\vbc.exe
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\VBCSCompiler.exe
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\roslyn\VBCSCompiler.exe.config
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\mid.dll.config
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\mid.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\mid.pdb
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Antlr3.Runtime.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\AspNet.ScriptManager.bootstrap.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\AspNet.ScriptManager.jQuery.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\EntityFramework.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\EntityFramework.SqlServer.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AI.Web.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AI.WindowsServer.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.ApplicationInsights.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AspNet.FriendlyUrls.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.Google.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.ScriptManager.MSAjax.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.ScriptManager.WebForms.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Web.Infrastructure.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Newtonsoft.Json.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Owin.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\System.Web.Optimization.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\System.Web.Providers.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\WebGrease.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AI.Web.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AI.WindowsServer.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.ApplicationInsights.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\System.Web.Optimization.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Antlr3.Runtime.pdb
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Newtonsoft.Json.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AspNet.FriendlyUrls.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\EntityFramework.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\EntityFramework.SqlServer.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\System.Web.Providers.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.Google.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\obj\Debug\mid.csprojResolveAssemblyReference.cache
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\obj\Debug\mid.dll
+c:\users\elsawah\documents\visual studio 2015\Projects\mid\mid\obj\Debug\mid.pdb
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\obj\Debug\mid.csprojResolveAssemblyReference.cache
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\obj\Debug\mid.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\obj\Debug\mid.pdb
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\ApplicationInsights.config
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\csc.exe
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\System.Collections.Immutable.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\System.Reflection.Metadata.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\vbc.exe
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\VBCSCompiler.exe
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\roslyn\VBCSCompiler.exe.config
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\mid.dll.config
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\mid.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\mid.pdb
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Antlr3.Runtime.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\AspNet.ScriptManager.bootstrap.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\AspNet.ScriptManager.jQuery.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\EntityFramework.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\EntityFramework.SqlServer.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.Agent.Intercept.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.DependencyCollector.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.Web.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.WindowsServer.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.ApplicationInsights.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.FriendlyUrls.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.Core.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Cookies.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Facebook.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Google.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.OAuth.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Twitter.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.ScriptManager.MSAjax.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.ScriptManager.WebForms.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Web.Infrastructure.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Newtonsoft.Json.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Owin.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\System.Web.Optimization.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\System.Web.Providers.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\WebGrease.dll
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.DependencyCollector.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.Web.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.WindowsServer.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.ApplicationInsights.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\System.Web.Optimization.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Antlr3.Runtime.pdb
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Newtonsoft.Json.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.FriendlyUrls.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\EntityFramework.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\EntityFramework.SqlServer.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.Core.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\System.Web.Providers.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Facebook.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Cookies.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Google.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Twitter.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\ASP.Net\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.OAuth.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\ApplicationInsights.config
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\csc.exe
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\System.Collections.Immutable.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\System.Reflection.Metadata.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\vbc.exe
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\VBCSCompiler.exe
+D:\تحديث القديم\تحديث\mid\mid\bin\roslyn\VBCSCompiler.exe.config
+D:\تحديث القديم\تحديث\mid\mid\bin\mid.dll.config
+D:\تحديث القديم\تحديث\mid\mid\bin\mid.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\mid.pdb
+D:\تحديث القديم\تحديث\mid\mid\bin\Antlr3.Runtime.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\AspNet.ScriptManager.bootstrap.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\AspNet.ScriptManager.jQuery.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\EntityFramework.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\EntityFramework.SqlServer.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.Agent.Intercept.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.DependencyCollector.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.Web.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.WindowsServer.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.ApplicationInsights.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.Core.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Cookies.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Facebook.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Google.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.OAuth.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Twitter.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.ScriptManager.WebForms.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Web.Infrastructure.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Newtonsoft.Json.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Owin.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\System.Web.Optimization.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\System.Web.Providers.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\WebGrease.dll
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.DependencyCollector.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.Web.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AI.WindowsServer.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.ApplicationInsights.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\System.Web.Optimization.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Antlr3.Runtime.pdb
+D:\تحديث القديم\تحديث\mid\mid\bin\Newtonsoft.Json.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\EntityFramework.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\EntityFramework.SqlServer.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.Core.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\System.Web.Providers.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Facebook.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Cookies.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Google.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.Twitter.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\تحديث القديم\تحديث\mid\mid\bin\Microsoft.Owin.Security.OAuth.xml
+D:\تحديث القديم\تحديث\mid\mid\obj\Debug\mid.csprojResolveAssemblyReference.cache
+D:\تحديث القديم\تحديث\mid\mid\obj\Debug\mid.dll
+D:\تحديث القديم\تحديث\mid\mid\obj\Debug\mid.pdb
+F:\mid\mid\bin\ApplicationInsights.config
+F:\mid\mid\bin\roslyn\csc.exe
+F:\mid\mid\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\mid\mid\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\mid\mid\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\mid\mid\bin\roslyn\System.Collections.Immutable.dll
+F:\mid\mid\bin\roslyn\System.Reflection.Metadata.dll
+F:\mid\mid\bin\roslyn\vbc.exe
+F:\mid\mid\bin\roslyn\VBCSCompiler.exe
+F:\mid\mid\bin\roslyn\VBCSCompiler.exe.config
+F:\mid\mid\bin\mid.dll.config
+F:\mid\mid\bin\mid.dll
+F:\mid\mid\bin\mid.pdb
+F:\mid\mid\bin\Antlr3.Runtime.dll
+F:\mid\mid\bin\AspNet.ScriptManager.bootstrap.dll
+F:\mid\mid\bin\AspNet.ScriptManager.jQuery.dll
+F:\mid\mid\bin\EntityFramework.dll
+F:\mid\mid\bin\EntityFramework.SqlServer.dll
+F:\mid\mid\bin\Microsoft.AI.Agent.Intercept.dll
+F:\mid\mid\bin\Microsoft.AI.DependencyCollector.dll
+F:\mid\mid\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\mid\mid\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\mid\mid\bin\Microsoft.AI.Web.dll
+F:\mid\mid\bin\Microsoft.AI.WindowsServer.dll
+F:\mid\mid\bin\Microsoft.ApplicationInsights.dll
+F:\mid\mid\bin\Microsoft.AspNet.FriendlyUrls.dll
+F:\mid\mid\bin\Microsoft.AspNet.Identity.Core.dll
+F:\mid\mid\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\mid\mid\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\mid\mid\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+F:\mid\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\mid\mid\bin\Microsoft.Owin.dll
+F:\mid\mid\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\mid\mid\bin\Microsoft.Owin.Security.Cookies.dll
+F:\mid\mid\bin\Microsoft.Owin.Security.dll
+F:\mid\mid\bin\Microsoft.Owin.Security.Facebook.dll
+F:\mid\mid\bin\Microsoft.Owin.Security.Google.dll
+F:\mid\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\mid\mid\bin\Microsoft.Owin.Security.OAuth.dll
+F:\mid\mid\bin\Microsoft.Owin.Security.Twitter.dll
+F:\mid\mid\bin\Microsoft.ScriptManager.MSAjax.dll
+F:\mid\mid\bin\Microsoft.ScriptManager.WebForms.dll
+F:\mid\mid\bin\Microsoft.Web.Infrastructure.dll
+F:\mid\mid\bin\Newtonsoft.Json.dll
+F:\mid\mid\bin\Owin.dll
+F:\mid\mid\bin\System.Web.Optimization.dll
+F:\mid\mid\bin\System.Web.Providers.dll
+F:\mid\mid\bin\WebGrease.dll
+F:\mid\mid\bin\Microsoft.AI.DependencyCollector.xml
+F:\mid\mid\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\mid\mid\bin\Microsoft.AI.Web.xml
+F:\mid\mid\bin\Microsoft.AI.WindowsServer.xml
+F:\mid\mid\bin\Microsoft.ApplicationInsights.xml
+F:\mid\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\mid\mid\bin\System.Web.Optimization.xml
+F:\mid\mid\bin\Antlr3.Runtime.pdb
+F:\mid\mid\bin\Newtonsoft.Json.xml
+F:\mid\mid\bin\Microsoft.AspNet.FriendlyUrls.xml
+F:\mid\mid\bin\EntityFramework.xml
+F:\mid\mid\bin\EntityFramework.SqlServer.xml
+F:\mid\mid\bin\Microsoft.AspNet.Identity.Core.xml
+F:\mid\mid\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\mid\mid\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\mid\mid\bin\System.Web.Providers.xml
+F:\mid\mid\bin\Microsoft.Owin.xml
+F:\mid\mid\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\mid\mid\bin\Microsoft.Owin.Security.xml
+F:\mid\mid\bin\Microsoft.Owin.Security.Facebook.xml
+F:\mid\mid\bin\Microsoft.Owin.Security.Cookies.xml
+F:\mid\mid\bin\Microsoft.Owin.Security.Google.xml
+F:\mid\mid\bin\Microsoft.Owin.Security.Twitter.xml
+F:\mid\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\mid\mid\bin\Microsoft.Owin.Security.OAuth.xml
+F:\mid\mid\obj\Debug\mid.csprojResolveAssemblyReference.cache
+F:\mid\mid\obj\Debug\mid.dll
+F:\mid\mid\obj\Debug\mid.pdb
+E:\ASP Department\mid\obj\Debug\mid.dll
+E:\ASP Department\mid\obj\Debug\mid.pdb
+E:\ASP Department\mid\mid\bin\ApplicationInsights.config
+E:\ASP Department\mid\mid\bin\roslyn\csc.exe
+E:\ASP Department\mid\mid\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\ASP Department\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\ASP Department\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\ASP Department\mid\mid\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\ASP Department\mid\mid\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\ASP Department\mid\mid\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\ASP Department\mid\mid\bin\roslyn\System.Collections.Immutable.dll
+E:\ASP Department\mid\mid\bin\roslyn\System.Reflection.Metadata.dll
+E:\ASP Department\mid\mid\bin\roslyn\vbc.exe
+E:\ASP Department\mid\mid\bin\roslyn\VBCSCompiler.exe
+E:\ASP Department\mid\mid\bin\roslyn\VBCSCompiler.exe.config
+E:\ASP Department\mid\mid\bin\mid.dll.config
+E:\ASP Department\mid\mid\bin\mid.dll
+E:\ASP Department\mid\mid\bin\mid.pdb
+E:\ASP Department\mid\mid\bin\Antlr3.Runtime.dll
+E:\ASP Department\mid\mid\bin\AspNet.ScriptManager.bootstrap.dll
+E:\ASP Department\mid\mid\bin\AspNet.ScriptManager.jQuery.dll
+E:\ASP Department\mid\mid\bin\EntityFramework.dll
+E:\ASP Department\mid\mid\bin\EntityFramework.SqlServer.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AI.Agent.Intercept.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AI.DependencyCollector.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AI.Web.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AI.WindowsServer.dll
+E:\ASP Department\mid\mid\bin\Microsoft.ApplicationInsights.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AspNet.Identity.Core.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\ASP Department\mid\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.dll
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.Cookies.dll
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.dll
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.Facebook.dll
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.Google.dll
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.OAuth.dll
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.Twitter.dll
+E:\ASP Department\mid\mid\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\ASP Department\mid\mid\bin\Microsoft.ScriptManager.WebForms.dll
+E:\ASP Department\mid\mid\bin\Microsoft.Web.Infrastructure.dll
+E:\ASP Department\mid\mid\bin\Newtonsoft.Json.dll
+E:\ASP Department\mid\mid\bin\Owin.dll
+E:\ASP Department\mid\mid\bin\System.Web.Optimization.dll
+E:\ASP Department\mid\mid\bin\System.Web.Providers.dll
+E:\ASP Department\mid\mid\bin\WebGrease.dll
+E:\ASP Department\mid\mid\bin\Microsoft.AI.DependencyCollector.xml
+E:\ASP Department\mid\mid\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\ASP Department\mid\mid\bin\Microsoft.AI.Web.xml
+E:\ASP Department\mid\mid\bin\Microsoft.AI.WindowsServer.xml
+E:\ASP Department\mid\mid\bin\Microsoft.ApplicationInsights.xml
+E:\ASP Department\mid\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\ASP Department\mid\mid\bin\System.Web.Optimization.xml
+E:\ASP Department\mid\mid\bin\Antlr3.Runtime.pdb
+E:\ASP Department\mid\mid\bin\Newtonsoft.Json.xml
+E:\ASP Department\mid\mid\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\ASP Department\mid\mid\bin\EntityFramework.xml
+E:\ASP Department\mid\mid\bin\EntityFramework.SqlServer.xml
+E:\ASP Department\mid\mid\bin\Microsoft.AspNet.Identity.Core.xml
+E:\ASP Department\mid\mid\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\ASP Department\mid\mid\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\ASP Department\mid\mid\bin\System.Web.Providers.xml
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.xml
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.xml
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.Facebook.xml
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.Cookies.xml
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.Google.xml
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.Twitter.xml
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\ASP Department\mid\mid\bin\Microsoft.Owin.Security.OAuth.xml
+E:\ASP Department\mid\mid\obj\Debug\mid.csprojResolveAssemblyReference.cache
+E:\ASP Department\mid\mid\obj\Debug\mid.dll
+E:\ASP Department\mid\mid\obj\Debug\mid.pdb
+E:\ASP Department\medical\mid\bin\ApplicationInsights.config
+E:\ASP Department\medical\mid\bin\roslyn\csc.exe
+E:\ASP Department\medical\mid\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\ASP Department\medical\mid\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\ASP Department\medical\mid\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\ASP Department\medical\mid\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\ASP Department\medical\mid\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\ASP Department\medical\mid\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\ASP Department\medical\mid\bin\roslyn\System.Collections.Immutable.dll
+E:\ASP Department\medical\mid\bin\roslyn\System.Reflection.Metadata.dll
+E:\ASP Department\medical\mid\bin\roslyn\vbc.exe
+E:\ASP Department\medical\mid\bin\roslyn\VBCSCompiler.exe
+E:\ASP Department\medical\mid\bin\roslyn\VBCSCompiler.exe.config
+E:\ASP Department\medical\mid\bin\mid.dll.config
+E:\ASP Department\medical\mid\bin\mid.dll
+E:\ASP Department\medical\mid\bin\mid.pdb
+E:\ASP Department\medical\mid\bin\Antlr3.Runtime.dll
+E:\ASP Department\medical\mid\bin\AspNet.ScriptManager.bootstrap.dll
+E:\ASP Department\medical\mid\bin\AspNet.ScriptManager.jQuery.dll
+E:\ASP Department\medical\mid\bin\EntityFramework.dll
+E:\ASP Department\medical\mid\bin\EntityFramework.SqlServer.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AI.Agent.Intercept.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AI.DependencyCollector.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AI.Web.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AI.WindowsServer.dll
+E:\ASP Department\medical\mid\bin\Microsoft.ApplicationInsights.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AspNet.Identity.Core.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\ASP Department\medical\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.dll
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.Cookies.dll
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.dll
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.Facebook.dll
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.Google.dll
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.OAuth.dll
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.Twitter.dll
+E:\ASP Department\medical\mid\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\ASP Department\medical\mid\bin\Microsoft.ScriptManager.WebForms.dll
+E:\ASP Department\medical\mid\bin\Microsoft.Web.Infrastructure.dll
+E:\ASP Department\medical\mid\bin\Newtonsoft.Json.dll
+E:\ASP Department\medical\mid\bin\Owin.dll
+E:\ASP Department\medical\mid\bin\System.Web.Optimization.dll
+E:\ASP Department\medical\mid\bin\System.Web.Providers.dll
+E:\ASP Department\medical\mid\bin\WebGrease.dll
+E:\ASP Department\medical\mid\bin\Microsoft.AI.DependencyCollector.xml
+E:\ASP Department\medical\mid\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\ASP Department\medical\mid\bin\Microsoft.AI.Web.xml
+E:\ASP Department\medical\mid\bin\Microsoft.AI.WindowsServer.xml
+E:\ASP Department\medical\mid\bin\Microsoft.ApplicationInsights.xml
+E:\ASP Department\medical\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\ASP Department\medical\mid\bin\System.Web.Optimization.xml
+E:\ASP Department\medical\mid\bin\Antlr3.Runtime.pdb
+E:\ASP Department\medical\mid\bin\Newtonsoft.Json.xml
+E:\ASP Department\medical\mid\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\ASP Department\medical\mid\bin\EntityFramework.xml
+E:\ASP Department\medical\mid\bin\EntityFramework.SqlServer.xml
+E:\ASP Department\medical\mid\bin\Microsoft.AspNet.Identity.Core.xml
+E:\ASP Department\medical\mid\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\ASP Department\medical\mid\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\ASP Department\medical\mid\bin\System.Web.Providers.xml
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.xml
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.xml
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.Facebook.xml
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.Cookies.xml
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.Google.xml
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.Twitter.xml
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\ASP Department\medical\mid\bin\Microsoft.Owin.Security.OAuth.xml
+E:\ASP Department\medical\mid\obj\Debug\mid.csprojResolveAssemblyReference.cache
+E:\ASP Department\medical\mid\obj\Debug\mid.dll
+E:\ASP Department\medical\mid\obj\Debug\mid.pdb
+D:\medical\mid\bin\ApplicationInsights.config
+D:\medical\mid\bin\roslyn\csc.exe
+D:\medical\mid\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\medical\mid\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\medical\mid\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\medical\mid\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\medical\mid\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\medical\mid\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\medical\mid\bin\roslyn\System.Collections.Immutable.dll
+D:\medical\mid\bin\roslyn\System.Reflection.Metadata.dll
+D:\medical\mid\bin\roslyn\vbc.exe
+D:\medical\mid\bin\roslyn\VBCSCompiler.exe
+D:\medical\mid\bin\roslyn\VBCSCompiler.exe.config
+D:\medical\mid\bin\mid.dll.config
+D:\medical\mid\bin\mid.dll
+D:\medical\mid\bin\mid.pdb
+D:\medical\mid\bin\Antlr3.Runtime.dll
+D:\medical\mid\bin\AspNet.ScriptManager.bootstrap.dll
+D:\medical\mid\bin\AspNet.ScriptManager.jQuery.dll
+D:\medical\mid\bin\EntityFramework.dll
+D:\medical\mid\bin\EntityFramework.SqlServer.dll
+D:\medical\mid\bin\Microsoft.AI.Agent.Intercept.dll
+D:\medical\mid\bin\Microsoft.AI.DependencyCollector.dll
+D:\medical\mid\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\medical\mid\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\medical\mid\bin\Microsoft.AI.Web.dll
+D:\medical\mid\bin\Microsoft.AI.WindowsServer.dll
+D:\medical\mid\bin\Microsoft.ApplicationInsights.dll
+D:\medical\mid\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\medical\mid\bin\Microsoft.AspNet.Identity.Core.dll
+D:\medical\mid\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\medical\mid\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\medical\mid\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\medical\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\medical\mid\bin\Microsoft.Owin.dll
+D:\medical\mid\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\medical\mid\bin\Microsoft.Owin.Security.Cookies.dll
+D:\medical\mid\bin\Microsoft.Owin.Security.dll
+D:\medical\mid\bin\Microsoft.Owin.Security.Facebook.dll
+D:\medical\mid\bin\Microsoft.Owin.Security.Google.dll
+D:\medical\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\medical\mid\bin\Microsoft.Owin.Security.OAuth.dll
+D:\medical\mid\bin\Microsoft.Owin.Security.Twitter.dll
+D:\medical\mid\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\medical\mid\bin\Microsoft.ScriptManager.WebForms.dll
+D:\medical\mid\bin\Microsoft.Web.Infrastructure.dll
+D:\medical\mid\bin\Newtonsoft.Json.dll
+D:\medical\mid\bin\Owin.dll
+D:\medical\mid\bin\System.Web.Optimization.dll
+D:\medical\mid\bin\System.Web.Providers.dll
+D:\medical\mid\bin\WebGrease.dll
+D:\medical\mid\bin\Microsoft.AI.DependencyCollector.xml
+D:\medical\mid\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\medical\mid\bin\Microsoft.AI.Web.xml
+D:\medical\mid\bin\Microsoft.AI.WindowsServer.xml
+D:\medical\mid\bin\Microsoft.ApplicationInsights.xml
+D:\medical\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\medical\mid\bin\System.Web.Optimization.xml
+D:\medical\mid\bin\Antlr3.Runtime.pdb
+D:\medical\mid\bin\Newtonsoft.Json.xml
+D:\medical\mid\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\medical\mid\bin\EntityFramework.xml
+D:\medical\mid\bin\EntityFramework.SqlServer.xml
+D:\medical\mid\bin\Microsoft.AspNet.Identity.Core.xml
+D:\medical\mid\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\medical\mid\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\medical\mid\bin\System.Web.Providers.xml
+D:\medical\mid\bin\Microsoft.Owin.xml
+D:\medical\mid\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\medical\mid\bin\Microsoft.Owin.Security.xml
+D:\medical\mid\bin\Microsoft.Owin.Security.Facebook.xml
+D:\medical\mid\bin\Microsoft.Owin.Security.Cookies.xml
+D:\medical\mid\bin\Microsoft.Owin.Security.Google.xml
+D:\medical\mid\bin\Microsoft.Owin.Security.Twitter.xml
+D:\medical\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\medical\mid\bin\Microsoft.Owin.Security.OAuth.xml
+D:\medical\mid\obj\Debug\mid.csprojResolveAssemblyReference.cache
+D:\medical\mid\obj\Debug\mid.dll
+D:\medical\mid\obj\Debug\mid.pdb
+E:\Islam\medical\mid\bin\ApplicationInsights.config
+E:\Islam\medical\mid\bin\roslyn\csc.exe
+E:\Islam\medical\mid\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Islam\medical\mid\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Islam\medical\mid\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Islam\medical\mid\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Islam\medical\mid\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Islam\medical\mid\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Islam\medical\mid\bin\roslyn\System.Collections.Immutable.dll
+E:\Islam\medical\mid\bin\roslyn\System.Reflection.Metadata.dll
+E:\Islam\medical\mid\bin\roslyn\vbc.exe
+E:\Islam\medical\mid\bin\roslyn\VBCSCompiler.exe
+E:\Islam\medical\mid\bin\roslyn\VBCSCompiler.exe.config
+E:\Islam\medical\mid\bin\mid.dll.config
+E:\Islam\medical\mid\bin\mid.dll
+E:\Islam\medical\mid\bin\mid.pdb
+E:\Islam\medical\mid\bin\Antlr3.Runtime.dll
+E:\Islam\medical\mid\bin\AspNet.ScriptManager.bootstrap.dll
+E:\Islam\medical\mid\bin\AspNet.ScriptManager.jQuery.dll
+E:\Islam\medical\mid\bin\EntityFramework.dll
+E:\Islam\medical\mid\bin\EntityFramework.SqlServer.dll
+E:\Islam\medical\mid\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Islam\medical\mid\bin\Microsoft.AI.DependencyCollector.dll
+E:\Islam\medical\mid\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Islam\medical\mid\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Islam\medical\mid\bin\Microsoft.AI.Web.dll
+E:\Islam\medical\mid\bin\Microsoft.AI.WindowsServer.dll
+E:\Islam\medical\mid\bin\Microsoft.ApplicationInsights.dll
+E:\Islam\medical\mid\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\Islam\medical\mid\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Islam\medical\mid\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Islam\medical\mid\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Islam\medical\mid\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\Islam\medical\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Islam\medical\mid\bin\Microsoft.Owin.dll
+E:\Islam\medical\mid\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.dll
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.Google.dll
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Islam\medical\mid\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\Islam\medical\mid\bin\Microsoft.ScriptManager.WebForms.dll
+E:\Islam\medical\mid\bin\Microsoft.Web.Infrastructure.dll
+E:\Islam\medical\mid\bin\Newtonsoft.Json.dll
+E:\Islam\medical\mid\bin\Owin.dll
+E:\Islam\medical\mid\bin\System.Web.Optimization.dll
+E:\Islam\medical\mid\bin\System.Web.Providers.dll
+E:\Islam\medical\mid\bin\WebGrease.dll
+E:\Islam\medical\mid\bin\Microsoft.AI.DependencyCollector.xml
+E:\Islam\medical\mid\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Islam\medical\mid\bin\Microsoft.AI.Web.xml
+E:\Islam\medical\mid\bin\Microsoft.AI.WindowsServer.xml
+E:\Islam\medical\mid\bin\Microsoft.ApplicationInsights.xml
+E:\Islam\medical\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Islam\medical\mid\bin\System.Web.Optimization.xml
+E:\Islam\medical\mid\bin\Antlr3.Runtime.pdb
+E:\Islam\medical\mid\bin\Newtonsoft.Json.xml
+E:\Islam\medical\mid\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\Islam\medical\mid\bin\EntityFramework.xml
+E:\Islam\medical\mid\bin\EntityFramework.SqlServer.xml
+E:\Islam\medical\mid\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Islam\medical\mid\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Islam\medical\mid\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Islam\medical\mid\bin\System.Web.Providers.xml
+E:\Islam\medical\mid\bin\Microsoft.Owin.xml
+E:\Islam\medical\mid\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.xml
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.Google.xml
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Islam\medical\mid\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Islam\medical\mid\obj\Debug\mid.csprojResolveAssemblyReference.cache
+E:\Islam\medical\mid\obj\Debug\mid.dll
+E:\Islam\medical\mid\obj\Debug\mid.pdb
+E:\Islam\medical\mid\bin\Syncfusion.EJ.Web.dll
+E:\Islam\medical\mid\bin\Syncfusion.EJ.dll
+E:\Islam\medical\mid\bin\Syncfusion.Linq.Base.dll
+E:\Islam\medical\mid\bin\Syncfusion.EJ.Web.xml
+E:\Islam\medical\mid\bin\Syncfusion.EJ.xml
+E:\Islam\medical\mid\bin\Syncfusion.Linq.Base.xml
+E:\Islam\medical\mid\bin\Microsoft.AspNet.EntityDataSource.dll
+D:\Work\Islam\mid\bin\ApplicationInsights.config
+D:\Work\Islam\mid\bin\roslyn\csc.exe
+D:\Work\Islam\mid\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Work\Islam\mid\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Work\Islam\mid\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Work\Islam\mid\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Work\Islam\mid\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Work\Islam\mid\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Work\Islam\mid\bin\roslyn\System.Collections.Immutable.dll
+D:\Work\Islam\mid\bin\roslyn\System.Reflection.Metadata.dll
+D:\Work\Islam\mid\bin\roslyn\vbc.exe
+D:\Work\Islam\mid\bin\roslyn\VBCSCompiler.exe
+D:\Work\Islam\mid\bin\roslyn\VBCSCompiler.exe.config
+D:\Work\Islam\mid\bin\mid.dll.config
+D:\Work\Islam\mid\bin\mid.dll
+D:\Work\Islam\mid\bin\mid.pdb
+D:\Work\Islam\mid\bin\Antlr3.Runtime.dll
+D:\Work\Islam\mid\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Work\Islam\mid\bin\AspNet.ScriptManager.jQuery.dll
+D:\Work\Islam\mid\bin\EntityFramework.dll
+D:\Work\Islam\mid\bin\EntityFramework.SqlServer.dll
+D:\Work\Islam\mid\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Work\Islam\mid\bin\Microsoft.AI.DependencyCollector.dll
+D:\Work\Islam\mid\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Work\Islam\mid\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Work\Islam\mid\bin\Microsoft.AI.Web.dll
+D:\Work\Islam\mid\bin\Microsoft.AI.WindowsServer.dll
+D:\Work\Islam\mid\bin\Microsoft.ApplicationInsights.dll
+D:\Work\Islam\mid\bin\Microsoft.AspNet.EntityDataSource.dll
+D:\Work\Islam\mid\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Work\Islam\mid\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Work\Islam\mid\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Work\Islam\mid\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Work\Islam\mid\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Work\Islam\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Work\Islam\mid\bin\Microsoft.Owin.dll
+D:\Work\Islam\mid\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.dll
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.Google.dll
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Work\Islam\mid\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Work\Islam\mid\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Work\Islam\mid\bin\Microsoft.Web.Infrastructure.dll
+D:\Work\Islam\mid\bin\Newtonsoft.Json.dll
+D:\Work\Islam\mid\bin\Owin.dll
+D:\Work\Islam\mid\bin\System.Web.Optimization.dll
+D:\Work\Islam\mid\bin\System.Web.Providers.dll
+D:\Work\Islam\mid\bin\WebGrease.dll
+D:\Work\Islam\mid\bin\Antlr3.Runtime.pdb
+D:\Work\Islam\mid\bin\EntityFramework.xml
+D:\Work\Islam\mid\bin\EntityFramework.SqlServer.xml
+D:\Work\Islam\mid\bin\Microsoft.AI.DependencyCollector.xml
+D:\Work\Islam\mid\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Work\Islam\mid\bin\Microsoft.AI.Web.xml
+D:\Work\Islam\mid\bin\Microsoft.AI.WindowsServer.xml
+D:\Work\Islam\mid\bin\Microsoft.ApplicationInsights.xml
+D:\Work\Islam\mid\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Work\Islam\mid\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Work\Islam\mid\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Work\Islam\mid\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Work\Islam\mid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Work\Islam\mid\bin\Microsoft.Owin.xml
+D:\Work\Islam\mid\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.xml
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.Google.xml
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Work\Islam\mid\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Work\Islam\mid\bin\Newtonsoft.Json.xml
+D:\Work\Islam\mid\bin\System.Web.Optimization.xml
+D:\Work\Islam\mid\bin\System.Web.Providers.xml
+D:\Work\Islam\mid\obj\Debug\mid.dll
+D:\Work\Islam\mid\obj\Debug\mid.pdb
