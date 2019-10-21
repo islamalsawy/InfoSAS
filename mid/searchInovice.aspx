@@ -97,80 +97,104 @@
             <asp:GridView ID="grdPurchasing" runat="server" AutoGenerateColumns="False" CellSpacing="5" CellPadding="6" CssClass="Table table-bordered table-striped  table-hover" AllowSorting="True" ShowHeaderWhenEmpty="True"
                 OnRowDataBound="grdPurchasing_RowDataBound"
                 OnRowCommand="grdPurchasing_RowCommand"
-                ShowFooter="True">
+                ShowFooter="True"
+                DataKeyNames="">
                 <Columns>
                 <asp:BoundField DataField="RowNumber"  HeaderText="RowNumber" ReadOnly="true" SortExpression="RowNumber"/>  
-      
-                    <asp:TemplateField HeaderText="Doc_No" SortExpression="Doc_No">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Doc_No") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("Doc_No") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Ln_No" SortExpression="Ln_No">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Ln_No") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("Ln_No") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+ 
                     <asp:TemplateField HeaderText="Itm_No" SortExpression="Itm_No">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Itm_No") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("Itm_No") %>'></asp:Label>
+                            <asp:Label ID="label2" runat="server" Text='<%# Bind("Itm_No") %>'></asp:Label>
                         </ItemTemplate>
+                           <FooterTemplate>
+         <asp:TextBox ID="txtInsertItm_No" runat="Server" OnTextChanged="txtInsertItm_No_TextChanged" AutoPostBack="true"/>               
+                         </FooterTemplate>
                     </asp:TemplateField>
+
                     <asp:TemplateField HeaderText="Loc_No" SortExpression="Loc_No">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Loc_No") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("Loc_No") %>'></asp:Label>
+                            <asp:Label ID="TextBox5" runat="server" Text='<%# Bind("Loc_No") %>'></asp:Label>
                         </ItemTemplate>
+                        <FooterTemplate>
+         <asp:TextBox ID="TextBox6" runat="Server"/>               
+                         </FooterTemplate>
                     </asp:TemplateField>
+
                     <asp:TemplateField HeaderText="Qty" SortExpression="Qty">
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("Qty") %>'></asp:TextBox>
+                            <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Qty") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Qty") %>'></asp:Label>
+                            <asp:Label ID="label3" runat="server" Text='<%# Bind("Qty") %>'></asp:Label>
                         </ItemTemplate>
+                        <FooterTemplate>
+         <asp:TextBox ID="TextBox9" runat="Server"/>               
+                         </FooterTemplate>
                     </asp:TemplateField>
+
                     <asp:TemplateField HeaderText="taxp_Extra" SortExpression="taxp_Extra">
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("taxp_Extra") %>'></asp:TextBox>
+                            <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("taxp_Extra") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("taxp_Extra") %>'></asp:Label>
+                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("taxp_Extra") %>'></asp:Label>
                         </ItemTemplate>
+                           <FooterTemplate>
+         <asp:TextBox ID="TextBox10" runat="Server"/>               
+                         </FooterTemplate>
                     </asp:TemplateField>
+
                     <asp:TemplateField HeaderText="Itm_NmAr" SortExpression="Itm_NmAr">
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Itm_NmAr") %>'></asp:TextBox>
+                            <asp:TextBox ID="TextBox11" runat="server" Text='<%# Bind("Itm_NmAr") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("Itm_NmAr") %>'></asp:Label>
+                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Itm_NmAr") %>'></asp:Label>
                         </ItemTemplate>
+                           <FooterTemplate>
+                               <asp:DropDownList ID="drpInsertItm_NmAr" runat="Server" DataSourceID="SqlDataSource2" DataTextField="Itm_NmAr" DataValueField="Itm_No" Width="150px" AutoPostBack="True" OnSelectedIndexChanged="drpInsertItm_NmAr_SelectedIndexChanged" />
+                               <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:DefaultConnection2 %>' SelectCommand="SELECT [Itm_No], [Itm_NmAr] FROM [MtsItmmfs]"></asp:SqlDataSource>
+                           </FooterTemplate>
                     </asp:TemplateField>
+
                     <asp:TemplateField HeaderText="Unit_NmAr" SortExpression="Unit_NmAr">
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("Unit_NmAr") %>'></asp:TextBox>
+                            <asp:DropDownList ID="drpEditUnit_NmAr" runat="server" Text='<%# Bind("Unit_NmAr") %>'></asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label8" runat="server" Text='<%# Bind("Unit_NmAr") %>'></asp:Label>
+                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("Unit_NmAr") %>'></asp:Label>
                         </ItemTemplate>
+                           <FooterTemplate>
+                               <asp:DropDownList ID="drpInsertUnit_NmAr" runat="Server" DataSourceID="SqlDataSource1" DataTextField="Unit_NmAr" DataValueField="Unit_No" />
+                               <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:DefaultConnection2 %>' SelectCommand="SELECT [Unit_No], [Unit_NmAr] FROM [InvItmunit]"></asp:SqlDataSource>
+                           </FooterTemplate>
                     </asp:TemplateField>
-      
+
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btnedit" runat="server" CommandName="Edit" Text="Edit" />
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:LinkButton ID="btnupdate" runat="server" CommandName="Update" Text="Update" />
+                            <asp:LinkButton ID="btncancel" runat="server" CommandName="Cancel" Text="Cancel" />
+                            <asp:LinkButton ID="btnDelete" runat="server" CommandName="Delete" Text="Delete" />
+                        </EditItemTemplate>
+                        <FooterTemplate>
+                            <asp:Button ID="btnInsert" runat="Server" Text="Insert" CommandName="Insert" UseSubmitBehavior="False" />
+                        </FooterTemplate>
+                    </asp:TemplateField>      
                 </Columns>
 
 
             </asp:GridView>
-        
+        <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="AddNewRecord" />
+
            
         
             </div>

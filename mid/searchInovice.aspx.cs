@@ -17,7 +17,7 @@ namespace mid
     {
         ICDBTrdAEntities DB = new ICDBTrdAEntities();
         DataTable dt = new DataTable();
-      DataRow dr = null;
+    
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -108,99 +108,38 @@ namespace mid
             }
         }
 
-        protected void drpItem_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            foreach (GridViewRow row in grdPurchasing.Rows)
-            {
-                TextBox txtGrdItemNo = row.FindControl("txtGrdItemNo") as TextBox;
-                DropDownList drpItem = row.FindControl("drpItem") as DropDownList;
-                if (drpItem != null)
-                {
-                    try
-                    {
-                        string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
-                        using (SqlConnection con = new SqlConnection(constr))
-                        {
-                            using (SqlCommand cmd = new SqlCommand("select Itm_No from MtsItmmfs where Itm_No=@Itm_No"))
-                            {
-                                cmd.CommandType = CommandType.Text;
-                                cmd.Connection = con;
-                                con.Open();
-                                cmd.Parameters.AddWithValue("@Itm_No", drpItem.SelectedValue);
-                                SqlDataReader dr = cmd.ExecuteReader();
-                                while (dr.Read())
-                                {
-                                    txtGrdItemNo.Text = dr["Itm_No"].ToString();
-                                }
-                                con.Close();
-                            }
-                        }
-                    }
-                    catch (Exception s)
-                    {
-                        HttpContext.Current.Response.Write("Error Occured " + s.Message);
-                    }
-                }
-
-
-
-                #region 
-                //DropDownList drpItem = (DropDownList)grdPurchasing.FindControl("drpItem") as DropDownList;
-
-                //TextBox txtGrdItemNo = (TextBox)grdPurchasing.FindControl("txtGrdItemNo")as TextBox;
-                //DropDownList drpItem = (DropDownList)grdPurchasing.FindControl("drpItem") as DropDownList;
-
-
-
-                //}
-
-                //var query = from p in DB.MtsItmmfs
-                //            where drpItem.SelectedItem.Value == Convert.ToString(p.Itm_No)
-                //            select new
-                //            {
-                //                p.Itm_No,
-
-                //            };
-
-
-                //txtGrdItemNo.Text = query.ToString();
-                #endregion
-            }
-        }
-
         protected void grdPurchasing_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            DropDownList drpItem = (DropDownList)e.Row.FindControl("drpItem") as DropDownList;
-            DropDownList drpUnit = (DropDownList)e.Row.FindControl("drpUnit") as DropDownList;
+        //   DropDownList drpInsertItm_NmAr = (DropDownList)e.Row.FindControl("drpInsertItm_NmAr") as DropDownList;
+        //    //DropDownList drpUnit = (DropDownList)e.Row.FindControl("drpUnit") as DropDownList;
 
 
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                if (drpItem != null && drpUnit != null)
-                {
-                    drpItem.DataValueField = "Itm_No";
-                    drpItem.DataTextField = "Itm_NmAr";
-                    drpItem.DataSource = DB.MtsItmmfs.ToList();
-                    drpItem.DataBind();
+        //    if (e.Row.RowType == DataControlRowType.DataRow)
+        //    {
+        //        if (drpInsertItm_NmAr != null /*&& drpUnit != null*/)
+        //        {
+        //            drpInsertItm_NmAr.DataValueField = "Itm_No";
+        //            drpInsertItm_NmAr.DataTextField = "Itm_NmAr";
+        //            drpInsertItm_NmAr.DataSource = DB.MtsItmmfs.ToList();
+        //            drpInsertItm_NmAr.DataBind();
 
-                    drpItem.AppendDataBoundItems = true;
-                    drpItem.Items.Insert(0, new ListItem("اختر صنفاً", "0"));
-                    drpItem.SelectedIndex = 0;
+        //            drpInsertItm_NmAr.AppendDataBoundItems = true;
+        //            drpInsertItm_NmAr.Items.Insert(0, new ListItem("اختر صنفاً", "0"));
+        //            drpInsertItm_NmAr.SelectedIndex = 0;
 
-                    drpUnit.DataValueField = "Unit_No";
-                    drpUnit.DataTextField = "Unit_NmAr";
-                    drpUnit.DataSource = DB.ItmsUnit.ToList();
-                    drpUnit.DataBind();
+                    //drpUnit.DataValueField = "Unit_No";
+                    //drpUnit.DataTextField = "Unit_NmAr";
+                    //drpUnit.DataSource = DB.ItmsUnit.ToList();
+                    //drpUnit.DataBind();
 
                     //drpItem.Items.Add(new ListItem("اختر صنفاً", "0"));
                     //drpItem.AppendDataBoundItems = true;
                     //drpItem.SelectedIndex = 0;
-                }
+            //    }
 
 
 
-            }
+            //}
         }
 
         protected void drpGrdItemNo_TextChanged(object sender, EventArgs e)
@@ -392,15 +331,9 @@ namespace mid
             }
         }
 
-
-
-
-
-
-
         protected void ButtonAdd_Click(object sender, EventArgs e)
         {
-            AddNewRowToGrid();
+           
         }
 
         protected void LinkDelete_Click(object sender, EventArgs e)
@@ -454,11 +387,12 @@ namespace mid
         }
         void BindGridView()
         {
-               
-                string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+     
+
+            string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(constr))
                 {
-                    using (SqlCommand cmd = new SqlCommand("select  ROW_NUMBER() OVER(Order by Ln_No) AS RowNumber, I.Doc_No, I.Ln_No, I.Itm_No, I.Loc_No, I.Qty, I.taxp_Extra, M.Itm_NmAr,U.Unit_NmAr from MtsItmmfs as M right join InvLoddtl as I on M.Itm_No=I.Itm_No join InvItmunit as U on U.Unit_No=I.Unit_No where I.Doc_No=@Doc_No"))
+                    using (SqlCommand cmd = new SqlCommand("select ROW_NUMBER () OVER(ORDER BY Ln_No) AS RowNumber, I.Doc_No, I.Ln_No, I.Itm_No, I.Loc_No, I.Qty, I.taxp_Extra, M.Itm_NmAr,U.Unit_NmAr from MtsItmmfs as M right join InvLoddtl as I on M.Itm_No=I.Itm_No left join InvItmunit as U on U.Unit_No=I.Unit_No where I.Doc_No=@Doc_No"))
                     {
                         cmd.CommandType = CommandType.Text;
                         cmd.Connection = con;
@@ -486,27 +420,168 @@ namespace mid
 
                             grdPurchasing.Rows[0].Cells[0]
     .HorizontalAlign = HorizontalAlign.Center;
+                        grdPurchasing.ShowFooter = false;
                         }
+                   
 
-                        con.Close();
+                    con.Close();
 
                     }
-                 
-                
-
             }
+            
         }
         protected void grdPurchasing_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
-            
+            int LastRow = grdPurchasing.Rows.Count - 1;
+            int Balance = ( Convert.ToInt16(grdPurchasing.Rows[LastRow].Cells[0].Text) + (1));
 
-                //Label RowNumber = row.FindControl("RowNumber") as Label;
-                //Label Doc_No = row.FindControl("Doc_No") as Label;
+            // Label RowNumber = row.FindControl("RowNumber") as Label;
+            //Label Doc_No = row.FindControl("Doc_No") as Label;
 
-                if (e.CommandName.Equals("add"))
+            if (e.CommandName.Equals("Insert"))
                 {
-                AddNewRowToGrid();
+                    TextBox TextBox2 = grdPurchasing.FooterRow.FindControl("txtInsertItm_No") as TextBox;
+                    TextBox TextBox6 = grdPurchasing.FooterRow.FindControl("TextBox6") as TextBox;
+                    TextBox TextBox9 = grdPurchasing.FooterRow.FindControl("TextBox9") as TextBox;
+                    TextBox TextBox10 = grdPurchasing.FooterRow.FindControl("TextBox10") as TextBox;
+                    TextBox TextBox12 = grdPurchasing.FooterRow.FindControl("TextBox12") as TextBox;
+                    TextBox TextBox14 = grdPurchasing.FooterRow.FindControl("TextBox14") as TextBox;
+                    DropDownList drpInsertUnit_NmAr = grdPurchasing.FooterRow.FindControl("drpInsertUnit_NmAr") as DropDownList;
+
+                    string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                    using (SqlConnection con = new SqlConnection(constr))
+                    {
+                        using (SqlCommand cmd = new SqlCommand("insert into Invloddtl (StoreID,Doc_Ty,Doc_No,Ln_No,Itm_No,Unit_No,Loc_No,Qty,taxp_Extra) values (13,13,@Doc_No,@RowNumber,@Itm_No,@Unit_No,@Loc_No,@Qty,@taxp_Extra)"))
+                        {
+                            cmd.CommandType = CommandType.Text;
+                            cmd.Connection = con;
+                            con.Open();
+
+                            cmd.Parameters.AddWithValue("@Itm_No", TextBox2.Text);
+                            cmd.Parameters.AddWithValue("@Loc_No", TextBox6.Text);
+                            cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
+                        cmd.Parameters.AddWithValue("@RowNumber", Balance);
+                            cmd.Parameters.AddWithValue("@Qty", TextBox9.Text);
+                            cmd.Parameters.AddWithValue("@taxp_Extra", TextBox10.Text);
+                            cmd.Parameters.AddWithValue("@Unit_No", drpInsertUnit_NmAr.SelectedValue);
+
+                            cmd.ExecuteNonQuery();
+                            grdPurchasing.ShowFooter = false;
+                            BindGridView();
+                        }
+                   
+                }
+            }
+        }
+
+        protected void AddNewRecord(object sender, EventArgs e)
+        {
+            grdPurchasing.ShowFooter = true;
+            BindGridView();
+        }
+
+        protected void drpInsertItm_NmAr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        
+                 //    TextBox txtInsertItm_No = row.FindControl("txtInsertItm_No") as TextBox;
+              //  DropDownList drpInsertItm_NmAr = row.FindControl("drpInsertItm_NmAr") as DropDownList;
+
+              TextBox txtInsertItm_No = grdPurchasing.FooterRow.FindControl("txtInsertItm_No") as TextBox;
+
+               DropDownList drpInsertItm_NmAr = grdPurchasing.FooterRow.FindControl("drpInsertItm_NmAr") as DropDownList;
+
+                if (drpInsertItm_NmAr != null)
+                {
+                    try
+                    {
+                        string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                        using (SqlConnection con = new SqlConnection(constr))
+                        {
+                            using (SqlCommand cmd = new SqlCommand("select Itm_No from MtsItmmfs where Itm_No=@Itm_No"))
+                            {
+                                cmd.CommandType = CommandType.Text;
+                                cmd.Connection = con;
+                                con.Open();
+                                cmd.Parameters.AddWithValue("@Itm_No", drpInsertItm_NmAr.SelectedValue);
+                                SqlDataReader dr = cmd.ExecuteReader();
+                                while (dr.Read())
+                                {
+                                    txtInsertItm_No.Text = dr["Itm_No"].ToString();
+                                }
+                                con.Close();
+                            }
+                        }
+                    }
+                    catch (Exception s)
+                    {
+                        HttpContext.Current.Response.Write("Error Occured " + s.Message);
+                    }
+                }
+
+
+
+                #region 
+                //DropDownList drpItem = (DropDownList)grdPurchasing.FindControl("drpItem") as DropDownList;
+
+                //TextBox txtGrdItemNo = (TextBox)grdPurchasing.FindControl("txtGrdItemNo")as TextBox;
+                //DropDownList drpItem = (DropDownList)grdPurchasing.FindControl("drpItem") as DropDownList;
+
+
+
+                //}
+
+                //var query = from p in DB.MtsItmmfs
+                //            where drpItem.SelectedItem.Value == Convert.ToString(p.Itm_No)
+                //            select new
+                //            {
+                //                p.Itm_No,
+
+                //            };
+
+
+                //txtGrdItemNo.Text = query.ToString();
+                #endregion
+            
+        }
+
+        protected void txtInsertItm_No_TextChanged(object sender, EventArgs e)
+        {
+
+            TextBox txtInsertItm_No = grdPurchasing.FooterRow.FindControl("txtInsertItm_No") as TextBox;
+            DropDownList drpInsertItm_NmAr = grdPurchasing.FooterRow.FindControl("drpInsertItm_NmAr") as DropDownList;
+
+            if (drpInsertItm_NmAr != null)
+                {
+                    try
+                    {
+                        string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                        using (SqlConnection con = new SqlConnection(constr))
+                        {
+                            using (SqlCommand cmd = new SqlCommand("select Itm_No,Itm_NmAr from MtsItmmfs where Itm_No=@Itm_No"))
+                            {
+                                cmd.CommandType = CommandType.Text;
+                                cmd.Connection = con;
+                                con.Open();
+                                cmd.Parameters.AddWithValue("@Itm_No", txtInsertItm_No.Text);
+                                SqlDataReader dr = cmd.ExecuteReader();
+                                if (dr.Read())
+                                {
+                                drpInsertItm_NmAr.SelectedItem.Text = dr["Itm_NmAr"].ToString();
+                                }
+                            else
+                            {
+                                Response.Write("لا يوجد صنف بهذا الرقم");
+                            }
+                                con.Close();
+                            }
+                        }
+                    }
+                    catch (Exception s)
+                    {
+                        HttpContext.Current.Response.Write("Error Occured " + s.Message);
+                    }
+                
             }
         }
     }
