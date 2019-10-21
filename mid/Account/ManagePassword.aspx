@@ -32,7 +32,7 @@
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword"
                                 CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required."
                                 ValidationGroup="SetPassword" />
-                            <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="confirmPassword"
+                            <asp:ComparBindidator runat="server" ControlToCompare="Password" ControlToValidate="confirmPassword"
                                 CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match."
                                 ValidationGroup="SetPassword" />
 
@@ -76,7 +76,7 @@
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmNewPassword"
                                 CssClass="text-danger" Display="Dynamic" ErrorMessage="Confirm new password is required."
                                 ValidationGroup="ChangePassword" />
-                            <asp:CompareValidator runat="server" ControlToCompare="NewPassword" ControlToValidate="ConfirmNewPassword"
+                            <asp:ComparBindidator runat="server" ControlToCompare="NewPassword" ControlToValidate="ConfirmNewPassword"
                                 CssClass="text-danger" Display="Dynamic" ErrorMessage="The new password and confirmation password do not match."
                                 ValidationGroup="ChangePassword" />
                         </div>

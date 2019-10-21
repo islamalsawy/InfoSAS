@@ -16,33 +16,69 @@ namespace mid
     public partial class purchasingInovice : System.Web.UI.Page
     {
         ICDBTrdAEntities DB = new ICDBTrdAEntities();
-        //protected void Grd_RowDataBound(object sender, GridViewRowEventArgs e)
-        //{
-        //    if (e.Row.RowType == DataControlRowType.DataRow)
-        //    {
-        //        DropDownList drpItem = (DropDownList)e.Row.FindControl("drpItem");
-        //        drpItem.Items.Add(new ListItem("--Select Item--", ""));
-        //    }
-        //}
+        public void Grid_Initializing()
+        {
+            DataTable dt = new DataTable();
+            DataRow dr = null;
+            //dt.Columns.Add(new DataColumn("Column1", typeof(string)));
 
+
+            dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
+            dt.Columns.Add(new DataColumn("Column1", typeof(string)));//for TextBox value 
+            dt.Columns.Add(new DataColumn("Column2", typeof(string)));//for TextBox value 
+            dt.Columns.Add(new DataColumn("Column3", typeof(string)));//for DropDownList selected item 
+            dt.Columns.Add(new DataColumn("Column4", typeof(string)));//for DropDownList 
+            dt.Columns.Add(new DataColumn("Column5", typeof(string)));//for TextBox value 
+            dt.Columns.Add(new DataColumn("Column6", typeof(string)));//for TextBox value 
+            dt.Columns.Add(new DataColumn("Column7", typeof(string)));//for DropDownList selected item 
+            dt.Columns.Add(new DataColumn("Column8", typeof(string)));//for DropDownList      
+            dt.Columns.Add(new DataColumn("Column9", typeof(string)));//for TextBox value 
+            dt.Columns.Add(new DataColumn("Column10", typeof(string)));//for TextBox value 
+            dt.Columns.Add(new DataColumn("Column11", typeof(string)));//for DropDownList selected item 
+            dt.Columns.Add(new DataColumn("Column12", typeof(string)));//for DropDownList 
+            dt.Columns.Add(new DataColumn("Column13", typeof(string)));//for TextBox value 
+            dt.Columns.Add(new DataColumn("Column14", typeof(string)));//for DropDownList selected item 
+            dt.Columns.Add(new DataColumn("Column15", typeof(string)));//for DropDownList      
+            dt.Columns.Add(new DataColumn("Column16", typeof(string)));//for TextBox value 
+            dt.Columns.Add(new DataColumn("Column17", typeof(string)));//for TextBox value 
+            dt.Columns.Add(new DataColumn("Column18", typeof(string)));//for DropDownList selected item 
+            dt.Columns.Add(new DataColumn("Column19", typeof(string)));//for DropDownList 
+
+            dr = dt.NewRow();
+            dr["RowNumber"] = 1;
+            dr["Column1"] = string.Empty;
+            dr["Column4"] = string.Empty;
+            dr["Column5"] = string.Empty;
+            dr["Column6"] = string.Empty;
+            dr["Column7"] = string.Empty;
+            dr["Column8"] = string.Empty;
+            dr["Column9"] = string.Empty;
+            dr["Column10"] = string.Empty;
+            dr["Column11"] = string.Empty;
+            dr["Column12"] = string.Empty;
+            dr["Column13"] = string.Empty;
+            dr["Column14"] = string.Empty;
+            dr["Column15"] = string.Empty;
+            dr["Column16"] = string.Empty;
+            dr["Column17"] = string.Empty;
+            dr["Column18"] = string.Empty;
+            dr["Column19"] = string.Empty;
+            dt.Rows.Add(dr);
+            ViewState["CurrentTable"] = dt;
+            grdPurchasing.DataSource = dt;
+            grdPurchasing.DataBind();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-
-          
             if (!Page.IsPostBack)
-            {
-
+            {              
                 //Islam 8-10-2019
-
-
                 drpBranch.DataValueField = "Brn_No";
                 drpBranch.DataTextField = "Brn_NmAr";
                 drpBranch.DataSource = DB.MainBranch.ToList();
                 drpBranch.DataBind();
                 drpBranch.Items.Insert(0, new ListItem("اختر الفرع", ""));
-
 
                 drpPayment.DataValueField = "Pym_No";
                 drpPayment.DataTextField = "Pym_Nmar";
@@ -63,69 +99,14 @@ namespace mid
                 drpReceiver.DataTextField = "Brn_NmAr";
                 drpReceiver.DataSource = DB.MainBranch.ToList();
                 drpReceiver.DataBind();
-               
-               
 
-
-
-
-            DataTable dt = new DataTable();
-                DataRow dr = null;
-                //dt.Columns.Add(new DataColumn("Column1", typeof(string)));
-               
-
-                dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
-                dt.Columns.Add(new DataColumn("Column1", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column2", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column3", typeof(string)));//for DropDownList selected item 
-                dt.Columns.Add(new DataColumn("Column4", typeof(string)));//for DropDownList 
-                dt.Columns.Add(new DataColumn("Column5", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column6", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column7", typeof(string)));//for DropDownList selected item 
-                dt.Columns.Add(new DataColumn("Column8", typeof(string)));//for DropDownList      
-                dt.Columns.Add(new DataColumn("Column9", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column10", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column11", typeof(string)));//for DropDownList selected item 
-                dt.Columns.Add(new DataColumn("Column12", typeof(string)));//for DropDownList 
-                dt.Columns.Add(new DataColumn("Column13", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column14", typeof(string)));//for DropDownList selected item 
-                dt.Columns.Add(new DataColumn("Column15", typeof(string)));//for DropDownList      
-                dt.Columns.Add(new DataColumn("Column16", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column17", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column18", typeof(string)));//for DropDownList selected item 
-                dt.Columns.Add(new DataColumn("Column19", typeof(string)));//for DropDownList 
-
-                dr = dt.NewRow();
-                dr["RowNumber"] = 1;
-                dr["Column1"] = string.Empty;
-                dr["Column4"] = string.Empty;
-                dr["Column5"] = string.Empty;
-                dr["Column6"] = string.Empty;
-                dr["Column7"] = string.Empty;
-                dr["Column8"] = string.Empty;
-                dr["Column9"] = string.Empty;
-                dr["Column10"] = string.Empty;
-                dr["Column11"] = string.Empty;
-                dr["Column12"] = string.Empty;
-                dr["Column13"] = string.Empty;
-                dr["Column14"] = string.Empty;
-                dr["Column15"] = string.Empty;
-                dr["Column16"] = string.Empty;
-                dr["Column17"] = string.Empty;
-                dr["Column18"] = string.Empty;
-                dr["Column19"] = string.Empty;
-                dt.Rows.Add(dr);
-                ViewState["CurrentTable"] = dt;
-                grdPurchasing.DataSource = dt;
-                grdPurchasing.DataBind();
-
-
+                Grid_Initializing();
             }
 
             drpBranch.Items[0].Attributes["disabled"] = "disabled";
         }
 
-    
+
         protected void drpItem_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -149,7 +130,7 @@ namespace mid
                                 SqlDataReader dr = cmd.ExecuteReader();
                                 while (dr.Read())
                                 {
-                                    txtGrdItemNo.Text = dr  ["Itm_No"].ToString();  
+                                    txtGrdItemNo.Text = dr["Itm_No"].ToString();
                                 }
                                 con.Close();
                             }
@@ -195,7 +176,7 @@ namespace mid
 
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                if (drpItem != null && drpUnit!=null)
+                if (drpItem != null && drpUnit != null)
                 {
                     drpItem.DataValueField = "Itm_No";
                     drpItem.DataTextField = "Itm_NmAr";
@@ -296,7 +277,7 @@ namespace mid
                         TextBox box19 = (TextBox)grdPurchasing.Rows[i].Cells[19].FindControl("txtTaxQuantity");
 
                         // Update the DataRow with the DDL Selected Items & TextBox values 
-                      
+
 
                         dtCurrentTable.Rows[i]["Column1"] = box1.Text;
                         dtCurrentTable.Rows[i]["Column2"] = box2.SelectedItem.Text;
@@ -374,7 +355,7 @@ namespace mid
 
 
                         //Fill the DropDownList with Data 
-        
+
                         if (i < dt.Rows.Count - 1)
                         {
 
@@ -412,12 +393,6 @@ namespace mid
                 }
             }
         }
-
-
-       
-
-
-
 
         protected void ButtonAdd_Click(object sender, EventArgs e)
         {
@@ -467,9 +442,10 @@ namespace mid
                 }
             }
         }
-        public void conn( int sql)
+
+        public void conn(int sql)
         {
-            string sqlStatement = "select isnull(MAX(Doc_No),0)+1 from InvLoddtl as I,MainBranch as M where I.Dlv_Stor=m.Dlv_Stor and m.Dlv_Stor='"+sql+"'";
+            string sqlStatement = "select isnull(MAX(Doc_No),0)+1 from InvLoddtl as I,MainBranch as M where I.Dlv_Stor=m.Dlv_Stor and m.Dlv_Stor='" + sql + "'";
             try
             {
                 string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
@@ -496,35 +472,138 @@ namespace mid
             }
         }
 
-  
-        protected void drpBranch_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnSave_Click(object sender, EventArgs e)
         {
-
-            switch (drpBranch.SelectedIndex)
+            foreach (GridViewRow row in grdPurchasing.Rows)
             {
-                case 1:
+                TextBox txtGrdItemNo = row.FindControl("txtGrdItemNo") as TextBox;
+
+                DropDownList drpUnit = row.FindControl("drpUnit") as DropDownList;
+
+                DropDownList drpItem = row.FindControl("drpItem") as DropDownList;
+
+                TextBox txtSitNo = row.FindControl("txtSitNo") as TextBox;
+                TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox;
+
+             
+                
+                string insertStatement = "insert into InvLoddtl (StoreID,Doc_Ty,Doc_No,Dlv_Stor,Unit_No,Ln_No,Itm_No) values(@StoreID,'1',@Doc_No,@Dlv_Stor,@Unit_No,@RowNumber,@Itm_No)";
+
+                string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    using (SqlCommand cmd = new SqlCommand(insertStatement))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Connection = con;
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@StoreID", drpBranch.SelectedValue);
+                        cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
+                        cmd.Parameters.AddWithValue("@Dlv_Stor", drpBranch.SelectedValue);
+                        cmd.Parameters.AddWithValue("@Unit_No", drpUnit.SelectedValue);
+                        cmd.Parameters.AddWithValue("@RowNumber", row.Cells[0].Text);                    
+                        cmd.Parameters.AddWithValue("@Itm_No", txtGrdItemNo.Text);
+
+
+                        int result = cmd.ExecuteNonQuery();
+                        Grid_Initializing();
+                        Response.Write("تم الحفظ بنجاح");
+                    
+                        if (result < 0)
+                        {
+                            HttpContext.Current.Response.Write("Error Occured ");  
+                        }
+                        con.Close();
+                    }
+                }
+            }
+
+
+            #region MyRegion
+            //    if (grdPurchasing.Rows.Count > 0)
+            //    {
+            //        DataTable dt = new DataTable();
+            //        dt.Columns.AddRange(new DataColumn[19] {
+            //            new DataColumn("Field1", typeof(string)),
+            //            new DataColumn("Field2", typeof(string)),
+            //            new DataColumn("Field3",typeof(string)),
+            //            new DataColumn("Field4",typeof(string)),
+            //            new DataColumn("Field5",typeof(string)),
+            //            new DataColumn("Field6",typeof(string)),
+            //            new DataColumn("Field7",typeof(string)),
+            //            new DataColumn("Field8",typeof(string)),
+            //            new DataColumn("Field9",typeof(string)),
+            //            new DataColumn("Field10",typeof(string)),
+            //            new DataColumn("Field11", typeof(string)),
+            //            new DataColumn("Field12", typeof(string)),
+            //            new DataColumn("Field13",typeof(string)),
+            //            new DataColumn("Field14",typeof(string)),
+            //            new DataColumn("Field15",typeof(string)),
+            //            new DataColumn("Field16",typeof(string)),
+            //            new DataColumn("Field17",typeof(string)),
+            //            new DataColumn("Field18",typeof(string)),
+            //            new DataColumn("Field19",typeof(string)),});
+
+            //        foreach (GridViewRow row in grdPurchasing.Rows)
+            //        {
+
+            //            string box1 = ((TextBox)row.Cells[1].FindControl("txtGrdItemNo")).Text;
+            //            string box2 = ((DropDownList)row.Cells[2].FindControl("drpItem")).SelectedItem.Text;
+            //            string box3 = ((DropDownList)row.Cells[3].FindControl("drpUnit")).SelectedItem.Text;
+            //            string box4 = ((TextBox)row.Cells[4].FindControl("txtSitNo")).Text;
+            //            string box5 = ((TextBox)row.Cells[5].FindControl("txtQuantity")).Text;
+            //            string box6 = ((TextBox)row.Cells[6].FindControl("txtUnitPrice")).Text;
+            //            string box7 = ((TextBox)row.Cells[7].FindControl("txtTotalPrice")).Text;
+            //            string box8 = ((TextBox)row.Cells[8].FindControl("txtVaildDate")).Text;
+            //            string box9 = ((TextBox)row.Cells[9].FindControl("txtDiscountPur1")).Text;
+            //            string box10 = ((TextBox)row.Cells[10].FindControl("txtDiscountQuantity")).Text;
+            //            string box11 = ((TextBox)row.Cells[11].FindControl("txtDiscountPur2")).Text;
+            //            string box12 = ((TextBox)row.Cells[12].FindControl("txtBonusPur")).Text;
+            //            string box13 = ((TextBox)row.Cells[13].FindControl("txtBonusQuantity")).Text;
+            //            string box14 = ((TextBox)row.Cells[14].FindControl("txtSalePrice")).Text;
+            //            string box15 = ((TextBox)row.Cells[15].FindControl("txtSaleQuantity")).Text;
+            //            string box16 = ((TextBox)row.Cells[16].FindControl("txtUnitCost")).Text;
+            //            string box17 = ((TextBox)row.Cells[17].FindControl("txtItemPrice")).Text;
+            //            string box18 = ((TextBox)row.Cells[18].FindControl("txtTax")).Text;
+            //            string box19 = ((TextBox)row.Cells[19].FindControl("txtTaxQuantity")).Text;
+
+
+
+
+            //            dt.Rows.Add(box1, box2, box3, box4, box5, box6, box7, box8, box9, box10, box11, box12, box13, box14, box15, box16, box17, box18, box19);
+            //        }
+            //        InsertRecords(dt);
+            //    }
+            #endregion
+        }
+
+        protected void drpBranch_PreRender(object sender, EventArgs e)
+        {
+            switch (drpBranch.SelectedValue)
+            {
+                case "1":
                     conn(1);
                     break;
-                case 2:
+                case "2":
                     conn(2);
                     break;
-                case 3:
+                case "3":
                     conn(3);
                     break;
-                case 4:
+                case "4":
                     conn(4);
                     break;
-                case 5:
+                case "5":
                     conn(5);
                     break;
                 default:
                     break;
             }
-          
-        }
-
         }
     }
+
+    }
+    
     
     
 

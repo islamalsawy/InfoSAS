@@ -23,7 +23,7 @@
 
     $('.validate-form .input100').each(function(){
         $(this).focus(function(){
-           hideValidate(this);
+           hidBindidate(this);
         });
     });
 
@@ -46,7 +46,7 @@
         $(thisAlert).addClass('alert-validate');
     }
 
-    function hideValidate(input) {
+    function hidBindidate(input) {
         var thisAlert = $(input).parent();
 
         $(thisAlert).removeClass('alert-validate');

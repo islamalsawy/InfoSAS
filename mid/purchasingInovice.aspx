@@ -1,6 +1,6 @@
 ﻿<%--Islam 7-10-2019--%>
 
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="purchasingInovice.aspx.cs" Inherits="mid.purchasingInovice" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="purchasingInovice.aspx.cs" Inherits="mid.purchasingInovice" EnableEventValidation="false" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -18,13 +18,12 @@
                     <tr>
                         <td>الفرع</td>
                         <td>
-                            <asp:DropDownList ID="drpBranch" runat="server" AutoPostBack="true"
-                                OnSelectedIndexChanged="drpBranch_SelectedIndexChanged" >
+                            <asp:DropDownList ID="drpBranch" runat="server" AutoPostBack="true"                   OnPreRender="drpBranch_PreRender">
                             </asp:DropDownList></td>
 
                         <td>سند الادخال</td>
                         <td>
-                            <asp:TextBox ID="txtSanad" runat="server"  Enabled="false" TextMode="Number" required="true"></asp:TextBox>
+                            <asp:TextBox ID="txtSanad" runat="server"  Enabled="false" TextMode="Number" required="true" AutoPostBack="true"></asp:TextBox>
 
                         </td>
 
@@ -110,7 +109,7 @@
                             </ItemTemplate>
                         </asp:TemplateField>--%>
 
-                    <asp:BoundField DataField="RowNumber" HeaderText="م" />
+                    <asp:BoundField DataField="RowNumber"  HeaderText="م" />
 
                     <asp:TemplateField HeaderText="رقم الصنف">
                         <ItemTemplate>
@@ -328,7 +327,7 @@
             <table class="table" style= "width:250px;padding:0;margin:auto">
                 <tr>   
                     <td> 
-                        <asp:Button ID="btnSave" runat="server" Text="حفظ"  CssClass="btn btn-primary" style="border: 1px solid transparent;
+                        <asp:Button ID="btnSave" runat="server" Text="حفظ" OnClick="btnSave_Click" CssClass="btn btn-primary" style="border: 1px solid transparent;
     padding: 0.375rem 0.75rem;"/>
                     </td>
                     <td>

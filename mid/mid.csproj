@@ -395,8 +395,13 @@
     <Content Include="wp-content\image\01.jpg" />
     <Content Include="wp-content\image\022e9691c5ba65d23cbf27a53f83163e.jpg" />
     <Content Include="wp-content\image\465731298.jpg.0.jpg" />
+    <Content Include="wp-content\image\84380.png" />
+    <Content Include="wp-content\image\cancel-solid-icon-614x460.png" />
     <Content Include="wp-content\image\clients.jpg" />
+    <Content Include="wp-content\image\DeleteDustbin-512.png" />
+    <Content Include="wp-content\image\new_artboard_file_create_post-512.png" />
     <Content Include="wp-content\image\Pharmacy-in-Gozo.jpg" />
+    <Content Include="wp-content\image\save.png" />
     <Content Include="wp-content\image\ulta-makeup.jpg" />
     <Content Include="wp-content\login.png" />
     <Content Include="wp-content\plugins\bold-page-builder\script_fe68b3.js" />

@@ -16,21 +16,17 @@ namespace mid
     public partial class searchInovice : System.Web.UI.Page
     {
         ICDBTrdAEntities DB = new ICDBTrdAEntities();
-        //protected void Grd_RowDataBound(object sender, GridViewRowEventArgs e)
-        //{
-        //    if (e.Row.RowType == DataControlRowType.DataRow)
-        //    {
-        //        DropDownList drpItem = (DropDownList)e.Row.FindControl("drpItem");
-        //        drpItem.Items.Add(new ListItem("--Select Item--", ""));
-        //    }
-        //}
+        DataTable dt = new DataTable();
+      DataRow dr = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             if (!Page.IsPostBack)
             {
 
                 //Islam 8-10-2019
-
+               
 
                 drpBranch.DataValueField = "Brn_No";
                 drpBranch.DataTextField = "Brn_NmAr";
@@ -57,54 +53,53 @@ namespace mid
                 drpReceiver.DataSource = DB.MainBranch.ToList();
                 drpReceiver.DataBind();
 
-                DataTable dt = new DataTable();
-                DataRow dr = null;
+               
+             
 
-                dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
-                dt.Columns.Add(new DataColumn("Column1", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column2", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column3", typeof(string)));//for DropDownList selected item 
-                dt.Columns.Add(new DataColumn("Column4", typeof(string)));//for DropDownList 
-                dt.Columns.Add(new DataColumn("Column5", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column6", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column7", typeof(string)));//for DropDownList selected item 
-                dt.Columns.Add(new DataColumn("Column8", typeof(string)));//for DropDownList      
-                dt.Columns.Add(new DataColumn("Column9", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column10", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column11", typeof(string)));//for DropDownList selected item 
-                dt.Columns.Add(new DataColumn("Column12", typeof(string)));//for DropDownList 
-                dt.Columns.Add(new DataColumn("Column13", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column14", typeof(string)));//for DropDownList selected item 
-                dt.Columns.Add(new DataColumn("Column15", typeof(string)));//for DropDownList      
-                dt.Columns.Add(new DataColumn("Column16", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column17", typeof(string)));//for TextBox value 
-                dt.Columns.Add(new DataColumn("Column18", typeof(string)));//for DropDownList selected item 
-                dt.Columns.Add(new DataColumn("Column19", typeof(string)));//for DropDownList 
+               // dt.Columns.Add(new DataColumn("RowNumber", typeof(string)));
+               // dt.Columns.Add(new DataColumn("Column1", typeof(string)));//for TextBox value 
+               // dt.Columns.Add(new DataColumn("Column2", typeof(string)));//for TextBox value 
+               // dt.Columns.Add(new DataColumn("Column3", typeof(string)));//for DropDownList selected item 
+               // dt.Columns.Add(new DataColumn("Column4", typeof(string)));//for DropDownList 
+               // dt.Columns.Add(new DataColumn("Column5", typeof(string)));//for TextBox value 
+               // dt.Columns.Add(new DataColumn("Column6", typeof(string)));//for TextBox value 
+               // dt.Columns.Add(new DataColumn("Column7", typeof(string)));//for DropDownList selected item 
+               // dt.Columns.Add(new DataColumn("Column8", typeof(string)));//for DropDownList      
+               // dt.Columns.Add(new DataColumn("Column9", typeof(string)));//for TextBox value 
+               // dt.Columns.Add(new DataColumn("Column10", typeof(string)));//for TextBox value 
+               // dt.Columns.Add(new DataColumn("Column11", typeof(string)));//for DropDownList selected item 
+               // dt.Columns.Add(new DataColumn("Column12", typeof(string)));//for DropDownList 
+               // dt.Columns.Add(new DataColumn("Column13", typeof(string)));//for TextBox value 
+               // dt.Columns.Add(new DataColumn("Column14", typeof(string)));//for DropDownList selected item 
+               // dt.Columns.Add(new DataColumn("Column15", typeof(string)));//for DropDownList      
+               // dt.Columns.Add(new DataColumn("Column16", typeof(string)));//for TextBox value 
+               // dt.Columns.Add(new DataColumn("Column17", typeof(string)));//for TextBox value 
+               // dt.Columns.Add(new DataColumn("Column18", typeof(string)));//for DropDownList selected item 
+               // dt.Columns.Add(new DataColumn("Column19", typeof(string)));//for DropDownList 
 
-                dr = dt.NewRow();
-                dr["RowNumber"] = 1;
-                dr["Column1"] = string.Empty;
-                dr["Column4"] = string.Empty;
-                dr["Column5"] = string.Empty;
-                dr["Column6"] = string.Empty;
-                dr["Column7"] = string.Empty;
-                dr["Column8"] = string.Empty;
-                dr["Column9"] = string.Empty;
-                dr["Column10"] = string.Empty;
-                dr["Column11"] = string.Empty;
-                dr["Column12"] = string.Empty;
-                dr["Column13"] = string.Empty;
-                dr["Column14"] = string.Empty;
-                dr["Column15"] = string.Empty;
-                dr["Column16"] = string.Empty;
-                dr["Column17"] = string.Empty;
-                dr["Column18"] = string.Empty;
-                dr["Column19"] = string.Empty;
-                dt.Rows.Add(dr);
-                ViewState["CurrentTable"] = dt;
-                grdPurchasing.DataSource = dt;
-                grdPurchasing.DataBind();
-
+               // dr = dt.NewRow();
+               // dr["RowNumber"] = 1;
+               // dr["Column1"] = string.Empty;
+               // dr["Column4"] = string.Empty;
+               // dr["Column5"] = string.Empty;
+               // dr["Column6"] = string.Empty;
+               // dr["Column7"] = string.Empty;
+               // dr["Column8"] = string.Empty;
+               // dr["Column9"] = string.Empty;
+               // dr["Column10"] = string.Empty;
+               // dr["Column11"] = string.Empty;
+               // dr["Column12"] = string.Empty;
+               // dr["Column13"] = string.Empty;
+               // dr["Column14"] = string.Empty;
+               // dr["Column15"] = string.Empty;
+               // dr["Column16"] = string.Empty;
+               // dr["Column17"] = string.Empty;
+               // dr["Column18"] = string.Empty;
+               // dr["Column19"] = string.Empty;
+               // dt.Rows.Add(dr);
+               // ViewState["CurrentTable"] = dt;
+               //grdPurchasing.DataSource = dt;
+               // grdPurchasing.DataBind();
 
 
 
@@ -304,9 +299,6 @@ namespace mid
                         dtCurrentTable.Rows[i]["Column17"] = box17.Text;
                         dtCurrentTable.Rows[i]["Column18"] = box18.Text;
                         dtCurrentTable.Rows[i]["Column19"] = box19.Text;
-
-
-
                     }
 
                     //Store the current data to ViewState for future reference 
@@ -452,6 +444,69 @@ namespace mid
                     row[0] = rowNumber;
                     rowNumber++;
                 }
+            }
+        }
+
+        protected void txtSanad_TextChanged(object sender, EventArgs e)
+        {     
+
+                BindGridView();
+        }
+        void BindGridView()
+        {
+               
+                string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    using (SqlCommand cmd = new SqlCommand("select  ROW_NUMBER() OVER(Order by Ln_No) AS RowNumber, I.Doc_No, I.Ln_No, I.Itm_No, I.Loc_No, I.Qty, I.taxp_Extra, M.Itm_NmAr,U.Unit_NmAr from MtsItmmfs as M right join InvLoddtl as I on M.Itm_No=I.Itm_No join InvItmunit as U on U.Unit_No=I.Unit_No where I.Doc_No=@Doc_No"))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Connection = con;
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);  
+                        cmd.ExecuteNonQuery();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        if (dt.Rows.Count >0) 
+                        {
+                            grdPurchasing.DataSource = dt;
+                            grdPurchasing.DataBind();
+                        }
+                        else
+                        {
+                            dt.Rows.Add(dt.NewRow());
+                            grdPurchasing.DataSource = dt;
+                            grdPurchasing.DataBind();
+                            grdPurchasing.Rows[0].Cells.Clear();
+                            grdPurchasing.Rows[0].Cells.Add(new TableCell());
+
+                            grdPurchasing.Rows[0].Cells[0].ColumnSpan = dt.Columns.Count;
+
+                            grdPurchasing.Rows[0].Cells[0].Text = "لا يوجد بيانات لسند الادخال";
+
+                            grdPurchasing.Rows[0].Cells[0]
+    .HorizontalAlign = HorizontalAlign.Center;
+                        }
+
+                        con.Close();
+
+                    }
+                 
+                
+
+            }
+        }
+        protected void grdPurchasing_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+            
+
+                //Label RowNumber = row.FindControl("RowNumber") as Label;
+                //Label Doc_No = row.FindControl("Doc_No") as Label;
+
+                if (e.CommandName.Equals("add"))
+                {
+                AddNewRowToGrid();
             }
         }
     }

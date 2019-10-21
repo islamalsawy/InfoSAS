@@ -718,3 +718,4 @@ D:\Work\Islam\mid\bin\System.Web.Optimization.xml
 D:\Work\Islam\mid\bin\System.Web.Providers.xml
 D:\Work\Islam\mid\obj\Debug\mid.dll
 D:\Work\Islam\mid\obj\Debug\mid.pdb
+D:\Work\Islam\mid\obj\Debug\mid.csprojResolveAssemblyReference.cache

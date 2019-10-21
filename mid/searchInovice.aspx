@@ -18,7 +18,8 @@
 
                         <td>سند الادخال</td>
                         <td>
-                            <asp:TextBox ID="txtSanad" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtSanad" runat="server" TextMode="Number" required="true" 
+                       AutoPostBack="true"         OnTextChanged="txtSanad_TextChanged"></asp:TextBox>
 
                         </td>
 
@@ -93,192 +94,86 @@
         </div>
 
         <div style="top: 0; bottom: 0; left: 0; right: 0; margin: auto; overflow: scroll; width: 1000px; height: 220px">
-            <asp:GridView ID="grdPurchasing" runat="server" AutoGenerateColumns="False" CellSpacing="5" CellPadding="6" CssClass="Table table-bordered table-striped  table-hover" AllowPaging="True" AllowSorting="True" ShowHeaderWhenEmpty="true"
+            <asp:GridView ID="grdPurchasing" runat="server" AutoGenerateColumns="False" CellSpacing="5" CellPadding="6" CssClass="Table table-bordered table-striped  table-hover" AllowSorting="True" ShowHeaderWhenEmpty="True"
                 OnRowDataBound="grdPurchasing_RowDataBound"
-                ShowFooter="true">
-
+                OnRowCommand="grdPurchasing_RowCommand"
+                ShowFooter="True">
                 <Columns>
-                    <%--       <asp:TemplateField HeaderText="م" >
-                            <ItemTemplate >
-                                <%# Container.DataItemIndex + 1 %>
-                            </ItemTemplate>
-                        </asp:TemplateField>--%>
-
-                    <asp:BoundField DataField="RowNumber" HeaderText="م" />
-
-                    <asp:TemplateField HeaderText="رقم الصنف">
+                <asp:BoundField DataField="RowNumber"  HeaderText="RowNumber" ReadOnly="true" SortExpression="RowNumber"/>  
+      
+                    <asp:TemplateField HeaderText="Doc_No" SortExpression="Doc_No">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Doc_No") %>'></asp:TextBox>
+                        </EditItemTemplate>
                         <ItemTemplate>
-
-                            <asp:TextBox ID="txtGrdItemNo" runat="server" Width="80px" AutoPostBack="true" OnTextChanged="drpGrdItemNo_TextChanged" TextMode="Number" Required="true"></asp:TextBox>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("Doc_No") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-
-
-                    <asp:TemplateField HeaderText="اسم الصنف">
+                    <asp:TemplateField HeaderText="Ln_No" SortExpression="Ln_No">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Ln_No") %>'></asp:TextBox>
+                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:DropDownList ID="drpItem" runat="server" AutoPostBack="true" Width="150px" OnSelectedIndexChanged="drpItem_SelectedIndexChanged">
-                            </asp:DropDownList>
-
+                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("Ln_No") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-
-
-                    <asp:TemplateField HeaderText="الوحدة">
+                    <asp:TemplateField HeaderText="Itm_No" SortExpression="Itm_No">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Itm_No") %>'></asp:TextBox>
+                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:DropDownList ID="drpUnit" runat="server" AutoPostBack="false"  Width="60px">
-                            </asp:DropDownList>                     
+                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("Itm_No") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-
-
-                    <asp:TemplateField HeaderText="رقم الموقع">
+                    <asp:TemplateField HeaderText="Loc_No" SortExpression="Loc_No">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Loc_No") %>'></asp:TextBox>
+                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:TextBox ID="txtSitNo" runat="server" Width="60px" TextMode="Number" Required="true">
-
-                            </asp:TextBox>
+                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("Loc_No") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="الكمية">
+                    <asp:TemplateField HeaderText="Qty" SortExpression="Qty">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("Qty") %>'></asp:TextBox>
+                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:TextBox ID="txtQuantity" runat="server" Width="60px" TextMode="Number" Required="true">
-
-                            </asp:TextBox>
+                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Qty") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="سعر شراء الوحدة">
+                    <asp:TemplateField HeaderText="taxp_Extra" SortExpression="taxp_Extra">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("taxp_Extra") %>'></asp:TextBox>
+                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:TextBox ID="txtUnitPrice" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
+                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("taxp_Extra") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="القيمة الإجمالية">
+                    <asp:TemplateField HeaderText="Itm_NmAr" SortExpression="Itm_NmAr">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Itm_NmAr") %>'></asp:TextBox>
+                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:TextBox ID="txtTotalPrice" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
+                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("Itm_NmAr") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="تاريخ الصلاحية">
+                    <asp:TemplateField HeaderText="Unit_NmAr" SortExpression="Unit_NmAr">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("Unit_NmAr") %>'></asp:TextBox>
+                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:TextBox ID="txtVaildDate" runat="server" Width="100px" TextMode="Month">
-
-                            </asp:TextBox>
+                            <asp:Label ID="Label8" runat="server" Text='<%# Bind("Unit_NmAr") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-
-
-                    <asp:TemplateField HeaderText=" خصم 1 شراء %">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtDiscountPur1" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField HeaderText="قيمة الخصم">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtDiscountQuantity" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="خصم 2 شراء %">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtDiscountPur2" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="بونص % شراء">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtBonusPur" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField HeaderText="بونص كمية">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtBonusQuantity" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="سعر البيع">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtSalePrice" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="قيمة البيع">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtSaleQuantity" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField HeaderText="تكلفة الوحدة">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtUnitCost" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField HeaderText="تكلفة الصنف">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtItemPrice" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="الضريبة %">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtTax" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="قيمة الضريبة">
-                        <ItemTemplate>
-                            <asp:TextBox ID="txtTaxQuantity" runat="server" Width="60px" TextMode="Number">
-
-                            </asp:TextBox>
-                        </ItemTemplate>
-                        <FooterStyle HorizontalAlign="Center" />
-                        <FooterTemplate>
-                            <asp:Button ID="ButtonAdd" runat="server"
-                                Text="أضف صنف جديد"
-                                OnClick="ButtonAdd_Click"
-                     CausesValidation="False" />
-                        </FooterTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton ID="LinkDelete" runat="server"
-                                OnClick="LinkDelete_Click">حذف</asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+      
                 </Columns>
+
+
             </asp:GridView>
-        </div>
+        
+           
+        
+            </div>
         <div style="margin: 10px">
             <table class="table " style="width: 400px; height: 50px;">
                 <tr>
