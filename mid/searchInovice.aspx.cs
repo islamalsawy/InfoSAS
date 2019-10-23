@@ -110,31 +110,31 @@ namespace mid
 
         protected void grdPurchasing_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-        //   DropDownList drpInsertItm_NmAr = (DropDownList)e.Row.FindControl("drpInsertItm_NmAr") as DropDownList;
-        //    //DropDownList drpUnit = (DropDownList)e.Row.FindControl("drpUnit") as DropDownList;
+       
+            //    //DropDownList drpUnit = (DropDownList)e.Row.FindControl("drpUnit") as DropDownList;
 
+          
+            //    if (e.Row.RowType == DataControlRowType.DataRow)
+            //    {
+            //        if (drpInsertItm_NmAr != null /*&& drpUnit != null*/)
+            //        {
+            //            drpInsertItm_NmAr.DataValueField = "Itm_No";
+            //            drpInsertItm_NmAr.DataTextField = "Itm_NmAr";
+            //            drpInsertItm_NmAr.DataSource = DB.MtsItmmfs.ToList();
+            //            drpInsertItm_NmAr.DataBind();
 
-        //    if (e.Row.RowType == DataControlRowType.DataRow)
-        //    {
-        //        if (drpInsertItm_NmAr != null /*&& drpUnit != null*/)
-        //        {
-        //            drpInsertItm_NmAr.DataValueField = "Itm_No";
-        //            drpInsertItm_NmAr.DataTextField = "Itm_NmAr";
-        //            drpInsertItm_NmAr.DataSource = DB.MtsItmmfs.ToList();
-        //            drpInsertItm_NmAr.DataBind();
+            //            drpInsertItm_NmAr.AppendDataBoundItems = true;
+            //            drpInsertItm_NmAr.Items.Insert(0, new ListItem("اختر صنفاً", "0"));
+            //            drpInsertItm_NmAr.SelectedIndex = 0;
 
-        //            drpInsertItm_NmAr.AppendDataBoundItems = true;
-        //            drpInsertItm_NmAr.Items.Insert(0, new ListItem("اختر صنفاً", "0"));
-        //            drpInsertItm_NmAr.SelectedIndex = 0;
+            //drpUnit.DataValueField = "Unit_No";
+            //drpUnit.DataTextField = "Unit_NmAr";
+            //drpUnit.DataSource = DB.ItmsUnit.ToList();
+            //drpUnit.DataBind();
 
-                    //drpUnit.DataValueField = "Unit_No";
-                    //drpUnit.DataTextField = "Unit_NmAr";
-                    //drpUnit.DataSource = DB.ItmsUnit.ToList();
-                    //drpUnit.DataBind();
-
-                    //drpItem.Items.Add(new ListItem("اختر صنفاً", "0"));
-                    //drpItem.AppendDataBoundItems = true;
-                    //drpItem.SelectedIndex = 0;
+            //drpItem.Items.Add(new ListItem("اختر صنفاً", "0"));
+            //drpItem.AppendDataBoundItems = true;
+            //drpItem.SelectedIndex = 0;
             //    }
 
 
@@ -392,7 +392,7 @@ namespace mid
             string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(constr))
                 {
-                    using (SqlCommand cmd = new SqlCommand("select ROW_NUMBER () OVER(ORDER BY Ln_No) AS RowNumber, I.Doc_No, I.Ln_No, I.Itm_No, I.Loc_No, I.Qty, I.taxp_Extra, M.Itm_NmAr,U.Unit_NmAr from MtsItmmfs as M right join InvLoddtl as I on M.Itm_No=I.Itm_No left join InvItmunit as U on U.Unit_No=I.Unit_No where I.Doc_No=@Doc_No"))
+                    using (SqlCommand cmd = new SqlCommand("select ROW_NUMBER () OVER(ORDER BY Ln_No) AS RowNumber, I.Doc_No, I.Ln_No, I.Itm_No, I.Loc_No, I.Qty, I.taxp_Extra, M.Itm_NmAr,U.Unit_NmAr,I.Itm_Cost,I.Titm_Cost,I.Exp_Date,I.Batch_No,I.Disc1_Prct,I.Disc1_Val,I.Disc2_Prct,I.BonusPur_Prct,I.BonusPur_Qty,I.Itm_Pur,I.Titm_Pur,I.taxv_Extra from MtsItmmfs as M right join InvLoddtl as I on M.Itm_No=I.Itm_No left join InvItmunit as U on U.Unit_No=I.Unit_No where I.Doc_No=@Doc_No"))
                     {
                         cmd.CommandType = CommandType.Text;
                         cmd.Connection = con;
@@ -405,7 +405,8 @@ namespace mid
                         {
                             grdPurchasing.DataSource = dt;
                             grdPurchasing.DataBind();
-                        }
+                        grdPurchasing.ShowFooter = true;
+                    }
                         else
                         {
                             dt.Rows.Add(dt.NewRow());
@@ -433,8 +434,8 @@ namespace mid
         protected void grdPurchasing_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
-            int LastRow = grdPurchasing.Rows.Count - 1;
-            int Balance = ( Convert.ToInt16(grdPurchasing.Rows[LastRow].Cells[0].Text) + (1));
+         //   int LastRow = grdPurchasing.Rows.Count - 1;
+         //   int Balance = ( Convert.ToInt16(grdPurchasing.Rows[LastRow].Cells[0].Text) + (1));
 
             // Label RowNumber = row.FindControl("RowNumber") as Label;
             //Label Doc_No = row.FindControl("Doc_No") as Label;
@@ -448,11 +449,12 @@ namespace mid
                     TextBox TextBox12 = grdPurchasing.FooterRow.FindControl("TextBox12") as TextBox;
                     TextBox TextBox14 = grdPurchasing.FooterRow.FindControl("TextBox14") as TextBox;
                     DropDownList drpInsertUnit_NmAr = grdPurchasing.FooterRow.FindControl("drpInsertUnit_NmAr") as DropDownList;
+                DropDownList drpInsertItm_NmAr = grdPurchasing.FooterRow.FindControl("drpInsertItm_NmAr") as DropDownList;
 
-                    string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
                     using (SqlConnection con = new SqlConnection(constr))
                     {
-                        using (SqlCommand cmd = new SqlCommand("insert into Invloddtl (StoreID,Doc_Ty,Doc_No,Ln_No,Itm_No,Unit_No,Loc_No,Qty,taxp_Extra) values (13,13,@Doc_No,@RowNumber,@Itm_No,@Unit_No,@Loc_No,@Qty,@taxp_Extra)"))
+                        using (SqlCommand cmd = new SqlCommand("insert into Invloddtl (Ln_No,StoreID,Doc_Ty,Doc_No,Itm_No,Unit_No,Loc_No,Qty,taxp_Extra) Values ((select max (Ln_No)+1 from Invloddtl where Doc_No=@Doc_No),13,13,@Doc_No,@Itm_No,@Unit_No,@Loc_No,@Qty,@taxp_Extra)"))
                         {
                             cmd.CommandType = CommandType.Text;
                             cmd.Connection = con;
@@ -461,15 +463,17 @@ namespace mid
                             cmd.Parameters.AddWithValue("@Itm_No", TextBox2.Text);
                             cmd.Parameters.AddWithValue("@Loc_No", TextBox6.Text);
                             cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
-                        cmd.Parameters.AddWithValue("@RowNumber", Balance);
+                     //   cmd.Parameters.AddWithValue("@RowNumber", Balance);
                             cmd.Parameters.AddWithValue("@Qty", TextBox9.Text);
                             cmd.Parameters.AddWithValue("@taxp_Extra", TextBox10.Text);
                             cmd.Parameters.AddWithValue("@Unit_No", drpInsertUnit_NmAr.SelectedValue);
 
-                            cmd.ExecuteNonQuery();
+                    
+                        cmd.ExecuteNonQuery();
                             grdPurchasing.ShowFooter = false;
                             BindGridView();
-                        }
+                       
+                    }
                    
                 }
             }
@@ -584,6 +588,97 @@ namespace mid
                 
             }
         }
+
+        protected void grdPurchasing_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            grdPurchasing.EditIndex = e.NewEditIndex;
+            BindGridView();
+
+        }
+
+        protected void grdPurchasing_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            //string ID = grdPurchasing.DataKeys[e.RowIndex].Value.ToString();
+            GridViewRow row = grdPurchasing.Rows[e.RowIndex];
+
+
+            TextBox txtEditItm_No = (TextBox)row.FindControl("txtEditItm_No");
+            TextBox txtEditLoc_No = (TextBox)row.FindControl("txtEditLoc_No");
+            TextBox txtEditQty = (TextBox)row.FindControl("txtEditQty");
+            TextBox txtEditTaxp_Extra = (TextBox)row.FindControl("txtEditTaxp_Extra");
+            DropDownList drpEditItm_NmAr = (DropDownList)row.FindControl("drpEditItm_NmAr");
+            DropDownList drpEditUnit_NmAr = (DropDownList)row.FindControl("drpEditUnit_NmAr");
+
+          
+
+            string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Update Invloddtl set  StoreID=13,Doc_Ty=13,Itm_No=@Itm_No,Unit_No=@Unit_No,Loc_No=@Loc_No,Qty=@Qty,taxp_Extra=@taxp_Extra where Doc_No=@Doc_No and Ln_No=@RowNumber"))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+
+                    cmd.Parameters.AddWithValue("@Itm_No", drpEditItm_NmAr.SelectedValue);
+                    cmd.Parameters.AddWithValue("@Loc_No", txtEditLoc_No.Text);
+                    cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
+                    cmd.Parameters.AddWithValue("@Qty", txtEditQty.Text);
+                    cmd.Parameters.AddWithValue("@taxp_Extra", txtEditTaxp_Extra.Text);                  
+                    cmd.Parameters.AddWithValue("@Unit_No", drpEditUnit_NmAr.SelectedValue);              
+                    cmd.Parameters.AddWithValue("@RowNumber", row.Cells[0].Text);
+
+                    cmd.ExecuteNonQuery();
+                    grdPurchasing.EditIndex = -1;
+                    BindGridView();
+                }
+
+            }
+
+        }
+
+        protected void grdPurchasing_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            grdPurchasing.EditIndex = -1;
+            BindGridView();
+
+        }
+
+        protected void grdPurchasing_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+
+          //  GridViewRow row = grdPurchasing.Rows[e.RowIndex];
+            int ItemID = int.Parse(grdPurchasing.DataKeys[e.RowIndex].Value.ToString());
+
+            string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    using (SqlCommand cmd = new SqlCommand("Delete from Invloddtl where Doc_No=@Doc_No and Ln_No=@RowNumber"))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Connection = con;
+                        con.Open();
+
+                        cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
+                        cmd.Parameters.AddWithValue("@RowNumber", ItemID);
+                        cmd.ExecuteNonQuery();
+                        grdPurchasing.EditIndex = -1;
+                        BindGridView();
+                    }
+                }
+            }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            string script = "alert(\"تم تحديث البيانات بنجاح\");";
+            ScriptManager.RegisterStartupScript(this, GetType(),
+                                  "ServerControlScript", script, true);
+        }
     }
 
-}
+   
+
+    }
+
+

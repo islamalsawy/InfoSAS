@@ -71,6 +71,9 @@ namespace mid
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            dateSanadH.Text = DateTime.Now.ToString("yyyy/MM/dd", new System.Globalization.CultureInfo("ar-SA"));
+            dateSanad.Text = DateTime.Now.ToString("yyyy/MM/dd", new System.Globalization.CultureInfo("ar-EG"));
+
             if (!Page.IsPostBack)
             {              
                 //Islam 8-10-2019
@@ -264,17 +267,20 @@ namespace mid
                         TextBox box6 = (TextBox)grdPurchasing.Rows[i].Cells[6].FindControl("txtUnitPrice");
                         TextBox box7 = (TextBox)grdPurchasing.Rows[i].Cells[7].FindControl("txtTotalPrice");
                         TextBox box8 = (TextBox)grdPurchasing.Rows[i].Cells[8].FindControl("txtVaildDate");
-                        TextBox box9 = (TextBox)grdPurchasing.Rows[i].Cells[9].FindControl("txtDiscountPur1");
-                        TextBox box10 = (TextBox)grdPurchasing.Rows[i].Cells[10].FindControl("txtDiscountQuantity");
-                        TextBox box11 = (TextBox)grdPurchasing.Rows[i].Cells[11].FindControl("txtDiscountPur2");
-                        TextBox box12 = (TextBox)grdPurchasing.Rows[i].Cells[12].FindControl("txtBonusPur");
-                        TextBox box13 = (TextBox)grdPurchasing.Rows[i].Cells[13].FindControl("txtBonusQuantity");
-                        TextBox box14 = (TextBox)grdPurchasing.Rows[i].Cells[14].FindControl("txtSalePrice");
-                        TextBox box15 = (TextBox)grdPurchasing.Rows[i].Cells[15].FindControl("txtSaleQuantity");
-                        TextBox box16 = (TextBox)grdPurchasing.Rows[i].Cells[16].FindControl("txtUnitCost");
-                        TextBox box17 = (TextBox)grdPurchasing.Rows[i].Cells[17].FindControl("txtItemPrice");
-                        TextBox box18 = (TextBox)grdPurchasing.Rows[i].Cells[18].FindControl("txtTax");
-                        TextBox box19 = (TextBox)grdPurchasing.Rows[i].Cells[19].FindControl("txtTaxQuantity");
+                        TextBox box9 = (TextBox)grdPurchasing.Rows[i].Cells[9].FindControl("txtBatch_No");
+                        TextBox box10 = (TextBox)grdPurchasing.Rows[i].Cells[10].FindControl("txtDiscountPur1");
+                        TextBox box11 = (TextBox)grdPurchasing.Rows[i].Cells[11].FindControl("txtDiscountQuantity");
+                        TextBox box12 = (TextBox)grdPurchasing.Rows[i].Cells[12].FindControl("txtDiscountPur2");
+                        TextBox box13 = (TextBox)grdPurchasing.Rows[i].Cells[13].FindControl("txtBonusPur");
+                        TextBox box14 = (TextBox)grdPurchasing.Rows[i].Cells[14].FindControl("txtBonusQuantity");
+                        TextBox box15 = (TextBox)grdPurchasing.Rows[i].Cells[15].FindControl("txtSalePrice");
+                        TextBox box16 = (TextBox)grdPurchasing.Rows[i].Cells[16].FindControl("txtSaleQuantity");
+                        TextBox box17 = (TextBox)grdPurchasing.Rows[i].Cells[17].FindControl("txtUnitCost");
+                        TextBox box18 = (TextBox)grdPurchasing.Rows[i].Cells[18].FindControl("txtItemPrice");
+                        TextBox box19 = (TextBox)grdPurchasing.Rows[i].Cells[19].FindControl("txtTax");
+                        TextBox box20 = (TextBox)grdPurchasing.Rows[i].Cells[20].FindControl("txtTaxQuantity");
+
+
 
                         // Update the DataRow with the DDL Selected Items & TextBox values 
 
@@ -298,6 +304,7 @@ namespace mid
                         dtCurrentTable.Rows[i]["Column17"] = box17.Text;
                         dtCurrentTable.Rows[i]["Column18"] = box18.Text;
                         dtCurrentTable.Rows[i]["Column19"] = box19.Text;
+                        dtCurrentTable.Rows[i]["Column20"] = box20.Text;
 
 
 
@@ -333,24 +340,25 @@ namespace mid
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         TextBox box1 = (TextBox)grdPurchasing.Rows[i].Cells[1].FindControl("txtGrdItemNo");
-                        DropDownList box2 = (DropDownList)grdPurchasing.Rows[rowIndex].Cells[2].FindControl("drpItem");
-                        DropDownList box3 = (DropDownList)grdPurchasing.Rows[rowIndex].Cells[3].FindControl("drpUnit");
+                        DropDownList box2 = (DropDownList)grdPurchasing.Rows[i].Cells[2].FindControl("drpItem");
+                        DropDownList box3 = (DropDownList)grdPurchasing.Rows[i].Cells[3].FindControl("drpUnit");
                         TextBox box4 = (TextBox)grdPurchasing.Rows[i].Cells[4].FindControl("txtSitNo");
                         TextBox box5 = (TextBox)grdPurchasing.Rows[i].Cells[5].FindControl("txtQuantity");
                         TextBox box6 = (TextBox)grdPurchasing.Rows[i].Cells[6].FindControl("txtUnitPrice");
                         TextBox box7 = (TextBox)grdPurchasing.Rows[i].Cells[7].FindControl("txtTotalPrice");
                         TextBox box8 = (TextBox)grdPurchasing.Rows[i].Cells[8].FindControl("txtVaildDate");
-                        TextBox box9 = (TextBox)grdPurchasing.Rows[i].Cells[9].FindControl("txtDiscountPur1");
-                        TextBox box10 = (TextBox)grdPurchasing.Rows[i].Cells[10].FindControl("txtDiscountQuantity");
-                        TextBox box11 = (TextBox)grdPurchasing.Rows[i].Cells[11].FindControl("txtDiscountPur2");
-                        TextBox box12 = (TextBox)grdPurchasing.Rows[i].Cells[12].FindControl("txtBonusPur");
-                        TextBox box13 = (TextBox)grdPurchasing.Rows[i].Cells[13].FindControl("txtBonusQuantity");
-                        TextBox box14 = (TextBox)grdPurchasing.Rows[i].Cells[14].FindControl("txtSalePrice");
-                        TextBox box15 = (TextBox)grdPurchasing.Rows[i].Cells[15].FindControl("txtSaleQuantity");
-                        TextBox box16 = (TextBox)grdPurchasing.Rows[i].Cells[16].FindControl("txtUnitCost");
-                        TextBox box17 = (TextBox)grdPurchasing.Rows[i].Cells[17].FindControl("txtItemPrice");
-                        TextBox box18 = (TextBox)grdPurchasing.Rows[i].Cells[18].FindControl("txtTax");
-                        TextBox box19 = (TextBox)grdPurchasing.Rows[i].Cells[19].FindControl("txtTaxQuantity");
+                        TextBox box9 = (TextBox)grdPurchasing.Rows[i].Cells[9].FindControl("txtBatch_No");
+                        TextBox box10 = (TextBox)grdPurchasing.Rows[i].Cells[10].FindControl("txtDiscountPur1");
+                        TextBox box11 = (TextBox)grdPurchasing.Rows[i].Cells[11].FindControl("txtDiscountQuantity");
+                        TextBox box12 = (TextBox)grdPurchasing.Rows[i].Cells[12].FindControl("txtDiscountPur2");
+                        TextBox box13 = (TextBox)grdPurchasing.Rows[i].Cells[13].FindControl("txtBonusPur");
+                        TextBox box14 = (TextBox)grdPurchasing.Rows[i].Cells[14].FindControl("txtBonusQuantity");
+                        TextBox box15 = (TextBox)grdPurchasing.Rows[i].Cells[15].FindControl("txtSalePrice");
+                        TextBox box16 = (TextBox)grdPurchasing.Rows[i].Cells[16].FindControl("txtSaleQuantity");
+                        TextBox box17 = (TextBox)grdPurchasing.Rows[i].Cells[17].FindControl("txtUnitCost");
+                        TextBox box18 = (TextBox)grdPurchasing.Rows[i].Cells[18].FindControl("txtItemPrice");
+                        TextBox box19 = (TextBox)grdPurchasing.Rows[i].Cells[19].FindControl("txtTax");
+                        TextBox box20 = (TextBox)grdPurchasing.Rows[i].Cells[20].FindControl("txtTaxQuantity");
 
 
 
@@ -386,6 +394,7 @@ namespace mid
                             box17.Text = dt.Rows[i]["Column17"].ToString();
                             box18.Text = dt.Rows[i]["Column18"].ToString();
                             box19.Text = dt.Rows[i]["Column19"].ToString();
+                            box20.Text = dt.Rows[i]["Column20"].ToString();
                         }
 
                         rowIndex++;

@@ -218,6 +218,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\StyleSheet.css" />
     <Content Include="country.aspx" />
+    <Content Include="css\component.css" />
+    <Content Include="css\demo.css" />
+    <Content Include="css\organicfoodicons.css" />
     <Content Include="curncy.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="deduction_type.aspx" />
@@ -242,6 +245,11 @@
     <Content Include="glastacnbnk.aspx" />
     <Content Include="glastacntyp.aspx" />
     <Content Include="gljrntyp.aspx" />
+    <Content Include="js\classie.js" />
+    <Content Include="js\dummydata.js" />
+    <Content Include="js\jquery.maskedinput.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\modernizr-custom.js" />
     <Content Include="Login_v5\css\main.css" />
     <Content Include="Login_v5\css\util.css" />
     <Content Include="Login_v5\fonts\font-awesome-4.7.0\css\font-awesome.css" />
@@ -396,6 +404,7 @@
     <Content Include="wp-content\image\022e9691c5ba65d23cbf27a53f83163e.jpg" />
     <Content Include="wp-content\image\465731298.jpg.0.jpg" />
     <Content Include="wp-content\image\84380.png" />
+    <Content Include="wp-content\image\add-logo.png" />
     <Content Include="wp-content\image\cancel-solid-icon-614x460.png" />
     <Content Include="wp-content\image\clients.jpg" />
     <Content Include="wp-content\image\DeleteDustbin-512.png" />
