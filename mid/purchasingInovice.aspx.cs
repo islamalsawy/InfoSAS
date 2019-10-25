@@ -494,9 +494,26 @@ namespace mid
                 TextBox txtSitNo = row.FindControl("txtSitNo") as TextBox;
                 TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox;
 
+                TextBox Itm_Pur = row.FindControl("txtUnitPrice") as TextBox;
+                TextBox Titm_Pur = row.FindControl("txtTotalPrice") as TextBox;
+                TextBox Exp_Date = row.FindControl("txtVaildDate") as TextBox;
+                TextBox Batch_No = row.FindControl("txtBatch_No") as TextBox;
+                TextBox Disc1_Prct = row.FindControl("txtDiscountPur1") as TextBox;
+                TextBox Disc1_Val = row.FindControl("txtDiscountQuantity") as TextBox;
+                TextBox Disc2_Prct = row.FindControl("txtDiscountPur2") as TextBox;
+                TextBox BonusPur_Prct = row.FindControl("txtBonusPur") as TextBox;
+                TextBox BonusPur_Qty = row.FindControl("txtBonusQuantity") as TextBox;
+                TextBox Itm_Sal = row.FindControl("txtSalePrice") as TextBox;
+                TextBox Titm_Sal = row.FindControl("txtSaleQuantity") as TextBox;
+
+                TextBox Itm_Cost = row.FindControl("txtUnitCost") as TextBox;
+                TextBox Titm_Cost = row.FindControl("txtItemPrice") as TextBox;
+
+                TextBox taxp_Extra = row.FindControl("txtTax") as TextBox;
+                TextBox taxv_Extra = row.FindControl("txtTaxQuantity") as TextBox;
+            
              
-                
-                string insertStatement = "insert into InvLoddtl (StoreID,Doc_Ty,Doc_No,Dlv_Stor,Unit_No,Ln_No,Itm_No) values(@StoreID,'1',@Doc_No,@Dlv_Stor,@Unit_No,@RowNumber,@Itm_No)";
+                string insertStatement = "insert into InvLoddtl (StoreID,Doc_Ty,Doc_No,Dlv_Stor,Qty,Loc_No,Unit_No,Ln_No,Itm_No,Itm_Cost,Titm_Cost,Exp_Date, Batch_No,Disc1_Prct,Disc1_Val,Disc2_Prct,BonusPur_Prct,BonusPur_Qty,Itm_Sal,Titm_Sal,taxp_Extra,taxv_Extra,Itm_Pur,Titm_Pur) values(@StoreID,'2',@Doc_No,@Dlv_Stor,@Qty,@Loc_No,@Unit_No,@RowNumber,@Itm_No,@Itm_Cost,@Titm_Cost,@Exp_Date,@Batch_No,@Disc1_Prct,@Disc1_Val,@Disc2_Prct,@BonusPur_Prct,@BonusPur_Qty,@Itm_Sal,@Titm_Sal,@taxp_Extra,@taxv_Extra,@Itm_Pur,@Titm_Pur)";
 
                 string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(constr))
@@ -510,8 +527,33 @@ namespace mid
                         cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
                         cmd.Parameters.AddWithValue("@Dlv_Stor", drpBranch.SelectedValue);
                         cmd.Parameters.AddWithValue("@Unit_No", drpUnit.SelectedValue);
-                        cmd.Parameters.AddWithValue("@RowNumber", row.Cells[0].Text);                    
+                        cmd.Parameters.AddWithValue("@RowNumber", row.Cells[0].Text);
+                        cmd.Parameters.AddWithValue("@Qty", txtQuantity.Text);
+                        cmd.Parameters.AddWithValue("@Loc_No", txtSitNo.Text);
                         cmd.Parameters.AddWithValue("@Itm_No", txtGrdItemNo.Text);
+                        cmd.Parameters.AddWithValue("@Itm_Cost", Itm_Cost.Text);
+                        cmd.Parameters.AddWithValue("@Titm_Cost", Titm_Cost.Text);
+                        cmd.Parameters.AddWithValue("@Exp_Date", Exp_Date.Text);
+                        cmd.Parameters.AddWithValue("@Batch_No", Batch_No.Text);
+                        cmd.Parameters.AddWithValue("@Disc1_Prct", Disc1_Prct.Text);
+                        cmd.Parameters.AddWithValue("@Disc1_Val", Disc1_Val.Text);
+                        cmd.Parameters.AddWithValue("@Disc2_Prct", Disc2_Prct.Text);
+                        cmd.Parameters.AddWithValue("@BonusPur_Prct", BonusPur_Prct.Text);
+                        cmd.Parameters.AddWithValue("@BonusPur_Qty", BonusPur_Qty.Text);
+                        cmd.Parameters.AddWithValue("@Itm_Sal", Itm_Sal.Text);
+                        cmd.Parameters.AddWithValue("@Titm_Sal", Titm_Sal.Text);
+                        cmd.Parameters.AddWithValue("@Itm_Cost", Itm_Cost.Text);
+                        cmd.Parameters.AddWithValue("@Titm_Cost", Titm_Cost.Text);
+
+                        cmd.Parameters.AddWithValue("@Itm_Pur", Itm_Pur.Text);
+                        cmd.Parameters.AddWithValue("@Titm_Pur", Titm_Pur.Text);
+
+                        cmd.Parameters.AddWithValue("@taxp_Extra", taxp_Extra.Text);
+                        cmd.Parameters.AddWithValue("@taxv_Extra", taxv_Extra.Text);
+
+
+
+
 
 
                         int result = cmd.ExecuteNonQuery();

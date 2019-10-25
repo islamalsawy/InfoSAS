@@ -16,11 +16,6 @@
          display: none;
          }
     </style>
-    <script type="text/javascript">
-        var control = document.getElementById("txtSanad");
-        control.disabled = true;
-     
-    </script>
     </head>
     <body>
         <div>
@@ -374,5 +369,8 @@
     </body>
 
  
-
+       <script type="text/javascript">
+           var control = document.getElementById("txtSanad");
+           control.disabled = true;
+    </script>
 </asp:Content>

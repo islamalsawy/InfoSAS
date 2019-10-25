@@ -387,26 +387,25 @@ namespace mid
         }
         void BindGridView()
         {
-     
 
-            string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(constr))
                 {
-                    using (SqlCommand cmd = new SqlCommand("select ROW_NUMBER () OVER(ORDER BY Ln_No) AS RowNumber, I.Doc_No, I.Ln_No, I.Itm_No, I.Loc_No, I.Qty, I.taxp_Extra, M.Itm_NmAr,U.Unit_NmAr,I.Itm_Cost,I.Titm_Cost,I.Exp_Date,I.Batch_No,I.Disc1_Prct,I.Disc1_Val,I.Disc2_Prct,I.BonusPur_Prct,I.BonusPur_Qty,I.Itm_Pur,I.Titm_Pur,I.taxv_Extra from MtsItmmfs as M right join InvLoddtl as I on M.Itm_No=I.Itm_No left join InvItmunit as U on U.Unit_No=I.Unit_No where I.Doc_No=@Doc_No"))
+                    using (SqlCommand cmd = new SqlCommand("select ROW_NUMBER () OVER(ORDER BY Ln_No) AS RowNumber, I.Doc_No, I.Ln_No, I.Itm_No, I.Loc_No, I.Qty, I.taxp_Extra, M.Itm_NmAr,U.Unit_NmAr,I.Itm_Cost,I.Titm_Cost,I.Exp_Date,I.Batch_No,I.Disc1_Prct,I.Disc1_Val,I.Disc2_Prct,I.BonusPur_Prct,I.BonusPur_Qty,I.Itm_Pur,I.Titm_Pur,I.taxv_Extra,I.Itm_Sal,I.Titm_Sal from MtsItmmfs as M right join InvLoddtl as I on M.Itm_No=I.Itm_No left join InvItmunit as U on U.Unit_No=I.Unit_No where I.Doc_No=@Doc_No"))
                     {
                         cmd.CommandType = CommandType.Text;
                         cmd.Connection = con;
                         con.Open();
-                        cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);  
+                        cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
                         cmd.ExecuteNonQuery();
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         da.Fill(dt);
-                        if (dt.Rows.Count >0) 
+                        if (dt.Rows.Count > 0)
                         {
                             grdPurchasing.DataSource = dt;
                             grdPurchasing.DataBind();
-                        grdPurchasing.ShowFooter = true;
-                    }
+                            grdPurchasing.ShowFooter = true;
+                        }
                         else
                         {
                             dt.Rows.Add(dt.NewRow());
@@ -421,14 +420,14 @@ namespace mid
 
                             grdPurchasing.Rows[0].Cells[0]
     .HorizontalAlign = HorizontalAlign.Center;
-                        grdPurchasing.ShowFooter = false;
+                            grdPurchasing.ShowFooter = false;
                         }
-                   
 
-                    con.Close();
+
+                        con.Close();
 
                     }
-            }
+                }
             
         }
         protected void grdPurchasing_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -451,16 +450,34 @@ namespace mid
                     DropDownList drpInsertUnit_NmAr = grdPurchasing.FooterRow.FindControl("drpInsertUnit_NmAr") as DropDownList;
                 DropDownList drpInsertItm_NmAr = grdPurchasing.FooterRow.FindControl("drpInsertItm_NmAr") as DropDownList;
 
+                TextBox txtItm_PurFooter = grdPurchasing.FooterRow.FindControl("txtItm_PurFooter") as TextBox;
+                TextBox txtTitm_PurFooter = grdPurchasing.FooterRow.FindControl("txtTitm_PurFooter") as TextBox;
+                TextBox Exp_DateFooter = grdPurchasing.FooterRow.FindControl("Exp_DateFooter") as TextBox;
+                TextBox Batch_NoFooter = grdPurchasing.FooterRow.FindControl("Batch_NoFooter") as TextBox;
+                TextBox Disc1_PrctFooter = grdPurchasing.FooterRow.FindControl("Disc1_PrctFooter") as TextBox;
+                TextBox Disc1_ValFooter = grdPurchasing.FooterRow.FindControl("Disc1_ValFooter") as TextBox;
+                TextBox Disc2_PrctFooter = grdPurchasing.FooterRow.FindControl("Disc2_PrctFooter") as TextBox;
+                TextBox BonusPur_PrctFooter = grdPurchasing.FooterRow.FindControl("BonusPur_PrctFooter") as TextBox;
+                TextBox BonusPur_QtyFooter = grdPurchasing.FooterRow.FindControl("BonusPur_QtyFooter") as TextBox;
+                TextBox Itm_SalFooter = grdPurchasing.FooterRow.FindControl("Itm_SalFooter") as TextBox;
+                TextBox Titm_SalFooter = grdPurchasing.FooterRow.FindControl("Titm_SalFooter") as TextBox;
+                TextBox Titm_CostFooter = grdPurchasing.FooterRow.FindControl("Titm_CostFooter") as TextBox;
+                TextBox Itm_CostFooter = grdPurchasing.FooterRow.FindControl("Itm_CostFooter") as TextBox;
+                TextBox taxv_ExtraFooter = grdPurchasing.FooterRow.FindControl("taxv_ExtraFooter") as TextBox;
+
+
+
                 string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
                     using (SqlConnection con = new SqlConnection(constr))
                     {
-                        using (SqlCommand cmd = new SqlCommand("insert into Invloddtl (Ln_No,StoreID,Doc_Ty,Doc_No,Itm_No,Unit_No,Loc_No,Qty,taxp_Extra) Values ((select max (Ln_No)+1 from Invloddtl where Doc_No=@Doc_No),13,13,@Doc_No,@Itm_No,@Unit_No,@Loc_No,@Qty,@taxp_Extra)"))
+                        using (SqlCommand cmd = new SqlCommand("insert into Invloddtl (Ln_No,StoreID,Doc_Ty,Doc_No,Itm_No,Unit_No,Loc_No,Qty,taxp_Extra,Dlv_Stor,Itm_Cost,Titm_Cost,Exp_Date,Batch_No,Disc1_Prct,Disc1_Val,Disc2_Prct,BonusPur_Prct,BonusPur_Qty,Itm_Sal,Titm_Sal,taxv_Extra,Itm_Pur,Titm_Pur) Values ((select max (Ln_No)+1 from Invloddtl where Doc_No=@Doc_No),@StoreID,2,@Doc_No,@Itm_No,@Unit_No,@Loc_No,@Qty,@taxp_Extra,@Dlv_Stor,@Itm_Cost,@Titm_Cost,@Exp_Date,@Batch_No,@Disc1_Prct,@Disc1_Val,@Disc2_Prct,@BonusPur_Prct,@BonusPur_Qty,@Itm_Sal,@Titm_Sal,@taxv_Extra,@Itm_Pur,@Titm_Pur )"))
                         {
                             cmd.CommandType = CommandType.Text;
                             cmd.Connection = con;
                             con.Open();
-
-                            cmd.Parameters.AddWithValue("@Itm_No", TextBox2.Text);
+                        cmd.Parameters.AddWithValue("@StoreID", drpBranch.SelectedValue);
+                        cmd.Parameters.AddWithValue("@Dlv_Stor", drpBranch.SelectedValue);
+                        cmd.Parameters.AddWithValue("@Itm_No", TextBox2.Text);
                             cmd.Parameters.AddWithValue("@Loc_No", TextBox6.Text);
                             cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
                      //   cmd.Parameters.AddWithValue("@RowNumber", Balance);
@@ -468,7 +485,22 @@ namespace mid
                             cmd.Parameters.AddWithValue("@taxp_Extra", TextBox10.Text);
                             cmd.Parameters.AddWithValue("@Unit_No", drpInsertUnit_NmAr.SelectedValue);
 
-                    
+                        cmd.Parameters.AddWithValue("@Itm_Pur", txtItm_PurFooter.Text);
+                        cmd.Parameters.AddWithValue("@Titm_Pur", txtTitm_PurFooter.Text);
+                        cmd.Parameters.AddWithValue("@Exp_Date", Exp_DateFooter.Text);
+                        cmd.Parameters.AddWithValue("@Batch_No", Batch_NoFooter.Text);
+                        cmd.Parameters.AddWithValue("@Disc1_Prct", Disc1_PrctFooter.Text);
+                        cmd.Parameters.AddWithValue("@Disc1_Val", Disc1_ValFooter.Text);
+                        cmd.Parameters.AddWithValue("@Disc2_Prct", Disc2_PrctFooter.Text);
+                        cmd.Parameters.AddWithValue("@BonusPur_Prct", BonusPur_PrctFooter.Text);
+                        cmd.Parameters.AddWithValue("@BonusPur_Qty", BonusPur_QtyFooter.Text);
+                        cmd.Parameters.AddWithValue("@Itm_Sal", Itm_SalFooter.Text);
+                        cmd.Parameters.AddWithValue("@Titm_Sal", Titm_SalFooter.Text);
+                        cmd.Parameters.AddWithValue("@Itm_Cost", Itm_CostFooter.Text);
+                        cmd.Parameters.AddWithValue("@Titm_Cost", Titm_CostFooter.Text);
+                        cmd.Parameters.AddWithValue("@taxv_Extra", taxv_ExtraFooter.Text);
+
+
                         cmd.ExecuteNonQuery();
                             grdPurchasing.ShowFooter = false;
                             BindGridView();
@@ -609,12 +641,33 @@ namespace mid
             DropDownList drpEditItm_NmAr = (DropDownList)row.FindControl("drpEditItm_NmAr");
             DropDownList drpEditUnit_NmAr = (DropDownList)row.FindControl("drpEditUnit_NmAr");
 
-          
+            TextBox txtSitNo = row.FindControl("txtSitNo") as TextBox;
+            TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox;
+
+            TextBox Itm_Pur = row.FindControl("txtItm_Pur") as TextBox;
+            TextBox Titm_Pur = row.FindControl("txtTitm_Pur") as TextBox;
+            TextBox Exp_Date = row.FindControl("txtExp_Date") as TextBox;
+            TextBox Batch_No = row.FindControl("txtBatch_No") as TextBox;
+            TextBox Disc1_Prct = row.FindControl("txtDisc1_Prct") as TextBox;
+            TextBox Disc1_Val = row.FindControl("txtDisc1_Val") as TextBox;
+            TextBox Disc2_Prct = row.FindControl("txtDisc2_Prct") as TextBox;
+            TextBox BonusPur_Prct = row.FindControl("txtBonusPur_Prct") as TextBox;
+            TextBox BonusPur_Qty = row.FindControl("txtBonusPur_Qty") as TextBox;
+            TextBox Itm_Sal = row.FindControl("txtItm_Sal") as TextBox;
+            TextBox Titm_Sal = row.FindControl("txtTitm_Sal") as TextBox;
+
+            TextBox Itm_Cost = row.FindControl("txtItm_Cost") as TextBox;
+            TextBox Titm_Cost = row.FindControl("txtTitm_Cost") as TextBox;
+
+            TextBox taxp_Extra = row.FindControl("txtEditTaxp_Extra") as TextBox;
+            TextBox taxv_Extra = row.FindControl("taxv_Extra_Extra") as TextBox;
+
+
 
             string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("Update Invloddtl set  StoreID=13,Doc_Ty=13,Itm_No=@Itm_No,Unit_No=@Unit_No,Loc_No=@Loc_No,Qty=@Qty,taxp_Extra=@taxp_Extra where Doc_No=@Doc_No and Ln_No=@RowNumber"))
+                using (SqlCommand cmd = new SqlCommand("Update Invloddtl set  StoreID=@StoreID,Doc_Ty=2,Itm_No=@Itm_No,Unit_No=@Unit_No,Loc_No=@Loc_No,Qty=@Qty,taxp_Extra=@taxp_Extra,taxv_Extra=@taxv_Extra,Itm_Cost=@Itm_Cost,Titm_Cost=@Titm_Cost,Exp_Date=@Exp_Date,Batch_No=@Batch_No,Disc1_Prct=@Disc1_Prct,Disc1_Val=@Disc1_Val,Disc2_Prct=@Disc2_Prct,BonusPur_Prct=@BonusPur_Prct,BonusPur_Qty=@BonusPur_Qty,Itm_Sal=@Itm_Sal,Titm_Sal=@Titm_Sal,Itm_Pur=@Itm_Pur,Titm_Pur=@Titm_Pur where Doc_No=@Doc_No and Ln_No=@RowNumber"))
                 {
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = con;
@@ -627,6 +680,23 @@ namespace mid
                     cmd.Parameters.AddWithValue("@taxp_Extra", txtEditTaxp_Extra.Text);                  
                     cmd.Parameters.AddWithValue("@Unit_No", drpEditUnit_NmAr.SelectedValue);              
                     cmd.Parameters.AddWithValue("@RowNumber", row.Cells[0].Text);
+
+                    cmd.Parameters.AddWithValue("@Itm_Pur", Itm_Pur.Text);
+                    cmd.Parameters.AddWithValue("@Titm_Pur", Titm_Pur.Text);
+                    cmd.Parameters.AddWithValue("@Exp_Date", Exp_Date.Text);
+                    cmd.Parameters.AddWithValue("@Batch_No", Batch_No.Text);
+                    cmd.Parameters.AddWithValue("@Disc1_Prct", Disc1_Prct.Text);
+                    cmd.Parameters.AddWithValue("@Disc1_Val", Disc1_Val.Text);
+                    cmd.Parameters.AddWithValue("@Disc2_Prct", Disc2_Prct.Text);
+                    cmd.Parameters.AddWithValue("@BonusPur_Prct", BonusPur_Prct.Text);
+                    cmd.Parameters.AddWithValue("@BonusPur_Qty", BonusPur_Qty.Text);
+                    cmd.Parameters.AddWithValue("@Itm_Sal", Itm_Sal.Text);
+                    cmd.Parameters.AddWithValue("@Titm_Sal", Titm_Sal.Text);
+                    cmd.Parameters.AddWithValue("@Itm_Cost", Itm_Cost.Text);
+                    cmd.Parameters.AddWithValue("@Titm_Cost", Titm_Cost.Text);
+                    cmd.Parameters.AddWithValue("@taxv_Extra", taxv_Extra.Text);
+
+
 
                     cmd.ExecuteNonQuery();
                     grdPurchasing.EditIndex = -1;

@@ -137,15 +137,15 @@
 
                      <asp:TemplateField HeaderText="اسم الصنف" SortExpression="Itm_NmAr" ItemStyle-Width="100px">
                         <EditItemTemplate>
-                            <asp:DropDownList ID="drpEditItm_NmAr" runat="server" SelectedValue='<%# Bind("Itm_No") %>' DataSourceID="SqlDataSource3" DataTextField="Itm_NmAr" DataValueField="Itm_No" Width="130px" AutoPostBack="true" >
+                            <asp:DropDownList ID="drpEditItm_NmAr" runat="server" SelectedValue='<%# Bind("Itm_No") %>' DataSourceID="SqlDataSource3" DataTextField="Itm_NmAr" DataValueField="Itm_No" Width="125px" AutoPostBack="true" >
                             </asp:DropDownList>                            
                             <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:DefaultConnection2 %>' SelectCommand="SELECT [Itm_No], [Itm_NmAr] FROM [MtsItmmfs]"></asp:SqlDataSource>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Itm_NmAr") %>' Width="120px"></asp:Label>
+                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Itm_NmAr") %>' Width="125px"></asp:Label>
                         </ItemTemplate>
                            <FooterTemplate>
-                               <asp:DropDownList ID="drpInsertItm_NmAr" runat="Server" DataSourceID="SqlDataSource2" DataTextField="Itm_NmAr" DataValueField="Itm_No" Width="130px" AutoPostBack="True" OnSelectedIndexChanged="drpInsertItm_NmAr_SelectedIndexChanged" AppendDataBoundItems="true">        <asp:ListItem Selected="True" Value="0">اختر صنفاً</asp:ListItem>
+                               <asp:DropDownList ID="drpInsertItm_NmAr" runat="Server" DataSourceID="SqlDataSource2" DataTextField="Itm_NmAr" DataValueField="Itm_No" Width="125px" AutoPostBack="True" OnSelectedIndexChanged="drpInsertItm_NmAr_SelectedIndexChanged" AppendDataBoundItems="true">        <asp:ListItem Selected="True" Value="0">اختر صنفاً</asp:ListItem>
                                </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="revDdlMatch" runat="server" ControlToValidate="drpInsertItm_NmAr" InitialValue="0" ErrorMessage="اختر صنفاً" ForeColor="Red"></asp:RequiredFieldValidator>
                                <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:DefaultConnection2 %>' SelectCommand="SELECT [Itm_No], [Itm_NmAr] FROM [MtsItmmfs]"></asp:SqlDataSource>
@@ -155,7 +155,7 @@
                     
                     <asp:TemplateField HeaderText="الوحدة" SortExpression="Unit_NmAr">
                         <EditItemTemplate>
-                            <asp:DropDownList ID="drpEditUnit_NmAr" runat="server" SelectedItem='<%# Bind("Unit_NmAr") %>'  DataSourceID="SqlDataSource4" DataTextField="Unit_NmAr" DataValueField="Unit_No" Width="60px"></asp:DropDownList>
+                            <asp:DropDownList ID="drpEditUnit_NmAr" runat="server" SelectedItem='<%# Bind("Unit_NmAr") %>'  DataSourceID="SqlDataSource4" DataTextField="Unit_NmAr" DataValueField="Unit_No" Width="45px"></asp:DropDownList>
                             <asp:SqlDataSource runat="server" ID="SqlDataSource4" ConnectionString='<%$ ConnectionStrings:DefaultConnection2 %>' SelectCommand="SELECT [Unit_No], [Unit_NmAr] FROM [ItmsUnit]"></asp:SqlDataSource>
                         </EditItemTemplate>
                         <ItemTemplate>
@@ -169,7 +169,7 @@
 
                     <asp:TemplateField HeaderText="الموقع" SortExpression="Loc_No">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtEditLoc_No" runat="server" Text='<%# Bind("Loc_No") %>' TextMode="Number" Width="30px"></asp:TextBox>
+                            <asp:TextBox ID="txtEditLoc_No" runat="server" Text='<%# Bind("Loc_No") %>' TextMode="Number" Width="20px"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="TextBox5" runat="server" Text='<%# Bind("Loc_No") %>'  Width="30px"></asp:Label>
@@ -181,49 +181,51 @@
 
                     <asp:TemplateField HeaderText="الكمية" SortExpression="Qty">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtEditQty" runat="server" Text='<%# Bind("Qty") %>' TextMode="Number"  Width="40px"></asp:TextBox>
+                            <asp:TextBox ID="txtEditQty" runat="server" Text='<%# Bind("Qty") %>' TextMode="Number"  Width="35px"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="label3" runat="server" Text='<%# Bind("Qty") %>' Width="40px"></asp:Label>
+                            <asp:Label ID="label3" runat="server" Text='<%# Bind("Qty") %>' Width="35px" ></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-         <asp:TextBox ID="TextBox9" runat="Server" TextMode="Number" Width="40px"/>               
+         <asp:TextBox ID="TextBox9" runat="Server" TextMode="Number" Width="30px"/>               
                          </FooterTemplate>
                     </asp:TemplateField>
 
-                      <asp:TemplateField HeaderText="سعر شراء الوحدة" SortExpression="Itm_Cost">
+                      <asp:TemplateField HeaderText="سعر شراء الوحدة" SortExpression="Itm_Pur">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtUnitPrice" runat="server" Text='<%# Bind("Itm_Cost") %>' TextMode="Number" Width="40px"></asp:TextBox>
+                            <asp:TextBox ID="txtItm_Pur" runat="server" Text='<%# Bind("Itm_Pur") %>' TextMode="Number" Width="40px"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Bind("Itm_Cost") %>' Width="40px"></asp:Label>
+                            <asp:Label ID="lblItm_Pur" runat="server" Text='<%# Bind("Itm_Pur") %>' Width="40px"></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-         <asp:TextBox ID="txtUnitPriceFooter" runat="Server" TextMode="Number" Width="40px"/>               
+         <asp:TextBox ID="txtItm_PurFooter" runat="Server" TextMode="Number" Width="40px"/>               
                          </FooterTemplate>
                     </asp:TemplateField>
 
-                     <asp:TemplateField HeaderText="القيمة الإجمالية" SortExpression="Titm_Cost">
+                     <asp:TemplateField HeaderText="القيمة الإجمالية" SortExpression="Titm_Pur">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtTotalPrice" runat="server" Text='<%# Bind("Titm_Cost") %>' TextMode="Number" Width="40px"></asp:TextBox>
+                            <asp:TextBox ID="txtTitm_Pur" runat="server" Text='<%# Bind("Titm_Pur") %>' TextMode="Number" Width="40px"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblTotalPrice" runat="server" Text='<%# Bind("Titm_Cost") %>' Width="40px"></asp:Label>
+                            <asp:Label ID="lblTitm_Pur" runat="server" Text='<%# Bind("Titm_Pur") %>' Width="40px"></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-         <asp:TextBox ID="txtTotalPriceFooter" runat="Server" TextMode="Number" Width="40px"/>               
+         <asp:TextBox ID="txtTitm_PurFooter" runat="Server" TextMode="Number" Width="40px"/>               
                          </FooterTemplate>
                     </asp:TemplateField>
 
                           <asp:TemplateField HeaderText="تاريخ الصلاحية" SortExpression="Exp_Date">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtExp_Date" runat="server" Text='<%# Bind("Exp_Date") %>'  Width="60px"></asp:TextBox>
+                            <asp:TextBox ID="txtExp_Date" runat="server" Text='<%# Bind("Exp_Date") %>' placeholder="يوم/سنة" Width="45px"></asp:TextBox>
+                            <asp:RegularExpressionValidator runat="server" ControlToValidate="txtExp_Date"  ValidationExpression="(0[1-9]|1[012])[/]\d{4}"  SetFocusOnError="true">
+                       </asp:RegularExpressionValidator >
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblExp_Date" runat="server" Text='<%# Bind("Exp_Date") %>' Width="60px"></asp:Label>
+                            <asp:Label ID="lblExp_Date" runat="server" Text='<%# Bind("Exp_Date") %>' Width="45px"></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-         <asp:TextBox ID="Exp_DateFooter" runat="Server" placeholder="يوم/سنة" Width="60px"/> 
+         <asp:TextBox ID="Exp_DateFooter" runat="Server" placeholder="يوم/سنة" Width="45px"/> 
                               <asp:RegularExpressionValidator runat="server" ControlToValidate="Exp_DateFooter"  ValidationExpression="(0[1-9]|1[012])[/]\d{4}"  SetFocusOnError="true">
                        </asp:RegularExpressionValidator >
                          </FooterTemplate>
@@ -231,13 +233,13 @@
 
                       <asp:TemplateField HeaderText="رقم التشغيلة" SortExpression="Batch_No">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtBatch_No" runat="server" Text='<%# Bind("Batch_No") %>' Width="40px" ></asp:TextBox>
+                            <asp:TextBox ID="txtBatch_No" runat="server" Text='<%# Bind("Batch_No") %>' Width="30px" ></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblBatch_No" runat="server" Text='<%# Bind("Batch_No") %>' Width="40px"></asp:Label>
+                            <asp:Label ID="lblBatch_No" runat="server" Text='<%# Bind("Batch_No") %>' Width="35px"></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-         <asp:TextBox ID="Batch_NoFooter" runat="Server" Width="40px" />                      </FooterTemplate>
+         <asp:TextBox ID="Batch_NoFooter" runat="Server" Width="35px" />                      </FooterTemplate>
                     </asp:TemplateField>
 
                      <asp:TemplateField HeaderText="نسبة خصم 1 %" SortExpression="Disc1_Prct">
@@ -296,50 +298,51 @@
          <asp:TextBox ID="BonusPur_QtyFooter" runat="Server" TextMode="Number" Width="40px"/>                      </FooterTemplate>
                     </asp:TemplateField>
 
-                     <asp:TemplateField HeaderText="سعر البيع" SortExpression="Itm_Pur">
+                     <asp:TemplateField HeaderText="سعر البيع" SortExpression="Itm_Sal">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtItm_Pur" runat="server" Text='<%# Bind("Itm_Pur") %>' TextMode="Number" Width="40px"></asp:TextBox>
+                            <asp:TextBox ID="txtItm_Sal" runat="server" Text='<%# Bind("Itm_Sal") %>' TextMode="Number" Width="40px"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblItm_Pur" runat="server" Text='<%# Bind("Itm_Pur") %>' Width="40px"></asp:Label>
+                            <asp:Label ID="lblItm_Sal" runat="server" Text='<%# Bind("Itm_Sal") %>' Width="40px"></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-         <asp:TextBox ID="Itm_PurFooter" runat="Server" TextMode="Number" Width="40px"/>                      </FooterTemplate>
+         <asp:TextBox ID="Itm_SalFooter" runat="Server" TextMode="Number" Width="40px"/>                      </FooterTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="قيمة البيع" SortExpression="Titm_Pur">
+                    <asp:TemplateField HeaderText="قيمة البيع" SortExpression="Titm_Sal">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtTitm_Pur" runat="server" Text='<%# Bind("Titm_Pur") %>' TextMode="Number" Width="40px"></asp:TextBox>
+                            <asp:TextBox ID="txtTitm_Sal" runat="server" Text='<%# Bind("Titm_Sal") %>' TextMode="Number" Width="40px"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblTitm_Pur" runat="server" Text='<%# Bind("Titm_Pur") %>' Width="40px"></asp:Label>
+                            <asp:Label ID="lblTitm_Sal" runat="server" Text='<%# Bind("Titm_Sal") %>' Width="40px"></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-         <asp:TextBox ID="Titm_PurFooter" runat="Server" TextMode="Number" Width="40px"/>                      </FooterTemplate>
+         <asp:TextBox ID="Titm_SalFooter" runat="Server" TextMode="Number" Width="40px"/>                      </FooterTemplate>
                     </asp:TemplateField>
 
-                    <%--<asp:TemplateField HeaderText="تكلفة الصنف" SortExpression="Titm_Pur">
+                    <asp:TemplateField HeaderText="تكلفة الصنف" SortExpression="Titm_Cost">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtTitm_Pur" runat="server" Text='<%# Bind("Titm_Pur") %>' TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="txtTitm_Cost" runat="server" Text='<%# Bind("Titm_Cost") %>' TextMode="Number"  Width="40px"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblTitm_Pur" runat="server" Text='<%# Bind("Titm_Pur") %>'></asp:Label>
+                            <asp:Label ID="lblTitm_Cost" runat="server" Text='<%# Bind("Titm_Cost") %>'  Width="40px"></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-         <asp:TextBox ID="Titm_PurFooter" runat="Server" TextMode="Number"/>                      </FooterTemplate>
+         <asp:TextBox ID="Titm_CostFooter" runat="Server" TextMode="Number"  Width="40px"/>
+                        </FooterTemplate>
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField HeaderText="تكلفة الوحدة" SortExpression="Titm_Pur">
+                    <asp:TemplateField HeaderText="تكلفة الوحدة" SortExpression="Itm_Cost">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtTitm_Pur" runat="server" Text='<%# Bind("Titm_Pur") %>' TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="txtItm_Cost" runat="server" Text='<%# Bind("Itm_Cost") %>' TextMode="Number"  Width="40px"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblTitm_Pur" runat="server" Text='<%# Bind("Titm_Pur") %>'></asp:Label>
+                            <asp:Label ID="lblItm_Cost" runat="server" Text='<%# Bind("Itm_Cost") %>'  Width="40px"></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-         <asp:TextBox ID="Titm_PurFooter" runat="Server" TextMode="Number"/>                      </FooterTemplate>
-                    </asp:TemplateField>--%>
+         <asp:TextBox ID="Itm_CostFooter" runat="Server" TextMode="Number"  Width="40px"/>                      </FooterTemplate>
+                    </asp:TemplateField>
 
 
 
