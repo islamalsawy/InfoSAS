@@ -125,19 +125,19 @@
 
                     <asp:TemplateField HeaderText="رقم الصنف" SortExpression="Itm_No" HeaderStyle-Width="60px">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtEditItm_No" runat="server" Text='<%# Bind("Itm_No") %>' TextMode="Number" Width="60px"></asp:TextBox>
+                            <asp:TextBox ID="txtEditItm_No" runat="server" Text='<%# Bind("Itm_No") %>' TextMode="Number" Width="60px" required="true"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="label2" runat="server" Text='<%# Bind("Itm_No") %>' Width="60px"></asp:Label>
                         </ItemTemplate>
                            <FooterTemplate>
-         <asp:TextBox ID="txtInsertItm_No" runat="Server" OnTextChanged="txtInsertItm_No_TextChanged" AutoPostBack="true" TextMode="Number" Width="60px"/>
+         <asp:TextBox ID="txtInsertItm_No" runat="Server" OnTextChanged="txtInsertItm_No_TextChanged" AutoPostBack="true" TextMode="Number" Width="60px" required="true"/>
                          </FooterTemplate>
                     </asp:TemplateField>
 
                      <asp:TemplateField HeaderText="اسم الصنف" SortExpression="Itm_NmAr" ItemStyle-Width="100px">
                         <EditItemTemplate>
-                            <asp:DropDownList ID="drpEditItm_NmAr" runat="server" SelectedValue='<%# Bind("Itm_No") %>' DataSourceID="SqlDataSource3" DataTextField="Itm_NmAr" DataValueField="Itm_No" Width="125px" AutoPostBack="true" >
+                            <asp:DropDownList ID="drpEditItm_NmAr" runat="server" SelectedValue='<%# Bind("Itm_No") %>' DataSourceID="SqlDataSource3" DataTextField="Itm_NmAr" DataValueField="Itm_No" Width="125px" AutoPostBack="true"  OnSelectedIndexChanged="drpEditItm_NmAr_SelectedIndexChanged">
                             </asp:DropDownList>                            
                             <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:DefaultConnection2 %>' SelectCommand="SELECT [Itm_No], [Itm_NmAr] FROM [MtsItmmfs]"></asp:SqlDataSource>
                         </EditItemTemplate>
@@ -382,7 +382,7 @@
                         <EditItemTemplate>
                             <asp:ImageButton ID="btnupdate" runat="server" CommandName="Update" Text="Update" ImageUrl="~/wp-content/image/save.png" Width="20px" Height="20px" ToolTip="تحديث" AlternateText="تحديث" CausesValidation="false"/>
                             <asp:ImageButton ID="btncancel" runat="server" CommandName="Cancel" Text="Cancel" ImageUrl="~/wp-content/image/cancel-solid-icon-614x460.png" Width="30px" Height="30px" ToolTip="الغاء" AlternateText="الغاء" CausesValidation="false"/>
-                            <asp:ImageButton ID="btnDelete" runat="server" CommandName="Delete" Text="Delete" ImageUrl="~/wp-content/image/DeleteDustbin-512.png" Width="20px" Height="20px" ToolTip="حذف" AlternateText="حذف" CausesValidation="false" />
+                            <asp:ImageButton ID="btnDelete" runat="server" CommandName="Delete" Text="Delete" ImageUrl="~/wp-content/image/DeleteDustbin-512.png" Width="20px" Height="20px" ToolTip="حذف" AlternateText="حذف" CausesValidation="false"  OnClientClick="if (!deleteConfirmation()) return false;"/>
                         </EditItemTemplate>
                         <FooterTemplate>
                             <asp:ImageButton ID="btnInsert" runat="Server" Text="Insert" CommandName="Insert" UseSubmitBehavior="False" ImageUrl="~/wp-content/image/new_artboard_file_create_post-512.png" Width="20px" Height="20px" ToolTip="ادخال" AlternateText="ادخال" />
@@ -447,7 +447,7 @@
                 <tr>   
                     <td> 
                         <asp:Button ID="btnSave" runat="server" Text="تحديث"  CssClass="btn btn-primary" style="border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;" OnClick="btnSave_Click"/>
+    padding: 0.375rem 0.75rem;" OnClick="btnSave_Click" OnClientClick="if (!deleteConfirmation2()) return false;"/>
                     </td>
                     <td>
                         <asp:Button ID="btnCancel" runat="server" Text="الغاء"  CssClass="btn btn-primary" style="background-color:firebrick;border: 1px solid transparent;
@@ -462,8 +462,15 @@
 
  
     </body>
-
+    <script>
+        function deleteConfirmation() {
+            return confirm("هل تريد حذف هذا الصنف؟");
+        }
+        function deleteConfirmation2() {
+            return confirm("هل تريد تحديث الفاتورة؟");
+        }
+    </script>
     </html>
 
-
+    
 </asp:Content>

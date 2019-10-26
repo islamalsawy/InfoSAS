@@ -10,12 +10,16 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="Content/StyleSheet.css" type="text/css" rel="stylesheet" />
+        <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css"
+    rel="stylesheet" type="text/css" />
          <Style>
     input[type=number]::-webkit-inner-spin-button, input[type=month]::-webkit-inner-spin-button {
         -webkit-appearance: none;
          display: none;
          }
     </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+</script>
     </head>
     <body>
         <div>
@@ -29,7 +33,7 @@
 
                         <td>سند الادخال</td>
                         <td>
-                            <asp:TextBox ID="txtSanad" runat="server"  Enabled="false" TextMode="Number" required="true" AutoPostBack="true"></asp:TextBox>
+                            <asp:TextBox ID="txtSanad" runat="server"  Enabled="false" TextMode="Number" required="true" ></asp:TextBox>
 
                         </td>
 
@@ -80,7 +84,7 @@
 
                         <td>تاريخ الاستحقاق</td>
                         <td>
-                            <asp:TextBox ID="dateDue" runat="server" TextMode="Date"></asp:TextBox></td>
+                            <asp:TextBox ID="dateDue" runat="server" ></asp:TextBox></td>
                     </tr>
 
                     <tr>
@@ -104,8 +108,10 @@
             </div>
         </div>
 
+
         <div style="top: 0; bottom: 0; left: 0; right: 0; margin: auto; overflow: scroll; width: 1100px; height: 220px">
-            <asp:GridView ID="grdPurchasing" runat="server" AutoGenerateColumns="False" CellSpacing="1" CellPadding="2"  CssClass="Table table-bordered table-striped  table-hover" AllowPaging="True" AllowSorting="True" ShowHeaderWhenEmpty="true"
+            <asp:GridView ID="grdPurchasing" runat="server" AutoGenerateColumns="False" CellSpacing="1" CellPadding="2"  CssClass="Table table-bordered table-striped  table-hover" AllowPaging="True" AllowSorting="True" 
+                ShowHeaderWhenEmpty="true"
                 OnRowDataBound="grdPurchasing_RowDataBound"
                 ShowFooter="true"
                 HeaderStyle-HorizontalAlign="Center"
@@ -114,19 +120,19 @@
                 RowStyle-VerticalAlign="Middle"
            
                 >
-
+                
                 <Columns>
                     <%--       <asp:TemplateField HeaderText="م" >
                             <ItemTemplate >
                                 <%# Container.DataItemIndex + 1 %>
                             </ItemTemplate>
                         </asp:TemplateField>--%>
-
+                    
                     <asp:BoundField DataField="RowNumber"  HeaderText="م" />
 
                     <asp:TemplateField HeaderText="رقم الصنف">
                         <ItemTemplate>
-
+                            
                             <asp:TextBox ID="txtGrdItemNo" runat="server" Width="60px" AutoPostBack="true" OnTextChanged="drpGrdItemNo_TextChanged" TextMode="Number" Required="true" ></asp:TextBox>
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -134,7 +140,7 @@
 
                     <asp:TemplateField HeaderText="اسم الصنف">
                         <ItemTemplate>
-                            <asp:DropDownList ID="drpItem" runat="server" AutoPostBack="true" Width="140px" OnSelectedIndexChanged="drpItem_SelectedIndexChanged">
+                            <asp:DropDownList ID="drpItem" runat="server" AutoPostBack="true" Width="140px" OnSelectedIndexChanged="drpItem_SelectedIndexChanged" >
                             </asp:DropDownList>
 
                         </ItemTemplate>
@@ -159,7 +165,7 @@
 
                     <asp:TemplateField HeaderText="الكمية">
                         <ItemTemplate>
-                            <asp:TextBox ID="txtQuantity" runat="server" Width="40px" TextMode="Number" Required="true">
+                            <asp:TextBox ID="txtQuantity" runat="server" Width="40px" TextMode="Number" Required="true"  OnTextChanged="txtQuantity_TextChanged"  AutoPostBack="true">
 
                             </asp:TextBox>
                         </ItemTemplate>
@@ -167,7 +173,7 @@
 
                     <asp:TemplateField HeaderText="سعر شراء الوحدة">
                         <ItemTemplate>
-                            <asp:TextBox ID="txtUnitPrice" runat="server" Width="40px" TextMode="Number">
+                            <asp:TextBox ID="txtUnitPrice" runat="server" Width="40px" TextMode="Number" >
 
                             </asp:TextBox>
                         </ItemTemplate>
@@ -203,7 +209,7 @@
 
                     <asp:TemplateField HeaderText=" خصم 1 شراء %">
                         <ItemTemplate>
-                            <asp:TextBox ID="txtDiscountPur1" runat="server" Width="40px" TextMode="Number">
+                            <asp:TextBox ID="txtDiscountPur1" runat="server" Width="40px" TextMode="Number" OnPreRender ="txtDiscountPur1_OnPreRender"  AutoPostBack="true" OnTextChanged="txtDiscountPur1_TextChanged">
 
                             </asp:TextBox>
                         </ItemTemplate>
@@ -212,7 +218,7 @@
 
                     <asp:TemplateField HeaderText="قيمة الخصم">
                         <ItemTemplate>
-                            <asp:TextBox ID="txtDiscountQuantity" runat="server" Width="40px" TextMode="Number">
+                            <asp:TextBox ID="txtDiscountQuantity" runat="server" Width="40px" TextMode="Number" OnPreRender="txtDiscountQuantity_PreRender">
 
                             </asp:TextBox>
                         </ItemTemplate>
@@ -220,7 +226,7 @@
 
                     <asp:TemplateField HeaderText="خصم 2 شراء %">
                         <ItemTemplate>
-                            <asp:TextBox ID="txtDiscountPur2" runat="server" Width="40px" TextMode="Number">
+                            <asp:TextBox ID="txtDiscountPur2" runat="server" Width="40px" TextMode="Number" AutoPostBack="true" >
 
                             </asp:TextBox>
                         </ItemTemplate>
@@ -228,7 +234,7 @@
 
                     <asp:TemplateField HeaderText="بونص % شراء">
                         <ItemTemplate>
-                            <asp:TextBox ID="txtBonusPur" runat="server" Width="40px" TextMode="Number">
+                            <asp:TextBox ID="txtBonusPur" runat="server" Width="40px" TextMode="Number"  OnTextChanged="txtBonusPur_OnTextChanged" AutoPostBack="true">
 
                             </asp:TextBox>
                         </ItemTemplate>
@@ -237,7 +243,7 @@
 
                     <asp:TemplateField HeaderText="بونص كمية">
                         <ItemTemplate>
-                            <asp:TextBox ID="txtBonusQuantity" runat="server" Width="40px" TextMode="Number">
+                            <asp:TextBox ID="txtBonusQuantity" runat="server" Width="40px" TextMode="Number" OnTextChanged="txtBonusQuantity_OnTextChanged" AutoPostBack="true">
 
                             </asp:TextBox>
                         </ItemTemplate>
@@ -262,7 +268,7 @@
 
                     <asp:TemplateField HeaderText="تكلفة الوحدة">
                         <ItemTemplate>
-                            <asp:TextBox ID="txtUnitCost" runat="server" Width="40px" TextMode="Number">
+                            <asp:TextBox ID="txtUnitCost" runat="server" Width="40px" TextMode="Number" ReadOnly="true" >
 
                             </asp:TextBox>
                         </ItemTemplate>
@@ -271,7 +277,7 @@
 
                     <asp:TemplateField HeaderText="تكلفة الصنف">
                         <ItemTemplate>
-                            <asp:TextBox ID="txtItemPrice" runat="server" Width="40px" TextMode="Number">
+                            <asp:TextBox ID="txtItemPrice" runat="server" Width="40px" TextMode="Number" OnPreRender="txtItemPrice_OnPreRender" ReadOnly="true" >
 
                             </asp:TextBox>
                         </ItemTemplate>
@@ -302,12 +308,13 @@
                     <asp:TemplateField HeaderText="حذف">
                         <ItemTemplate>
                             <asp:ImageButton ID="LinkDelete" runat="server"
-                                OnClick="LinkDelete_Click" ImageUrl="~/wp-content/image/DeleteDustbin-512.png" Width="20px" Height="20px" ToolTip="حذف" AlternateText="حذف"></asp:ImageButton>
+                                OnClick="LinkDelete_Click" ImageUrl="~/wp-content/image/DeleteDustbin-512.png" Width="20px" Height="20px" ToolTip="حذف" AlternateText="حذف" CausesValidation="false"></asp:ImageButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
         </div>
+
         <div style="margin: 10px">
             <table class="table " style="width: 400px; height: 50px;">
                 <tr>
@@ -352,7 +359,8 @@
                 <tr>   
                     <td> 
                         <asp:Button ID="btnSave" runat="server" Text="حفظ" OnClick="btnSave_Click" CssClass="btn btn-primary" style="border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;"/>
+    padding: 0.375rem 0.75rem;"  CausesValidation="true" OnClientClick="if (!deleteConfirmation()) return false;"/>
+ 
                     </td>
                     <td>
                         <asp:Button ID="btnCancel" runat="server" Text="الغاء"  CssClass="btn btn-primary" style="background-color:firebrick;border: 1px solid transparent;
@@ -368,9 +376,14 @@
  
     </body>
 
- 
        <script type="text/javascript">
            var control = document.getElementById("txtSanad");
            control.disabled = true;
-    </script>
+           function deleteConfirmation() {
+               return confirm("هل تريد حفظ الفاتورة؟");
+           }
+
+   
+</script>
+    
 </asp:Content>

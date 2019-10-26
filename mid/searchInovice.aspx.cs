@@ -20,8 +20,8 @@ namespace mid
     
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
+            grdPurchasing.ShowFooter = false;
             if (!Page.IsPostBack)
             {
 
@@ -501,6 +501,7 @@ namespace mid
                         cmd.Parameters.AddWithValue("@taxv_Extra", taxv_ExtraFooter.Text);
 
 
+
                         cmd.ExecuteNonQuery();
                             grdPurchasing.ShowFooter = false;
                             BindGridView();
@@ -517,17 +518,62 @@ namespace mid
             BindGridView();
         }
 
+      
+
         protected void drpInsertItm_NmAr_SelectedIndexChanged(object sender, EventArgs e)
         {
-        
-                 //    TextBox txtInsertItm_No = row.FindControl("txtInsertItm_No") as TextBox;
-              //  DropDownList drpInsertItm_NmAr = row.FindControl("drpInsertItm_NmAr") as DropDownList;
 
-              TextBox txtInsertItm_No = grdPurchasing.FooterRow.FindControl("txtInsertItm_No") as TextBox;
+            //    TextBox txtInsertItm_No = row.FindControl("txtInsertItm_No") as TextBox;
+            //  DropDownList drpInsertItm_NmAr = row.FindControl("drpInsertItm_NmAr") as DropDownList;
 
-               DropDownList drpInsertItm_NmAr = grdPurchasing.FooterRow.FindControl("drpInsertItm_NmAr") as DropDownList;
 
-                if (drpInsertItm_NmAr != null)
+            TextBox txtInsertItm_No = grdPurchasing.FooterRow.FindControl("txtInsertItm_No") as TextBox;
+
+            DropDownList drpInsertItm_NmAr = grdPurchasing.FooterRow.FindControl("drpInsertItm_NmAr") as DropDownList;
+
+            if (drpInsertItm_NmAr != null)
+            {
+                try
+                {
+                    string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                    using (SqlConnection con = new SqlConnection(constr))
+                    {
+                        using (SqlCommand cmd = new SqlCommand("select Itm_No from MtsItmmfs where Itm_No=@Itm_No"))
+                        {
+                            cmd.CommandType = CommandType.Text;
+                            cmd.Connection = con;
+                            con.Open();
+                            cmd.Parameters.AddWithValue("@Itm_No", drpInsertItm_NmAr.SelectedValue);
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            while (dr.Read())
+                            {
+                                txtInsertItm_No.Text = dr["Itm_No"].ToString();
+                            }
+                            con.Close();
+                        }
+                    }
+                }
+                catch (Exception s)
+                {
+                    HttpContext.Current.Response.Write("Error Occured " + s.Message);
+                }
+            }
+        }
+
+
+
+
+
+        protected void drpEditItm_NmAr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in grdPurchasing.Rows)
+            {
+
+                TextBox txtEditItm_No = row.FindControl("txtEditItm_No") as TextBox;
+
+                DropDownList drpEditItm_NmAr = row.FindControl("drpEditItm_NmAr") as DropDownList;
+
+                if (drpEditItm_NmAr != null)
                 {
                     try
                     {
@@ -539,11 +585,11 @@ namespace mid
                                 cmd.CommandType = CommandType.Text;
                                 cmd.Connection = con;
                                 con.Open();
-                                cmd.Parameters.AddWithValue("@Itm_No", drpInsertItm_NmAr.SelectedValue);
+                                cmd.Parameters.AddWithValue("@Itm_No", drpEditItm_NmAr.SelectedValue);
                                 SqlDataReader dr = cmd.ExecuteReader();
                                 while (dr.Read())
                                 {
-                                    txtInsertItm_No.Text = dr["Itm_No"].ToString();
+                                    txtEditItm_No.Text = dr["Itm_No"].ToString();
                                 }
                                 con.Close();
                             }
@@ -554,34 +600,10 @@ namespace mid
                         HttpContext.Current.Response.Write("Error Occured " + s.Message);
                     }
                 }
-
-
-
-                #region 
-                //DropDownList drpItem = (DropDownList)grdPurchasing.FindControl("drpItem") as DropDownList;
-
-                //TextBox txtGrdItemNo = (TextBox)grdPurchasing.FindControl("txtGrdItemNo")as TextBox;
-                //DropDownList drpItem = (DropDownList)grdPurchasing.FindControl("drpItem") as DropDownList;
-
-
-
-                //}
-
-                //var query = from p in DB.MtsItmmfs
-                //            where drpItem.SelectedItem.Value == Convert.ToString(p.Itm_No)
-                //            select new
-                //            {
-                //                p.Itm_No,
-
-                //            };
-
-
-                //txtGrdItemNo.Text = query.ToString();
-                #endregion
-            
+            }
         }
 
-        protected void txtInsertItm_No_TextChanged(object sender, EventArgs e)
+    protected void txtInsertItm_No_TextChanged(object sender, EventArgs e)
         {
 
             TextBox txtInsertItm_No = grdPurchasing.FooterRow.FindControl("txtInsertItm_No") as TextBox;
@@ -623,6 +645,7 @@ namespace mid
 
         protected void grdPurchasing_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            grdPurchasing.ShowFooter = false;
             grdPurchasing.EditIndex = e.NewEditIndex;
             BindGridView();
 
@@ -630,81 +653,84 @@ namespace mid
 
         protected void grdPurchasing_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            //string ID = grdPurchasing.DataKeys[e.RowIndex].Value.ToString();
-            GridViewRow row = grdPurchasing.Rows[e.RowIndex];
+          
+                //string ID = grdPurchasing.DataKeys[e.RowIndex].Value.ToString();
+                GridViewRow row = grdPurchasing.Rows[e.RowIndex];
 
+             //  int rowIndex = row.RowIndex;
+               
+                TextBox txtEditItm_No = (TextBox)row.FindControl("txtEditItm_No");
+                TextBox txtEditLoc_No = (TextBox)row.FindControl("txtEditLoc_No");
+                TextBox txtEditQty = (TextBox)row.FindControl("txtEditQty");
+                TextBox txtEditTaxp_Extra = (TextBox)row.FindControl("txtEditTaxp_Extra");
+                DropDownList drpEditItm_NmAr = (DropDownList)row.FindControl("drpEditItm_NmAr");
+                DropDownList drpEditUnit_NmAr = (DropDownList)row.FindControl("drpEditUnit_NmAr");
 
-            TextBox txtEditItm_No = (TextBox)row.FindControl("txtEditItm_No");
-            TextBox txtEditLoc_No = (TextBox)row.FindControl("txtEditLoc_No");
-            TextBox txtEditQty = (TextBox)row.FindControl("txtEditQty");
-            TextBox txtEditTaxp_Extra = (TextBox)row.FindControl("txtEditTaxp_Extra");
-            DropDownList drpEditItm_NmAr = (DropDownList)row.FindControl("drpEditItm_NmAr");
-            DropDownList drpEditUnit_NmAr = (DropDownList)row.FindControl("drpEditUnit_NmAr");
+                TextBox txtSitNo = row.FindControl("txtSitNo") as TextBox;
+                TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox;
 
-            TextBox txtSitNo = row.FindControl("txtSitNo") as TextBox;
-            TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox;
+                TextBox Itm_Pur = row.FindControl("txtItm_Pur") as TextBox;
+                TextBox Titm_Pur = row.FindControl("txtTitm_Pur") as TextBox;
+                TextBox Exp_Date = row.FindControl("txtExp_Date") as TextBox;
+                TextBox Batch_No = row.FindControl("txtBatch_No") as TextBox;
+                TextBox Disc1_Prct = row.FindControl("txtDisc1_Prct") as TextBox;
+                TextBox Disc1_Val = row.FindControl("txtDisc1_Val") as TextBox;
+                TextBox Disc2_Prct = row.FindControl("txtDisc2_Prct") as TextBox;
+                TextBox BonusPur_Prct = row.FindControl("txtBonusPur_Prct") as TextBox;
+                TextBox BonusPur_Qty = row.FindControl("txtBonusPur_Qty") as TextBox;
+                TextBox Itm_Sal = row.FindControl("txtItm_Sal") as TextBox;
+                TextBox Titm_Sal = row.FindControl("txtTitm_Sal") as TextBox;
 
-            TextBox Itm_Pur = row.FindControl("txtItm_Pur") as TextBox;
-            TextBox Titm_Pur = row.FindControl("txtTitm_Pur") as TextBox;
-            TextBox Exp_Date = row.FindControl("txtExp_Date") as TextBox;
-            TextBox Batch_No = row.FindControl("txtBatch_No") as TextBox;
-            TextBox Disc1_Prct = row.FindControl("txtDisc1_Prct") as TextBox;
-            TextBox Disc1_Val = row.FindControl("txtDisc1_Val") as TextBox;
-            TextBox Disc2_Prct = row.FindControl("txtDisc2_Prct") as TextBox;
-            TextBox BonusPur_Prct = row.FindControl("txtBonusPur_Prct") as TextBox;
-            TextBox BonusPur_Qty = row.FindControl("txtBonusPur_Qty") as TextBox;
-            TextBox Itm_Sal = row.FindControl("txtItm_Sal") as TextBox;
-            TextBox Titm_Sal = row.FindControl("txtTitm_Sal") as TextBox;
+                TextBox Itm_Cost = row.FindControl("txtItm_Cost") as TextBox;
+                TextBox Titm_Cost = row.FindControl("txtTitm_Cost") as TextBox;
 
-            TextBox Itm_Cost = row.FindControl("txtItm_Cost") as TextBox;
-            TextBox Titm_Cost = row.FindControl("txtTitm_Cost") as TextBox;
+                TextBox taxp_Extra = row.FindControl("txtEditTaxp_Extra") as TextBox;
+                TextBox taxv_Extra = row.FindControl("taxv_Extra_Extra") as TextBox;
 
-            TextBox taxp_Extra = row.FindControl("txtEditTaxp_Extra") as TextBox;
-            TextBox taxv_Extra = row.FindControl("taxv_Extra_Extra") as TextBox;
+                Label Ln_No = row.FindControl("Ln_No") as Label;
 
-
-
-            string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand("Update Invloddtl set  StoreID=@StoreID,Doc_Ty=2,Itm_No=@Itm_No,Unit_No=@Unit_No,Loc_No=@Loc_No,Qty=@Qty,taxp_Extra=@taxp_Extra,taxv_Extra=@taxv_Extra,Itm_Cost=@Itm_Cost,Titm_Cost=@Titm_Cost,Exp_Date=@Exp_Date,Batch_No=@Batch_No,Disc1_Prct=@Disc1_Prct,Disc1_Val=@Disc1_Val,Disc2_Prct=@Disc2_Prct,BonusPur_Prct=@BonusPur_Prct,BonusPur_Qty=@BonusPur_Qty,Itm_Sal=@Itm_Sal,Titm_Sal=@Titm_Sal,Itm_Pur=@Itm_Pur,Titm_Pur=@Titm_Pur where Doc_No=@Doc_No and Ln_No=@RowNumber"))
+                string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(constr))
                 {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand("Update Invloddtl set  StoreID=@StoreID,Doc_Ty=2,Itm_No=@Itm_No,Unit_No=@Unit_No,Loc_No=@Loc_No,Qty=@Qty,taxp_Extra=@taxp_Extra,taxv_Extra=@taxv_Extra,Itm_Cost=@Itm_Cost,Titm_Cost=@Titm_Cost,Exp_Date=@Exp_Date,Batch_No=@Batch_No,Disc1_Prct=@Disc1_Prct,Disc1_Val=@Disc1_Val,Disc2_Prct=@Disc2_Prct,BonusPur_Prct=@BonusPur_Prct,BonusPur_Qty=@BonusPur_Qty,Itm_Sal=@Itm_Sal,Titm_Sal=@Titm_Sal,Itm_Pur=@Itm_Pur,Titm_Pur=@Titm_Pur where Doc_No=@Doc_No and Ln_No=@Ln_No"))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Connection = con;
+                        con.Open();
 
-                    cmd.Parameters.AddWithValue("@Itm_No", drpEditItm_NmAr.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Loc_No", txtEditLoc_No.Text);
-                    cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
-                    cmd.Parameters.AddWithValue("@Qty", txtEditQty.Text);
-                    cmd.Parameters.AddWithValue("@taxp_Extra", txtEditTaxp_Extra.Text);                  
-                    cmd.Parameters.AddWithValue("@Unit_No", drpEditUnit_NmAr.SelectedValue);              
-                    cmd.Parameters.AddWithValue("@RowNumber", row.Cells[0].Text);
-
-                    cmd.Parameters.AddWithValue("@Itm_Pur", Itm_Pur.Text);
-                    cmd.Parameters.AddWithValue("@Titm_Pur", Titm_Pur.Text);
-                    cmd.Parameters.AddWithValue("@Exp_Date", Exp_Date.Text);
-                    cmd.Parameters.AddWithValue("@Batch_No", Batch_No.Text);
-                    cmd.Parameters.AddWithValue("@Disc1_Prct", Disc1_Prct.Text);
-                    cmd.Parameters.AddWithValue("@Disc1_Val", Disc1_Val.Text);
-                    cmd.Parameters.AddWithValue("@Disc2_Prct", Disc2_Prct.Text);
-                    cmd.Parameters.AddWithValue("@BonusPur_Prct", BonusPur_Prct.Text);
-                    cmd.Parameters.AddWithValue("@BonusPur_Qty", BonusPur_Qty.Text);
-                    cmd.Parameters.AddWithValue("@Itm_Sal", Itm_Sal.Text);
-                    cmd.Parameters.AddWithValue("@Titm_Sal", Titm_Sal.Text);
-                    cmd.Parameters.AddWithValue("@Itm_Cost", Itm_Cost.Text);
-                    cmd.Parameters.AddWithValue("@Titm_Cost", Titm_Cost.Text);
-                    cmd.Parameters.AddWithValue("@taxv_Extra", taxv_Extra.Text);
+                        cmd.Parameters.AddWithValue("@Itm_No", drpEditItm_NmAr.SelectedValue);
+                        cmd.Parameters.AddWithValue("@Loc_No", txtEditLoc_No.Text);
+                        cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
+                        cmd.Parameters.AddWithValue("@Qty", txtEditQty.Text);
+                        cmd.Parameters.AddWithValue("@taxp_Extra", txtEditTaxp_Extra.Text);
+                        cmd.Parameters.AddWithValue("@Unit_No", drpEditUnit_NmAr.SelectedValue);
+                        cmd.Parameters.AddWithValue("@Ln_No", Ln_No.Text);
 
 
+                        cmd.Parameters.AddWithValue("@Itm_Pur", Itm_Pur.Text);
+                        cmd.Parameters.AddWithValue("@Titm_Pur", Titm_Pur.Text);
+                        cmd.Parameters.AddWithValue("@Exp_Date", Exp_Date.Text);
+                        cmd.Parameters.AddWithValue("@Batch_No", Batch_No.Text);
+                        cmd.Parameters.AddWithValue("@Disc1_Prct", Disc1_Prct.Text);
+                        cmd.Parameters.AddWithValue("@Disc1_Val", Disc1_Val.Text);
+                        cmd.Parameters.AddWithValue("@Disc2_Prct", Disc2_Prct.Text);
+                        cmd.Parameters.AddWithValue("@BonusPur_Prct", BonusPur_Prct.Text);
+                        cmd.Parameters.AddWithValue("@BonusPur_Qty", BonusPur_Qty.Text);
+                        cmd.Parameters.AddWithValue("@Itm_Sal", Itm_Sal.Text);
+                        cmd.Parameters.AddWithValue("@Titm_Sal", Titm_Sal.Text);
+                        cmd.Parameters.AddWithValue("@Itm_Cost", Itm_Cost.Text);
+                        cmd.Parameters.AddWithValue("@Titm_Cost", Titm_Cost.Text);
+                        cmd.Parameters.AddWithValue("@taxv_Extra", taxv_Extra.Text);
+                        cmd.Parameters.AddWithValue("@StoreID", drpBranch.SelectedValue);
 
-                    cmd.ExecuteNonQuery();
-                    grdPurchasing.EditIndex = -1;
-                    BindGridView();
-                }
 
+                        cmd.ExecuteNonQuery();
+                        grdPurchasing.EditIndex = -1;
+                        BindGridView();
+                    }
+
+                
             }
-
         }
 
         protected void grdPurchasing_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
@@ -735,20 +761,26 @@ namespace mid
                         cmd.ExecuteNonQuery();
                         grdPurchasing.EditIndex = -1;
                         BindGridView();
-                    }
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('تم حذف الصنف بنجاح')", true);
+                }
                 }
             }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            if ( !string.IsNullOrWhiteSpace(txtSanad.Text))
+            {
+                //Update
+           
             string script = "alert(\"تم تحديث البيانات بنجاح\");";
             ScriptManager.RegisterStartupScript(this, GetType(),
                                   "ServerControlScript", script, true);
         }
+        }
     }
 
-   
 
-    }
+
+}
 
 

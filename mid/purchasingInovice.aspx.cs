@@ -43,6 +43,7 @@ namespace mid
             dt.Columns.Add(new DataColumn("Column17", typeof(string)));//for TextBox value 
             dt.Columns.Add(new DataColumn("Column18", typeof(string)));//for DropDownList selected item 
             dt.Columns.Add(new DataColumn("Column19", typeof(string)));//for DropDownList 
+            dt.Columns.Add(new DataColumn("Column20", typeof(string)));//for DropDownList 
 
             dr = dt.NewRow();
             dr["RowNumber"] = 1;
@@ -63,6 +64,7 @@ namespace mid
             dr["Column17"] = string.Empty;
             dr["Column18"] = string.Empty;
             dr["Column19"] = string.Empty;
+            dr["Column20"] = string.Empty;
             dt.Rows.Add(dr);
             ViewState["CurrentTable"] = dt;
             grdPurchasing.DataSource = dt;
@@ -73,9 +75,10 @@ namespace mid
         {
             dateSanadH.Text = DateTime.Now.ToString("yyyy/MM/dd", new System.Globalization.CultureInfo("ar-SA"));
             dateSanad.Text = DateTime.Now.ToString("yyyy/MM/dd", new System.Globalization.CultureInfo("ar-EG"));
+            dateDue.Text = DateTime.Now.AddDays(60).ToString("yyy/MM/dd");
 
             if (!Page.IsPostBack)
-            {              
+            {
                 //Islam 8-10-2019
                 drpBranch.DataValueField = "Brn_No";
                 drpBranch.DataTextField = "Brn_NmAr";
@@ -117,6 +120,8 @@ namespace mid
             {
                 TextBox txtGrdItemNo = row.FindControl("txtGrdItemNo") as TextBox;
                 DropDownList drpItem = row.FindControl("drpItem") as DropDownList;
+                TextBox txtUnitPrice = row.FindControl("txtUnitPrice") as TextBox;
+                TextBox txtSalePrice = row.FindControl("txtSalePrice") as TextBox;
                 if (drpItem != null)
                 {
                     try
@@ -124,7 +129,7 @@ namespace mid
                         string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
                         using (SqlConnection con = new SqlConnection(constr))
                         {
-                            using (SqlCommand cmd = new SqlCommand("select Itm_No from MtsItmmfs where Itm_No=@Itm_No"))
+                            using (SqlCommand cmd = new SqlCommand("select Itm_No,Itm_Pur,Itm_Sal2 from MtsItmmfs where Itm_No=@Itm_No"))
                             {
                                 cmd.CommandType = CommandType.Text;
                                 cmd.Connection = con;
@@ -134,6 +139,8 @@ namespace mid
                                 while (dr.Read())
                                 {
                                     txtGrdItemNo.Text = dr["Itm_No"].ToString();
+                                    txtUnitPrice.Text = dr["Itm_Pur"].ToString();
+                                    txtSalePrice.Text = dr["Itm_Sal2"].ToString();
                                 }
                                 con.Close();
                             }
@@ -145,29 +152,6 @@ namespace mid
                     }
                 }
 
-
-
-                #region 
-                //DropDownList drpItem = (DropDownList)grdPurchasing.FindControl("drpItem") as DropDownList;
-
-                //TextBox txtGrdItemNo = (TextBox)grdPurchasing.FindControl("txtGrdItemNo")as TextBox;
-                //DropDownList drpItem = (DropDownList)grdPurchasing.FindControl("drpItem") as DropDownList;
-
-
-
-                //}
-
-                //var query = from p in DB.MtsItmmfs
-                //            where drpItem.SelectedItem.Value == Convert.ToString(p.Itm_No)
-                //            select new
-                //            {
-                //                p.Itm_No,
-
-                //            };
-
-
-                //txtGrdItemNo.Text = query.ToString();
-                #endregion
             }
         }
 
@@ -211,6 +195,8 @@ namespace mid
             {
                 TextBox txtGrdItemNo = row.FindControl("txtGrdItemNo") as TextBox;
                 DropDownList drpItem = row.FindControl("drpItem") as DropDownList;
+                TextBox txtUnitPrice = row.FindControl("txtUnitPrice") as TextBox;
+                TextBox txtSalePrice = row.FindControl("txtSalePrice") as TextBox;
                 if (drpItem != null)
                 {
                     try
@@ -218,7 +204,7 @@ namespace mid
                         string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
                         using (SqlConnection con = new SqlConnection(constr))
                         {
-                            using (SqlCommand cmd = new SqlCommand("select Itm_No,Itm_NmAr from MtsItmmfs where Itm_No=@Itm_No"))
+                            using (SqlCommand cmd = new SqlCommand("select Itm_No,Itm_NmAr,Itm_Pur,Itm_Sal2 from MtsItmmfs where Itm_No=@Itm_No"))
                             {
                                 cmd.CommandType = CommandType.Text;
                                 cmd.Connection = con;
@@ -228,6 +214,8 @@ namespace mid
                                 while (dr.Read())
                                 {
                                     drpItem.SelectedItem.Text = dr["Itm_NmAr"].ToString();
+                                    txtUnitPrice.Text = dr["Itm_Pur"].ToString();
+                                    txtSalePrice.Text = dr["Itm_Sal2"].ToString();
                                 }
                                 con.Close();
                             }
@@ -240,6 +228,24 @@ namespace mid
                 }
             }
 
+        }
+
+        protected void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in grdPurchasing.Rows)
+            {
+                TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox;
+                TextBox txtTotalPrice = row.FindControl("txtTotalPrice") as TextBox;
+                TextBox txtUnitPrice = row.FindControl("txtUnitPrice") as TextBox;
+                TextBox txtItemPrice = row.FindControl("txtItemPrice") as TextBox;
+                decimal output, output2;
+                var txtQuantityD = decimal.TryParse(txtQuantity.Text, out output);
+
+                var txtUnitPriceD = decimal.TryParse(txtUnitPrice.Text, out output2);
+
+                txtTotalPrice.Text = (output * output2).ToString();
+                //txtItemPrice.Text = txtTotalPrice.Text;
+            }
         }
 
         private void AddNewRowToGrid()
@@ -410,7 +416,7 @@ namespace mid
 
         protected void LinkDelete_Click(object sender, EventArgs e)
         {
-            LinkButton lb = (LinkButton)sender;
+            ImageButton lb = (ImageButton)sender;
             GridViewRow gvRow = (GridViewRow)lb.NamingContainer;
             int rowID = gvRow.RowIndex;
             if (ViewState["CurrentTable"] != null)
@@ -483,92 +489,100 @@ namespace mid
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            foreach (GridViewRow row in grdPurchasing.Rows)
+            if (drpBranch.SelectedIndex != 0)
             {
-                TextBox txtGrdItemNo = row.FindControl("txtGrdItemNo") as TextBox;
 
-                DropDownList drpUnit = row.FindControl("drpUnit") as DropDownList;
 
-                DropDownList drpItem = row.FindControl("drpItem") as DropDownList;
-
-                TextBox txtSitNo = row.FindControl("txtSitNo") as TextBox;
-                TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox;
-
-                TextBox Itm_Pur = row.FindControl("txtUnitPrice") as TextBox;
-                TextBox Titm_Pur = row.FindControl("txtTotalPrice") as TextBox;
-                TextBox Exp_Date = row.FindControl("txtVaildDate") as TextBox;
-                TextBox Batch_No = row.FindControl("txtBatch_No") as TextBox;
-                TextBox Disc1_Prct = row.FindControl("txtDiscountPur1") as TextBox;
-                TextBox Disc1_Val = row.FindControl("txtDiscountQuantity") as TextBox;
-                TextBox Disc2_Prct = row.FindControl("txtDiscountPur2") as TextBox;
-                TextBox BonusPur_Prct = row.FindControl("txtBonusPur") as TextBox;
-                TextBox BonusPur_Qty = row.FindControl("txtBonusQuantity") as TextBox;
-                TextBox Itm_Sal = row.FindControl("txtSalePrice") as TextBox;
-                TextBox Titm_Sal = row.FindControl("txtSaleQuantity") as TextBox;
-
-                TextBox Itm_Cost = row.FindControl("txtUnitCost") as TextBox;
-                TextBox Titm_Cost = row.FindControl("txtItemPrice") as TextBox;
-
-                TextBox taxp_Extra = row.FindControl("txtTax") as TextBox;
-                TextBox taxv_Extra = row.FindControl("txtTaxQuantity") as TextBox;
-            
-             
-                string insertStatement = "insert into InvLoddtl (StoreID,Doc_Ty,Doc_No,Dlv_Stor,Qty,Loc_No,Unit_No,Ln_No,Itm_No,Itm_Cost,Titm_Cost,Exp_Date, Batch_No,Disc1_Prct,Disc1_Val,Disc2_Prct,BonusPur_Prct,BonusPur_Qty,Itm_Sal,Titm_Sal,taxp_Extra,taxv_Extra,Itm_Pur,Titm_Pur) values(@StoreID,'2',@Doc_No,@Dlv_Stor,@Qty,@Loc_No,@Unit_No,@RowNumber,@Itm_No,@Itm_Cost,@Titm_Cost,@Exp_Date,@Batch_No,@Disc1_Prct,@Disc1_Val,@Disc2_Prct,@BonusPur_Prct,@BonusPur_Qty,@Itm_Sal,@Titm_Sal,@taxp_Extra,@taxv_Extra,@Itm_Pur,@Titm_Pur)";
-
-                string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
-                using (SqlConnection con = new SqlConnection(constr))
+                foreach (GridViewRow row in grdPurchasing.Rows)
                 {
-                    using (SqlCommand cmd = new SqlCommand(insertStatement))
+                    TextBox txtGrdItemNo = row.FindControl("txtGrdItemNo") as TextBox;
+
+                    DropDownList drpUnit = row.FindControl("drpUnit") as DropDownList;
+
+                    DropDownList drpItem = row.FindControl("drpItem") as DropDownList;
+
+                    TextBox txtSitNo = row.FindControl("txtSitNo") as TextBox;
+                    TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox;
+
+                    TextBox Itm_Pur = row.FindControl("txtUnitPrice") as TextBox;
+                    TextBox Titm_Pur = row.FindControl("txtTotalPrice") as TextBox;
+                    TextBox Exp_Date = row.FindControl("txtVaildDate") as TextBox;
+                    TextBox Batch_No = row.FindControl("txtBatch_No") as TextBox;
+                    TextBox Disc1_Prct = row.FindControl("txtDiscountPur1") as TextBox;
+                    TextBox Disc1_Val = row.FindControl("txtDiscountQuantity") as TextBox;
+                    TextBox Disc2_Prct = row.FindControl("txtDiscountPur2") as TextBox;
+                    TextBox BonusPur_Prct = row.FindControl("txtBonusPur") as TextBox;
+                    TextBox BonusPur_Qty = row.FindControl("txtBonusQuantity") as TextBox;
+                    TextBox Itm_Sal = row.FindControl("txtSalePrice") as TextBox;
+                    TextBox Titm_Sal = row.FindControl("txtSaleQuantity") as TextBox;
+
+                    TextBox Itm_Cost = row.FindControl("txtUnitCost") as TextBox;
+                    TextBox Titm_Cost = row.FindControl("txtItemPrice") as TextBox;
+
+                    TextBox taxp_Extra = row.FindControl("txtTax") as TextBox;
+                    TextBox taxv_Extra = row.FindControl("txtTaxQuantity") as TextBox;
+
+
+                    string insertStatement = "insert into InvLoddtl (StoreID,Doc_Ty,Doc_No,Dlv_Stor,Qty,Loc_No,Unit_No,Ln_No,Itm_No,Itm_Cost,Titm_Cost,Exp_Date, Batch_No,Disc1_Prct,Disc1_Val,Disc2_Prct,BonusPur_Prct,BonusPur_Qty,Itm_Sal,Titm_Sal,taxp_Extra,taxv_Extra,Itm_Pur,Titm_Pur) values(@StoreID,'2',@Doc_No,@Dlv_Stor,@Qty,@Loc_No,@Unit_No,@RowNumber,@Itm_No,@Itm_Cost,@Titm_Cost,@Exp_Date,@Batch_No,@Disc1_Prct,@Disc1_Val,@Disc2_Prct,@BonusPur_Prct,@BonusPur_Qty,@Itm_Sal,@Titm_Sal,@taxp_Extra,@taxv_Extra,@Itm_Pur,@Titm_Pur)";
+
+                    string constr = ConfigurationManager.ConnectionStrings["DefaultConnection2"].ConnectionString;
+                    using (SqlConnection con = new SqlConnection(constr))
                     {
-                        cmd.CommandType = CommandType.Text;
-                        cmd.Connection = con;
-                        con.Open();
-                        cmd.Parameters.AddWithValue("@StoreID", drpBranch.SelectedValue);
-                        cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
-                        cmd.Parameters.AddWithValue("@Dlv_Stor", drpBranch.SelectedValue);
-                        cmd.Parameters.AddWithValue("@Unit_No", drpUnit.SelectedValue);
-                        cmd.Parameters.AddWithValue("@RowNumber", row.Cells[0].Text);
-                        cmd.Parameters.AddWithValue("@Qty", txtQuantity.Text);
-                        cmd.Parameters.AddWithValue("@Loc_No", txtSitNo.Text);
-                        cmd.Parameters.AddWithValue("@Itm_No", txtGrdItemNo.Text);
-                        cmd.Parameters.AddWithValue("@Itm_Cost", Itm_Cost.Text);
-                        cmd.Parameters.AddWithValue("@Titm_Cost", Titm_Cost.Text);
-                        cmd.Parameters.AddWithValue("@Exp_Date", Exp_Date.Text);
-                        cmd.Parameters.AddWithValue("@Batch_No", Batch_No.Text);
-                        cmd.Parameters.AddWithValue("@Disc1_Prct", Disc1_Prct.Text);
-                        cmd.Parameters.AddWithValue("@Disc1_Val", Disc1_Val.Text);
-                        cmd.Parameters.AddWithValue("@Disc2_Prct", Disc2_Prct.Text);
-                        cmd.Parameters.AddWithValue("@BonusPur_Prct", BonusPur_Prct.Text);
-                        cmd.Parameters.AddWithValue("@BonusPur_Qty", BonusPur_Qty.Text);
-                        cmd.Parameters.AddWithValue("@Itm_Sal", Itm_Sal.Text);
-                        cmd.Parameters.AddWithValue("@Titm_Sal", Titm_Sal.Text);
-                        cmd.Parameters.AddWithValue("@Itm_Cost", Itm_Cost.Text);
-                        cmd.Parameters.AddWithValue("@Titm_Cost", Titm_Cost.Text);
-
-                        cmd.Parameters.AddWithValue("@Itm_Pur", Itm_Pur.Text);
-                        cmd.Parameters.AddWithValue("@Titm_Pur", Titm_Pur.Text);
-
-                        cmd.Parameters.AddWithValue("@taxp_Extra", taxp_Extra.Text);
-                        cmd.Parameters.AddWithValue("@taxv_Extra", taxv_Extra.Text);
-
-
-
-
-
-
-                        int result = cmd.ExecuteNonQuery();
-                        Grid_Initializing();
-                        Response.Write("تم الحفظ بنجاح");
-                    
-                        if (result < 0)
+                        using (SqlCommand cmd = new SqlCommand(insertStatement))
                         {
-                            HttpContext.Current.Response.Write("Error Occured ");  
+                            cmd.CommandType = CommandType.Text;
+                            cmd.Connection = con;
+                            con.Open();
+                            cmd.Parameters.AddWithValue("@StoreID", drpBranch.SelectedValue);
+                            cmd.Parameters.AddWithValue("@Doc_No", txtSanad.Text);
+                            cmd.Parameters.AddWithValue("@Dlv_Stor", drpBranch.SelectedValue);
+                            cmd.Parameters.AddWithValue("@Unit_No", drpUnit.SelectedValue);
+                            cmd.Parameters.AddWithValue("@RowNumber", row.Cells[0].Text);
+                            cmd.Parameters.AddWithValue("@Qty", txtQuantity.Text);
+                            cmd.Parameters.AddWithValue("@Loc_No", txtSitNo.Text);
+                            cmd.Parameters.AddWithValue("@Itm_No", txtGrdItemNo.Text);
+                            //cmd.Parameters.AddWithValue("@Itm_Cost", Itm_Cost.Text);
+                            //cmd.Parameters.AddWithValue("@Titm_Cost", Titm_Cost.Text);
+                            cmd.Parameters.AddWithValue("@Exp_Date", Exp_Date.Text);
+                            cmd.Parameters.AddWithValue("@Batch_No", Batch_No.Text);
+                            cmd.Parameters.AddWithValue("@Disc1_Prct", Disc1_Prct.Text);
+                            cmd.Parameters.AddWithValue("@Disc1_Val", Disc1_Val.Text);
+                            cmd.Parameters.AddWithValue("@Disc2_Prct", Disc2_Prct.Text);
+                            cmd.Parameters.AddWithValue("@BonusPur_Prct", BonusPur_Prct.Text);
+                            cmd.Parameters.AddWithValue("@BonusPur_Qty", BonusPur_Qty.Text);
+                            cmd.Parameters.AddWithValue("@Itm_Sal", Itm_Sal.Text);
+                            cmd.Parameters.AddWithValue("@Titm_Sal", Titm_Sal.Text);
+                            cmd.Parameters.AddWithValue("@Itm_Cost", Itm_Cost.Text);
+                            cmd.Parameters.AddWithValue("@Titm_Cost", Titm_Cost.Text);
+
+                            cmd.Parameters.AddWithValue("@Itm_Pur", Itm_Pur.Text);
+                            cmd.Parameters.AddWithValue("@Titm_Pur", Titm_Pur.Text);
+
+                            cmd.Parameters.AddWithValue("@taxp_Extra", taxp_Extra.Text);
+                            cmd.Parameters.AddWithValue("@taxv_Extra", taxv_Extra.Text);
+
+
+
+
+
+                            int result = cmd.ExecuteNonQuery();
+                            Grid_Initializing();
+
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('تم حفظ الفاتورة.')", true);
+                            if (result < 0)
+                            {
+                                HttpContext.Current.Response.Write("حدث خطأ أثناء حفظ البيانات");
+                            }
+
+                            con.Close();
                         }
-                        con.Close();
                     }
                 }
             }
-
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('خطأ لابد من اختيار الفرع')", true);
+            }
 
             #region MyRegion
             //    if (grdPurchasing.Rows.Count > 0)
@@ -651,6 +665,194 @@ namespace mid
                     break;
             }
         }
+
+        protected void txtDiscountPur1_OnPreRender(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in grdPurchasing.Rows)
+            {
+                TextBox txtDiscountPur1 = row.FindControl("txtDiscountPur1") as TextBox;
+                // TextBox txtDiscountPur2 = row.FindControl("txtDiscountPur2") as TextBox;
+
+                TextBox txtTotalPrice = row.FindControl("txtTotalPrice") as TextBox;
+                TextBox txtDiscountQuantity = row.FindControl("txtDiscountQuantity") as TextBox;
+                TextBox txtUnitCost = row.FindControl("txtUnitCost") as TextBox;
+
+                TextBox txtItemPrice = row.FindControl("txtItemPrice") as TextBox;
+                decimal output, output2;
+
+                var txtDiscountPur1D = decimal.TryParse(txtDiscountPur1.Text,out output);
+                //  double txtDiscountPur2D = Convert.ToDouble(txtDiscountPur2.Text);
+                var txtTotalPriceD = decimal.TryParse(txtTotalPrice.Text, out output2);
+
+                txtDiscountQuantity.Text = ((output) / 100 * (output2)).ToString();
+
+
+
+
+              //  var txtDiscountQuantityD = decimal.TryParse(txtDiscountQuantity.Text,out output3);
+
+                     // var txtItemPriceD = decimal.TryParse(txtItemPrice.Text, out output4);
+
+             //   txtItemPrice.Text = (output2 - output3).ToString();
+
+            }
+        }
+
+
+
+        protected void txtItemPrice_OnPreRender(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in grdPurchasing.Rows)
+            {
+                TextBox txtDiscountPur1 = row.FindControl("txtDiscountPur1") as TextBox;
+                TextBox txtDiscountPur2 = row.FindControl("txtDiscountPur2") as TextBox;
+
+                TextBox txtTotalPrice = row.FindControl("txtTotalPrice") as TextBox;
+                TextBox txtDiscountQuantity = row.FindControl("txtDiscountQuantity") as TextBox;
+                TextBox txtUnitCost = row.FindControl("txtUnitCost") as TextBox;
+
+                TextBox txtItemPrice = row.FindControl("txtItemPrice") as TextBox;
+
+                decimal output, output2, output3;
+
+                var txtDiscountQuantityD = decimal.TryParse(txtDiscountQuantity.Text, out output);
+                //  double txtDiscountPur2D = Convert.ToDouble(txtDiscountPur2.Text);
+                var txtTotalPriceD = decimal.TryParse(txtTotalPrice.Text, out output2);
+                var txtDiscountPur2D = decimal.TryParse(txtDiscountPur2.Text, out output3); //10%
+
+
+
+                var temp2 = (output2 - output) * (output3 / 100); //قيمة خصم شراء 2
+                var temp = output2 - output - temp2; //المبلغ بعد خصم قيمة شراء 1 576
+
+
+
+                //   txtDiscountQuantity.Text = ((output) / 100 * (output2)).ToString();
+                txtItemPrice.Text = (temp).ToString();
+                // txtItemPrice.Text = (temp2 - (temp2 * 10 / 100)).ToString();
+            }
+        }
+
+        protected void txtDiscountQuantity_PreRender(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void txtBonusPur_OnTextChanged(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in grdPurchasing.Rows)
+            {
+
+                TextBox txtTotalPrice = row.FindControl("txtTotalPrice") as TextBox;
+                TextBox txtBonusQuantity = row.FindControl("txtBonusQuantity") as TextBox;
+                TextBox txtBonusPur = row.FindControl("txtBonusPur") as TextBox;
+                TextBox txtUnitCost = row.FindControl("txtUnitCost") as TextBox;
+                TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox;
+                TextBox txtItemPrice = row.FindControl("txtItemPrice") as TextBox;
+
+                decimal output, output2, output3, output4;
+
+               
+                //  double txtDiscountPur2D = Convert.ToDouble(txtDiscountPur2.Text);
+                var txtItemPriceD = decimal.TryParse(txtItemPrice.Text, out output2);
+                var txtQuantityD = decimal.TryParse(txtQuantity.Text, out output3);
+                var txtBonusPurD = decimal.TryParse(txtBonusPur.Text, out output4);
+
+
+                //   txtDiscountQuantity.Text = ((output) / 100 * (output2)).ToString();
+
+                txtBonusQuantity.Text = (output3 * output4 / 100).ToString();
+
+                var txtBonusQuantityD = decimal.TryParse(txtBonusQuantity.Text, out output);
+                txtUnitCost.Text = ((output2) / (output3+ output)).ToString();
+
+            }
+            }
+
+        protected void txtBonusPur_PreRender(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in grdPurchasing.Rows)
+            {
+                TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox;    TextBox txtBonusPur = row.FindControl("txtBonusPur") as TextBox; 
+                TextBox txtBonusQuantity = row.FindControl("txtBonusQuantity") as TextBox;
+
+
+                decimal output, output2;
+
+                var txtQuantityD = decimal.TryParse(txtQuantity.Text, out output);
+                //  double txtDiscountPur2D = Convert.ToDouble(txtDiscountPur2.Text);
+                var txtBonusPurD = decimal.TryParse(txtBonusPur.Text, out output2);
+
+
+
+                txtBonusQuantity.Text = (output*(output2/100)).ToString();
+                // txtItemPrice.Text = (temp2 - (temp2 * 10 / 100)).ToString();
+            }
+        }
+
+        protected void txtBonusQuantity_OnTextChanged(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in grdPurchasing.Rows)
+            {
+                TextBox txtQuantity = row.FindControl("txtQuantity") as TextBox; TextBox txtBonusPur = row.FindControl("txtBonusPur") as TextBox;
+                TextBox txtBonusQuantity = row.FindControl("txtBonusQuantity") as TextBox;
+                TextBox txtItemPrice = row.FindControl("txtItemPrice") as TextBox;
+                TextBox txtUnitCost = row.FindControl("txtUnitCost") as TextBox;
+
+
+
+                decimal output, output2, output3;
+
+                var txtQuantityD = decimal.TryParse(txtQuantity.Text, out output);
+                //  double txtDiscountPur2D = Convert.ToDouble(txtDiscountPur2.Text);
+                var txtBonusQuantityD = decimal.TryParse(txtBonusQuantity.Text, out output2);
+                var txtItemPriceD = decimal.TryParse(txtItemPrice.Text, out output3);
+
+
+
+
+                txtBonusPur.Text = (output2 / output * 100).ToString();
+                txtUnitCost.Text = ((output3) / (output + output2)).ToString();
+                // txtItemPrice.Text = (temp2 - (temp2 * 10 / 100)).ToString();
+            }
+        }
+
+        protected void txtDiscountPur1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+
+
+        //protected void txtDiscountPur2_TextChanged(object sender, EventArgs e)
+        //{
+        //    foreach (GridViewRow row in grdPurchasing.Rows)
+        //    {
+
+        //        TextBox txtDiscountPur2 = row.FindControl("txtDiscountPur2") as TextBox;
+        //        TextBox txtTotalPrice = row.FindControl("txtTotalPrice") as TextBox;
+        //        TextBox txtItemPrice = row.FindControl("txtItemPrice") as TextBox;
+        //        TextBox txtDiscountQuantity = row.FindControl("txtDiscountQuantity") as TextBox;
+
+        //        decimal output, output2, output3, output4, output5;
+
+        //        var txtDiscountPur2D = decimal.TryParse(txtDiscountPur2.Text, out output);
+        //        var txtTotalPriceD = decimal.TryParse(txtTotalPrice.Text, out output2);
+        //        var txtDiscountQuantityD = decimal.TryParse(txtDiscountQuantity.Text, out output3);
+
+
+        //        var temp = output2 - output3; //576
+        //        var txtItemPriceD = decimal.TryParse(txtItemPrice.Text,out output4);
+        //        var temp2 = decimal.TryParse(txtItemPrice.Text, out output5);
+
+        //        txtItemPrice.Text = (temp - (temp * output / 100)).ToString();
+
+
+
+
+
+        //    }
+        //}
     }
 
     }
